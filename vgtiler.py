@@ -97,9 +97,11 @@ async def health():
 app.mount("/viewer", StaticFiles(directory=os.path.join(BASE, "viewer"), html=True), name="viewer")
 app.mount("/web_data", StaticFiles(directory=DATA_DIR), name="web_data")
 
+from fastapi.responses import RedirectResponse
+
 @app.get("/")
 async def root():
-    return {"status": "Active", "viewer": "/viewer/index.html"}
+    return RedirectResponse(url="/viewer/")
 
 if __name__ == "__main__":
     # In cloud, uvicorn usually listens on 0.0.0.0
