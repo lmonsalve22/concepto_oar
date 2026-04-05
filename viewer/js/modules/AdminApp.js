@@ -2343,7 +2343,7 @@ export class AdminApp {
             if (isMatch) {
                 if (layer.bringToFront) layer.bringToFront();
                 layer.setStyle({ 
-                    fillOpacity: 1, 
+                    fillOpacity: 0.4, 
                     opacity: 1, 
                     weight: isTest ? 3 : 2, 
                     color: isTest ? '#fbbf24' : '#00ffcc' // Neon cyan for general isolation to make it highly visible!
@@ -2366,8 +2366,8 @@ export class AdminApp {
             this._ecoFlashInterval = setInterval(() => {
                 isFlashing = !isFlashing;
                 const newStyles = isFlashing 
-                    ? { weight: isTest ? 4 : 3, color: '#fbbf24', fillOpacity: isTest ? 0.8 : 1 } 
-                    : { weight: isTest ? 2.5 : 1.5, color: '#ffffff', fillOpacity: isTest ? 0.45 : 0.9 };
+                    ? { weight: isTest ? 4 : 3, color: '#fbbf24', fillOpacity: 0.3 } 
+                    : { weight: isTest ? 2.5 : 1.5, color: '#ffffff', fillOpacity: 0.3 };
                 
                 flashLayers.forEach(layer => {
                     if (layer.setStyle) layer.setStyle(newStyles);
@@ -3065,7 +3065,8 @@ export class AdminApp {
                     collapseRank,
                     lossPct: risk.estimatedLossPct || 0
                 };
-            }).sort((a, b) => 
+            }).filter(e => e.priorityRank !== 4) // Filter out 'humano'
+            .sort((a, b) => 
                 a.priorityRank - b.priorityRank || 
                 a.collapseRank - b.collapseRank || 
                 b.lossPct - a.lossPct
@@ -3878,7 +3879,7 @@ export class AdminApp {
             
             if (cleanName === targetSearch) {
                 if (layer.bringToFront) layer.bringToFront();
-                layer.setStyle({ fillOpacity: 0.9, opacity: 1, weight: 1.5, color: '#ffffff' });
+                layer.setStyle({ fillOpacity: 0.4, opacity: 1, weight: 1.5, color: '#ffffff' });
                 flashLayers.push(layer); 
             } else {
                 layer.setStyle({ fillOpacity: 0.03, opacity: 0.05, weight: 0.1, color: '#0f172a' });
@@ -3891,8 +3892,8 @@ export class AdminApp {
             this._ecoFlashInterval = setInterval(() => {
                 isFlashing = !isFlashing;
                 const newStyles = isFlashing 
-                    ? { weight: 3, color: '#fbbf24', fillOpacity: isTest ? 0.6 : 1 }   
-                    : { weight: 1.5, color: '#ffffff', fillOpacity: isTest ? 0.45 : 0.9 }; 
+                    ? { weight: 3, color: '#fbbf24', fillOpacity: 0.3 }   
+                    : { weight: 1.5, color: '#ffffff', fillOpacity: 0.3 }; 
                 
                 flashLayers.forEach(layer => {
                     if (layer.setStyle) layer.setStyle(newStyles);
@@ -4156,6 +4157,50 @@ export class AdminApp {
             this._initializeRegionalRanking();
         }
 
+        // --- NEW: MULTI-LEVEL RANKING CALCULATOR ---
+        // (Using parameters declared above: target, lossThreshold, collapseThreshold)
+
+        const getRankMap = (tIso, tLvl, tCode) => {
+            const iStats = this.calculateIntegratedStats(tIso, tLvl, tCode);
+            if (!iStats) return {};
+            const eRaw = [...iStats.bosque.ecosystems, ...iStats.agro.ecosystems, ...iStats.otros.ecosystems];
+            const uLoss = this._resolveLossStatsUnit(state.forestLossStats, tIso, tLvl, tCode);
+            
+            const processed = eRaw.map(e => {
+                let eL = 0;
+                if (uLoss?.ecosystems) {
+                    const normE = this.normalizeForMatch(e.name);
+                    let eD = uLoss.ecosystems[e.name] || uLoss.ecosystems[normE];
+                    if (!eD) {
+                        const sKey = Object.keys(uLoss.ecosystems).find(k => this.normalizeForMatch(k) === normE);
+                        if (sKey) eD = uLoss.ecosystems[sKey];
+                    }
+                    if (eD) eL = (typeof eD === 'object') ? (eD.total || 0) : eD;
+                }
+                // Pass dynamic parameters to ensure consistency with report rendering
+                const rsk = this.calculateEcosystemRisk(e.name, e.percent, eL, e.totalHa);
+                return { name: e.name, pId: rsk.id, lP: rsk.estimatedLossPct || 0 };
+            }).filter(e => e.pId !== 'humano'); // Filter out human-use areas before ranking
+
+            const pOrder = { critico: 0, alerta: 1, atencion: 2, estable: 3 };
+            processed.sort((a, b) => {
+                const valA = pOrder[a.pId] ?? 5;
+                const valB = pOrder[b.pId] ?? 5;
+                if (valA !== valB) return valA - valB;
+                return b.lP - a.lP; // Secondary: Higher loss percentage
+            });
+
+            const rMap = {};
+            processed.forEach((e, idx) => rMap[this.normalizeForMatch(e.name)] = idx + 1);
+            return rMap;
+        };
+
+        const nacRankMap = (iso !== 'ALL') ? getRankMap(iso, 0, null) : {};
+        const n1RankMap = (level >= 1) ? getRankMap(iso, 1, (level === 1 ? code : dVal)) : {};
+        const n2RankMap = (level === 2) ? getRankMap(iso, 2, code) : {};
+
+        const activeRankMap = (level === 2) ? n2RankMap : (level === 1) ? n1RankMap : (iso !== 'ALL' ? nacRankMap : this.regionalRankingMap);
+
         if (unitLoss) {
             const pData = unitLoss.periods || unitLoss;
             totalLossHa = Object.values(pData).reduce((a, b) => typeof b === 'number' ? a + b : a, 0);
@@ -4213,24 +4258,27 @@ export class AdminApp {
                 collapseCounts['Estable']++;
             }
 
-            // Get regional ranking position
-            const regionalRank = this.regionalRankingMap?.[this.normalizeForMatch(name)] || '-';
+            // Multi-level ranks
+            const normName = this.normalizeForMatch(name);
+            const regionalRank = this.regionalRankingMap?.[normName] || '-';
+            const nacRank = nacRankMap?.[normName] || '-';
+            const n1Rank = n1RankMap?.[normName] || '-';
+            const n2Rank = n2RankMap?.[normName] || '-';
 
             return {
-                ecoId: `eco-${this.normalizeForMatch(name).substring(0,8)}-${Math.random().toString(36).substr(2,4)}`,
+                ecoId: `eco-${normName.substring(0,8)}-${Math.random().toString(36).substr(2,4)}`,
                 name, percent: e.percent, totalHa: e.totalHa, eLoss, ePeriods,
                 lossPct: risk.estimatedLossPct || 0, priorityId: risk.id, priorityLabel: risk.label,
                 rank: risk.id === 'critico' ? 0 : (risk.id === 'alerta' ? 1 : (risk.id === 'atencion' ? 2 : 3)),
                 eGap: risk.gap || 0, collapse: statusLabel, collapseFull: displayLabel, annualRate: risk.annualRate || (eLoss / 20),
-                regionalRank
+                regionalRank, nacRank, n1Rank, n2Rank,
+                activeRank: activeRankMap?.[normName] || 999
             };
         });
 
         // 4. SORTING AND SUMMARY
         const priorityAnnexList = allEcos.filter(e => e.priorityId !== 'humano').sort((a,b) => {
-            const rA = parseInt(a.regionalRank) || 999;
-            const rB = parseInt(b.regionalRank) || 999;
-            return rA - rB;
+            return a.activeRank - b.activeRank;
         });
         const mostAffectedEcos = [...allEcos].sort((a,b) => b.eLoss - a.eLoss).slice(0, 3);
         const avgResilience = countWithProjection > 0 ? (totalYearsLimit / countWithProjection).toFixed(1) : "N/D";
@@ -4264,16 +4312,25 @@ export class AdminApp {
         const otherLossGroupPct = otherInitialTotal > 0 ? (otherLossTotal / otherInitialTotal) * 100 : 0;
 
         let globalStatus = 'stable';
-        let statusLabel = 'Conservación Estable';
+        let statusLabel = 'CONSERVACIÓN ESTABLE';
         let statusDesc = 'La unidad presenta indicadores de resiliencia aceptables.';
         
-        // Critical: Presence of critical ecos OR very low protection (less than half the target)
-        if (priorityCounts.critico > 0 || protPctLand < (target / 2)) {
-            globalStatus = 'critical'; statusLabel = 'ESTADO CRÍTICO';
-            statusDesc = `${priorityCounts.critico > 0 ? `${priorityCounts.critico} ecosistemas en riesgo de colapso` : 'Brecha extrema de protección territorial'} identificada (ver anexo).`;
-        } else if (priorityCounts.alerta > 0 || unitLossPct > lossThreshold) {
-            globalStatus = 'warning'; statusLabel = 'ALERTA PREVENTIVA';
-            statusDesc = `${priorityCounts.alerta > 0 ? `${priorityCounts.alerta} ecosistemas con tendencias de pérdida` : 'Presión forestal regional'} por encima del umbral de seguridad (${lossThreshold}%).`;
+        // Option A: Hierarchical Logic for absolute consistency with Annex
+        if (priorityCounts.critico > 0) {
+            globalStatus = 'critical'; 
+            statusLabel = 'ESTADO CRÍTICO';
+            statusDesc = `${priorityCounts.critico} ecosistemas en riesgo de colapso identificados (ver anexo).`;
+        } else if (priorityCounts.alerta > 0 || unitLossPct > lossThreshold || protPctLand < (target / 2)) {
+            globalStatus = 'warning'; 
+            statusLabel = 'ALERTA PREVENTIVA';
+            if (priorityCounts.alerta > 0) statusDesc = `${priorityCounts.alerta} ecosistemas con tendencias de pérdida activa identificados.`;
+            else if (protPctLand < (target / 2)) statusDesc = `Déficit extremo de protección territorial (${protPctLand.toFixed(1)}% de cobertura vs meta de ${target}%).`;
+            else statusDesc = `Presión forestal por encima del umbral de seguridad configurado (${lossThreshold}%).`;
+        } else if (priorityCounts.atencion > 0 || protPctLand < target) {
+            globalStatus = 'attention'; // New yellow state for unit
+            statusLabel = 'ATENCIÓN RECOMENDADA';
+            if (priorityCounts.atencion > 0) statusDesc = `Unidad con ${priorityCounts.atencion} ecosistemas desprotegidos pero con baja pérdida reciente.`;
+            else statusDesc = `La unidad aún no cumple la meta regional de biodiversidad (${target}%).`;
         }
 
         // 5. RECOMMENDATIONS ENGINE (New Section)
@@ -4293,6 +4350,13 @@ export class AdminApp {
         }
 
         // 6. MAIN HTML GENERATION
+        // NEW: Accurate counts based on non-human natural ecosystems (same as table)
+        const totalEcosREG = Object.keys(this.regionalRankingMap || {}).length;
+        const totalEcosNAC = Object.keys(nacRankMap || {}).length;
+        const totalEcosN1 = Object.keys(n1RankMap || {}).length;
+        // PriorityAnnexList is already filtered for natural ecosystems
+        const totalEcosN2 = priorityAnnexList.length;
+
         let html = `
             <div class="report-page">
                 <div style="text-align:center; margin-bottom:25px; border-bottom:3px solid var(--primary); padding-bottom:15px;">
@@ -4619,7 +4683,7 @@ export class AdminApp {
                     <table class="report-table" style="font-size:0.6rem;">
                         <thead style="background:#f1f5f9;">
                             <tr>
-                                <th style="border-radius:10px 0 0 0; text-align:center; width:50px;">Rank Reg.</th>
+                                <th style="border-radius:10px 0 0 0; text-align:center; width:65px;">Ranking</th>
                                 <th style="width:28%;">Ecosistema Natural</th>
                                 <th style="text-align:center;">Prioridad de Conservación</th>
                                 <th style="text-align:center;">Estado y Nivel de Riesgo</th>
@@ -4632,7 +4696,12 @@ export class AdminApp {
                         <tbody>
                             ${priorityAnnexList.map((e, idx) => `
                                 <tr style="background:${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
-                                    <td style="text-align:center; font-weight:700; color:#475569; font-size:0.75rem; border-right:1px solid #e2e8f0;">${e.regionalRank}</td>
+                                    <td style="text-align:left; padding:8px 5px; border-right:1px solid #e2e8f0; line-height:1.3;">
+                                        ${level === 2 ? `<div style="font-size:0.75rem; font-weight:900; color:#0f172a;">${e.n2Rank}</div>` : ''}
+                                        ${level >= 1 ? `<div style="font-size:${level === 1 ? '0.75rem' : '0.55rem'}; font-weight:${level === 1 ? '900' : '600'}; color:${level === 1 ? '#0f172a' : '#94a3b8'};">${level === 1 ? '' : 'N1: '}${e.n1Rank}</div>` : ''}
+                                        ${iso !== 'ALL' ? `<div style="font-size:${level === 0 ? '0.75rem' : '0.55rem'}; font-weight:${level === 0 ? '900' : '600'}; color:${level === 0 ? '#0f172a' : '#94a3b8'};">${level === 0 ? '' : 'NAC: '}${e.nacRank}</div>` : ''}
+                                        <div style="font-size:${(iso === 'ALL') ? '0.75rem' : '0.55rem'}; font-weight:${(iso === 'ALL') ? '900' : '600'}; color:${(iso === 'ALL') ? '#0f172a' : '#94a3b8'};">${(iso === 'ALL') ? '' : 'REG: '}${e.regionalRank}</div>
+                                    </td>
                                     <td style="font-weight:700; color:#1e293b; font-size:0.7rem;">
                                         ${e.name}
                                         <div style="font-weight:400; color:#64748b; font-size:0.55rem; margin-top:2px;">
@@ -4659,15 +4728,16 @@ export class AdminApp {
                         </tbody>
                     </table>
 
-                    <section style="margin-top:30px; padding:15px; background:#f1f5f9; border-radius:12px; border:1px solid #e2e8f0;">
-                        <h4 style="margin:0 0 10px 0; font-size:0.75rem; text-transform:uppercase; color:#1e293b;">6. NOTA METODOLÓGICA Y PARÁMETROS DE EVALUACIÓN</h4>
-                        <div style="font-size:0.65rem; color:#475569; display:grid; grid-template-columns: 1fr 1fr; gap:20px; line-height:1.4;">
+                    <section style="margin-top:20px; margin-bottom:80px; padding:15px; background:#f1f5f9; border-radius:12px; border:1px solid #e2e8f0;">
+                        <h4 style="margin:0 0 10px 0; font-size:0.75rem; text-transform:uppercase; color:#1e293b;">NOTA METODOLÓGICA Y PARÁMETROS DE EVALUACIÓN</h4>
+                        <div style="font-size:0.65rem; color:#475569; display:grid; grid-template-columns: 1fr 1.2fr; gap:25px; line-height:1.4;">
                             <div>
                                 <strong>Riesgo de Colapso Ambiental:</strong> Se proyecta según la tasa de pérdida histórica sobre el umbral crítico del <strong>${this.collapseThreshold || 20}%</strong> de superficie remanente ecosistémica.
-                                <br><strong>Déficit de Protección:</strong> Determinado por la brecha negativa respecto a la meta regional de Biodiversidad (<strong>30%</strong>).
+                                <br><strong>Déficit de Protección:</strong> Determinado por la brecha negativa respecto a la meta regional de Biodiversidad (<strong>${target}%</strong>).
                             </div>
                             <div>
-                                <strong>Umbral de Deforestación Crítica:</strong> Se ha utilizado un parámetro de pérdida anual superior al <strong>${lossThreshold}%</strong> para la activación de prioridades "Crítica" y "Alerta".
+                                <strong>Prioridades de Conservación:</strong> El umbral de deforestación del <strong>${lossThreshold}%</strong> activa la prioridad <strong>Crítica</strong> cuando existe un déficit de protección sustancial (>5%), y la prioridad de <strong>Alerta</strong> cuando la brecha de protección es menor pero la presión forestal es elevada.
+                                <br><strong>Alcance de Rankings:</strong> Regional (1-${totalEcosREG}) ${iso !== 'ALL' ? `, Nacional (1-${totalEcosNAC})` : ''} ${level >= 1 ? `, Departamental (1-${totalEcosN1})` : ''} ${level === 2 ? `, Municipal (1-${totalEcosN2})` : ''}.
                                 <br><strong>Fuente:</strong> Datos integrados del Observatorio Ambiental Regional (OAR).
                             </div>
                         </div>
@@ -4981,9 +5051,11 @@ export class AdminApp {
         const isHighPressure = estimatedLossPct >= lossThreshold;
         
         let priority = { id: 'estable', label: 'Estable', color: '#22c55e' };
-        if (gap > 10 && isHighPressure) priority = { id: 'critico', label: 'Crítico', color: '#ef4444' };
-        else if (gap <= 10 && isHighPressure) priority = { id: 'alerta', label: 'Alerta', color: '#ef4444' };
-        else if (gap > 10 && !isHighPressure) priority = { id: 'atencion', label: 'Atención', color: '#f97316' };
+        // Syncing gap threshold with user suggestion (5% for high deficit classification)
+        const gapThreshold = 5; 
+        if (gap > gapThreshold && isHighPressure) priority = { id: 'critico', label: 'Crítico', color: '#ef4444' };
+        else if (gap <= gapThreshold && isHighPressure) priority = { id: 'alerta', label: 'Alerta', color: '#ef4444' };
+        else if (gap > gapThreshold && !isHighPressure) priority = { id: 'atencion', label: 'Atención', color: '#f97316' };
 
         const annualLossRate = lossHa / 20;
         const criticalSurface = totalAreaOriginal * (collapseThreshold / 100);
