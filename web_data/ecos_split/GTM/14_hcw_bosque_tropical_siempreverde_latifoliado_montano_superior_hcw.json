@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "14_hcw_bosque_tropical_siempreverde_latifoliado_montano_superior_hcw",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "14-HCW Bosque tropical siempreverde latifoliado montano superior, HCW", "COD14": "14-HCW", "UNESCO": "IA1d(1/2)", "DESCRIP": "Bosque tropical siempreverde latifoliado montano superior, HCW" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -89.350547234410968, 14.428262978214928 ], [ -89.3496056463283, 14.42991775899489 ], [ -89.349746524582429, 14.428328057294038 ], [ -89.350261399710021, 14.427693482807101 ], [ -89.350547234410968, 14.428262978214928 ] ] ] } }
+]
+}

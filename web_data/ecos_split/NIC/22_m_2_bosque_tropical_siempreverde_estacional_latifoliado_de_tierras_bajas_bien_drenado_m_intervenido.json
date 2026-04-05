@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "22_m_2_bosque_tropical_siempreverde_estacional_latifoliado_de_tierras_bajas_bien_drenado_m_intervenido",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "22-M-2 Bosque tropical siempreverde estacional latifoliado de tierras bajas, bien drenado, M, intervenido", "COD14": "22-M-2", "UNESCO": "IA2a(1)(a)", "DESCRIP": "Bosque tropical siempreverde estacional latifoliado de tierras bajas,  bien drenado, M, intervenido" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -85.775342858737602, 13.847893426058624 ], [ -85.77401256442829, 13.84839920525917 ], [ -85.766026870643543, 13.848747962348625 ], [ -85.764374409788147, 13.847520855733402 ], [ -85.766991939874174, 13.842687587353891 ], [ -85.770823307331284, 13.843441074109068 ], [ -85.775342858737602, 13.847893426058624 ] ] ] } }
+]
+}

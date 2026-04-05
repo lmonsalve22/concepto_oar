@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "104_duna_y_playa_tropical_con_escasa_vegetacin",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "104 Duna y playa tropical con escasa vegetaci¢n", "COD14": "104", "UNESCO": "VIB1a(1)", "DESCRIP": "Duna y playa tropical con escasa vegetaci¢n" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -92.232342454747112, 14.550383374923559 ], [ -92.229986520773465, 14.550215328869964 ], [ -92.227271721216567, 14.547982556884447 ], [ -92.226393304986331, 14.549707654186349 ], [ -92.223506101769615, 14.549084081632099 ], [ -92.219370664764014, 14.54392179125237 ], [ -92.216913036012699, 14.542375228934349 ], [ -92.217558049941417, 14.541034221427603 ], [ -92.232342454747112, 14.550383374923559 ] ] ] } }
+]
+}

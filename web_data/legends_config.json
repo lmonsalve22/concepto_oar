@@ -1,0 +1,1320 @@
+{
+  "BLZ": {
+    "name": "Belice",
+    "categories": [
+      "Archaeological Reserve",
+      "Burdon Canal Nature Reserve",
+      "Cockscomb Basin Wildlife Sanctuary",
+      "Crooked Tree Wildlife Sanctuary",
+      "Forest Reserve",
+      "High Protection for Biodiversity Marine Reserve",
+      "Labouring Creek Jaguar Corridor Wildlife Sanctuary",
+      "Mangrove Reserve",
+      "Marine Reserve",
+      "Mountain Pine Ridge Forest Reserve",
+      "Nassau Grouper & Species Protection",
+      "National Park",
+      "Natural Monument",
+      "Nature Reserve",
+      "Nohoch Cheen Archaeological Reserve",
+      "Private Reserve",
+      "Public Reserve",
+      "Ramsar Site, Wetland of International Importance",
+      "Spawning Aggregation Site Reserves",
+      "Specially Protected Area (Cartagena Convention)",
+      "Wildlife Sanctuary",
+      "World Heritage Site (natural or mixed)"
+    ],
+    "zones": {
+      "BZ-BZ": {
+        "sub_zones": [
+          "BZ-BZ"
+        ],
+        "count": 70
+      },
+      "BZ-BZ/BZ-BZ": {
+        "sub_zones": [
+          "BZ-BZ/BZ-BZ"
+        ],
+        "count": 1
+      },
+      "BZ-BZ/BZ-CY": {
+        "sub_zones": [
+          "BZ-BZ/BZ-CY"
+        ],
+        "count": 1
+      },
+      "BZ-BZ/BZ-OW": {
+        "sub_zones": [
+          "BZ-BZ/BZ-OW"
+        ],
+        "count": 1
+      },
+      "BZ-BZ/BZ-SC": {
+        "sub_zones": [
+          "BZ-BZ/BZ-SC"
+        ],
+        "count": 1
+      },
+      "BZ-BZ/SC": {
+        "sub_zones": [
+          "BZ-BZ/SC"
+        ],
+        "count": 1
+      },
+      "BZ-CY": {
+        "sub_zones": [
+          "BZ-CY"
+        ],
+        "count": 19
+      },
+      "BZ-CZL": {
+        "sub_zones": [
+          "BZ-CZL"
+        ],
+        "count": 5
+      },
+      "BZ-CZL/BZ-OW": {
+        "sub_zones": [
+          "BZ-CZL/BZ-OW"
+        ],
+        "count": 2
+      },
+      "BZ-OW": {
+        "sub_zones": [
+          "BZ-OW"
+        ],
+        "count": 4
+      },
+      "BZ-SC": {
+        "sub_zones": [
+          "BZ-SC"
+        ],
+        "count": 28
+      },
+      "BZ-SC/BZ-TOL": {
+        "sub_zones": [
+          "BZ-SC/BZ-TOL"
+        ],
+        "count": 2
+      },
+      "BZ-TO": {
+        "sub_zones": [
+          "BZ-TO"
+        ],
+        "count": 11
+      },
+      "BZ-TOL": {
+        "sub_zones": [
+          "BZ-TOL"
+        ],
+        "count": 19
+      }
+    },
+    "total_count": 170
+  },
+  "CRI": {
+    "name": "Costa Rica",
+    "categories": [
+      "Area Marina de Manejo",
+      "Humedal",
+      "Monumento Nacional",
+      "Monumento Natural",
+      "Parque Nacional",
+      "Refugio Nacional de Vida Silvestre",
+      "Reserva Biologica",
+      "Reserva Forestal",
+      "Reserva Natural Absoluta",
+      "Zona Protectora"
+    ],
+    "zones": {
+      "AC": {
+        "sub_zones": [
+          "AC"
+        ],
+        "count": 4
+      },
+      "ACAHN": {
+        "sub_zones": [
+          "ACAHN"
+        ],
+        "count": 12
+      },
+      "ACAT": {
+        "sub_zones": [
+          "ACAT"
+        ],
+        "count": 11
+      },
+      "ACC": {
+        "sub_zones": [
+          "ACC"
+        ],
+        "count": 33
+      },
+      "ACG": {
+        "sub_zones": [
+          "ACG"
+        ],
+        "count": 9
+      },
+      "ACLAC": {
+        "sub_zones": [
+          "ACLAC"
+        ],
+        "count": 12
+      },
+      "ACLAP": {
+        "sub_zones": [
+          "ACLAP"
+        ],
+        "count": 9
+      },
+      "ACOPAC": {
+        "sub_zones": [
+          "ACOPAC"
+        ],
+        "count": 20
+      },
+      "ACOSA": {
+        "sub_zones": [
+          "ACOSA"
+        ],
+        "count": 21
+      },
+      "ACT": {
+        "sub_zones": [
+          "ACT"
+        ],
+        "count": 32
+      },
+      "ACTo": {
+        "sub_zones": [
+          "ACTo"
+        ],
+        "count": 8
+      }
+    },
+    "total_count": 171
+  },
+  "SLV": {
+    "name": "El Salvador",
+    "categories": [
+      "Area de Manejo de Hbitat/Especies",
+      "Parque Nacional"
+    ],
+    "zones": {
+      "Ahuachapan, Sonsonate/San Francisco Menendez, Juju": {
+        "sub_zones": [
+          "Ahuachapan, Sonsonate/San Francisco Menendez, Juju"
+        ],
+        "count": 1
+      },
+      "Ahuachapan/Ahuachapan": {
+        "sub_zones": [
+          "Ahuachapan/Ahuachapan"
+        ],
+        "count": 2
+      },
+      "Ahuachapan/Ahuachapan y Apaneca": {
+        "sub_zones": [
+          "Ahuachapan/Ahuachapan y Apaneca"
+        ],
+        "count": 1
+      },
+      "Ahuachapan/Apaneca": {
+        "sub_zones": [
+          "Ahuachapan/Apaneca"
+        ],
+        "count": 1
+      },
+      "Ahuachapan/Concepcion de Ataco": {
+        "sub_zones": [
+          "Ahuachapan/Concepcion de Ataco"
+        ],
+        "count": 1
+      },
+      "Ahuachapan/Jujutla": {
+        "sub_zones": [
+          "Ahuachapan/Jujutla"
+        ],
+        "count": 2
+      },
+      "Ahuachapan/San Francisco Menendez": {
+        "sub_zones": [
+          "Ahuachapan/San Francisco Menendez"
+        ],
+        "count": 5
+      },
+      "Ahuachapan/Tacuba": {
+        "sub_zones": [
+          "Ahuachapan/Tacuba"
+        ],
+        "count": 1
+      },
+      "Ahuchapan/San Lorenzo": {
+        "sub_zones": [
+          "Ahuchapan/San Lorenzo"
+        ],
+        "count": 1
+      },
+      "Cabaas y Cuscatlan/Cinquera": {
+        "sub_zones": [
+          "Cabaas y Cuscatlan/Cinquera"
+        ],
+        "count": 1
+      },
+      "Chalatenango/El Paraiso": {
+        "sub_zones": [
+          "Chalatenango/El Paraiso"
+        ],
+        "count": 1
+      },
+      "Chalatenango/Nueva Concepcion": {
+        "sub_zones": [
+          "Chalatenango/Nueva Concepcion"
+        ],
+        "count": 1
+      },
+      "Chalatenango/San Ignacio": {
+        "sub_zones": [
+          "Chalatenango/San Ignacio"
+        ],
+        "count": 1
+      },
+      "Chalchuapa/Santa Ana": {
+        "sub_zones": [
+          "Chalchuapa/Santa Ana"
+        ],
+        "count": 1
+      },
+      "Cuscatlan/Suchitoto": {
+        "sub_zones": [
+          "Cuscatlan/Suchitoto"
+        ],
+        "count": 2
+      },
+      "La Libertad/Antiguo Cuscatlan, Santa Tecla": {
+        "sub_zones": [
+          "La Libertad/Antiguo Cuscatlan, Santa Tecla"
+        ],
+        "count": 1
+      },
+      "La Libertad/Chiltiupan": {
+        "sub_zones": [
+          "La Libertad/Chiltiupan"
+        ],
+        "count": 3
+      },
+      "La Libertad/Comasagua": {
+        "sub_zones": [
+          "La Libertad/Comasagua"
+        ],
+        "count": 1
+      },
+      "La Libertad/La Libertad": {
+        "sub_zones": [
+          "La Libertad/La Libertad"
+        ],
+        "count": 5
+      },
+      "La Libertad/La Libertad/Huizucar": {
+        "sub_zones": [
+          "La Libertad/La Libertad/Huizucar"
+        ],
+        "count": 1
+      },
+      "La Libertad/Quezaltepeque": {
+        "sub_zones": [
+          "La Libertad/Quezaltepeque"
+        ],
+        "count": 5
+      },
+      "La Libertad/Quezaltepeque, Colon, Nueva San Salvad": {
+        "sub_zones": [
+          "La Libertad/Quezaltepeque, Colon, Nueva San Salvad"
+        ],
+        "count": 1
+      },
+      "La Libertad/San Diego": {
+        "sub_zones": [
+          "La Libertad/San Diego"
+        ],
+        "count": 1
+      },
+      "La Libertad/San Jose Villanueva": {
+        "sub_zones": [
+          "La Libertad/San Jose Villanueva"
+        ],
+        "count": 1
+      },
+      "La Libertad/San Juan Opico": {
+        "sub_zones": [
+          "La Libertad/San Juan Opico"
+        ],
+        "count": 6
+      },
+      "La Libertad/San Matias, Quezaltepeque": {
+        "sub_zones": [
+          "La Libertad/San Matias, Quezaltepeque"
+        ],
+        "count": 1
+      },
+      "La Libertad/San Pablo Tacachico": {
+        "sub_zones": [
+          "La Libertad/San Pablo Tacachico"
+        ],
+        "count": 1
+      },
+      "La Libertad/Teotepeque": {
+        "sub_zones": [
+          "La Libertad/Teotepeque"
+        ],
+        "count": 1
+      },
+      "La Libertad/Tepecoyo, Jical": {
+        "sub_zones": [
+          "La Libertad/Tepecoyo, Jical"
+        ],
+        "count": 1
+      },
+      "La Paz": {
+        "sub_zones": [
+          "La Paz"
+        ],
+        "count": 1
+      },
+      "La Paz/El Rosario": {
+        "sub_zones": [
+          "La Paz/El Rosario"
+        ],
+        "count": 1
+      },
+      "La Paz/San Luis Talpa": {
+        "sub_zones": [
+          "La Paz/San Luis Talpa"
+        ],
+        "count": 2
+      },
+      "La Paz/Zacatecoluca": {
+        "sub_zones": [
+          "La Paz/Zacatecoluca"
+        ],
+        "count": 3
+      },
+      "La Union": {
+        "sub_zones": [
+          "La Union"
+        ],
+        "count": 3
+      },
+      "La Union/Conchagua": {
+        "sub_zones": [
+          "La Union/Conchagua"
+        ],
+        "count": 6
+      },
+      "La Union/Conchagua, Intipuca": {
+        "sub_zones": [
+          "La Union/Conchagua, Intipuca"
+        ],
+        "count": 1
+      },
+      "La Union/Intipuca": {
+        "sub_zones": [
+          "La Union/Intipuca"
+        ],
+        "count": 1
+      },
+      "La Union/La Union": {
+        "sub_zones": [
+          "La Union/La Union"
+        ],
+        "count": 3
+      },
+      "La Union/Meanguera del Golfo": {
+        "sub_zones": [
+          "La Union/Meanguera del Golfo"
+        ],
+        "count": 1
+      },
+      "La Union/San Alejo, La Union, Pasaquina, Conchagua": {
+        "sub_zones": [
+          "La Union/San Alejo, La Union, Pasaquina, Conchagua"
+        ],
+        "count": 1
+      },
+      "La Union/Yayantique": {
+        "sub_zones": [
+          "La Union/Yayantique"
+        ],
+        "count": 1
+      },
+      "La liberda/San Juan Opico": {
+        "sub_zones": [
+          "La liberda/San Juan Opico"
+        ],
+        "count": 1
+      },
+      "Morazan/Arambala": {
+        "sub_zones": [
+          "Morazan/Arambala"
+        ],
+        "count": 1
+      },
+      "Morazan/Gualococti": {
+        "sub_zones": [
+          "Morazan/Gualococti"
+        ],
+        "count": 1
+      },
+      "Morazan/Hocicala": {
+        "sub_zones": [
+          "Morazan/Hocicala"
+        ],
+        "count": 1
+      },
+      "San Francisco Menendez": {
+        "sub_zones": [
+          "San Francisco Menendez"
+        ],
+        "count": 2
+      },
+      "San Miguel/Chinameca": {
+        "sub_zones": [
+          "San Miguel/Chinameca"
+        ],
+        "count": 1
+      },
+      "San Miguel/Chirilagua": {
+        "sub_zones": [
+          "San Miguel/Chirilagua"
+        ],
+        "count": 3
+      },
+      "San Miguel/El Transito": {
+        "sub_zones": [
+          "San Miguel/El Transito"
+        ],
+        "count": 1
+      },
+      "San Miguel/Moncagua": {
+        "sub_zones": [
+          "San Miguel/Moncagua"
+        ],
+        "count": 1
+      },
+      "San Miguel/Quelepa": {
+        "sub_zones": [
+          "San Miguel/Quelepa"
+        ],
+        "count": 1
+      },
+      "San Miguel/San Miguel": {
+        "sub_zones": [
+          "San Miguel/San Miguel"
+        ],
+        "count": 2
+      },
+      "San Miguel/San Miguel, El Transito": {
+        "sub_zones": [
+          "San Miguel/San Miguel, El Transito"
+        ],
+        "count": 1
+      },
+      "San Salvador/Aguilares": {
+        "sub_zones": [
+          "San Salvador/Aguilares"
+        ],
+        "count": 1
+      },
+      "San Salvador/Apopa": {
+        "sub_zones": [
+          "San Salvador/Apopa"
+        ],
+        "count": 2
+      },
+      "San Salvador/El Paisnal": {
+        "sub_zones": [
+          "San Salvador/El Paisnal"
+        ],
+        "count": 2
+      },
+      "San Salvador/Mejicanos": {
+        "sub_zones": [
+          "San Salvador/Mejicanos"
+        ],
+        "count": 2
+      },
+      "San Vicente/San Vicente": {
+        "sub_zones": [
+          "San Vicente/San Vicente"
+        ],
+        "count": 5
+      },
+      "San Vicente/Verapaz": {
+        "sub_zones": [
+          "San Vicente/Verapaz"
+        ],
+        "count": 1
+      },
+      "Santa Ana/Candelaria de La Frontera": {
+        "sub_zones": [
+          "Santa Ana/Candelaria de La Frontera"
+        ],
+        "count": 2
+      },
+      "Santa Ana/Canderlaria de la Frontera": {
+        "sub_zones": [
+          "Santa Ana/Canderlaria de la Frontera"
+        ],
+        "count": 1
+      },
+      "Santa Ana/Chalchuapa": {
+        "sub_zones": [
+          "Santa Ana/Chalchuapa"
+        ],
+        "count": 1
+      },
+      "Santa Ana/El Congo": {
+        "sub_zones": [
+          "Santa Ana/El Congo"
+        ],
+        "count": 1
+      },
+      "Santa Ana/El Porvenir": {
+        "sub_zones": [
+          "Santa Ana/El Porvenir"
+        ],
+        "count": 1
+      },
+      "Santa Ana/Metapan": {
+        "sub_zones": [
+          "Santa Ana/Metapan"
+        ],
+        "count": 5
+      },
+      "Santa Ana/Santa Ana": {
+        "sub_zones": [
+          "Santa Ana/Santa Ana"
+        ],
+        "count": 8
+      },
+      "Santa Ana/Santa Ana, Chalchuapa": {
+        "sub_zones": [
+          "Santa Ana/Santa Ana, Chalchuapa"
+        ],
+        "count": 1
+      },
+      "Santa Ana/Texistepeque": {
+        "sub_zones": [
+          "Santa Ana/Texistepeque"
+        ],
+        "count": 1
+      },
+      "Sonsonate/Acajutla": {
+        "sub_zones": [
+          "Sonsonate/Acajutla"
+        ],
+        "count": 12
+      },
+      "Sonsonate/Caluco": {
+        "sub_zones": [
+          "Sonsonate/Caluco"
+        ],
+        "count": 2
+      },
+      "Sonsonate/Cuisnahuat": {
+        "sub_zones": [
+          "Sonsonate/Cuisnahuat"
+        ],
+        "count": 1
+      },
+      "Sonsonate/Izalco": {
+        "sub_zones": [
+          "Sonsonate/Izalco"
+        ],
+        "count": 4
+      },
+      "Sonsonate/Izalco/Nahuizalco": {
+        "sub_zones": [
+          "Sonsonate/Izalco/Nahuizalco"
+        ],
+        "count": 1
+      },
+      "Sonsonate/Izalco/San Julian": {
+        "sub_zones": [
+          "Sonsonate/Izalco/San Julian"
+        ],
+        "count": 2
+      },
+      "Sonsonate/Juayua": {
+        "sub_zones": [
+          "Sonsonate/Juayua"
+        ],
+        "count": 3
+      },
+      "Sonsonate/Nahuizalco": {
+        "sub_zones": [
+          "Sonsonate/Nahuizalco"
+        ],
+        "count": 1
+      },
+      "Sonsonate/Santa Isabel Ishuatan": {
+        "sub_zones": [
+          "Sonsonate/Santa Isabel Ishuatan"
+        ],
+        "count": 1
+      },
+      "Sonsonate/Sonsonate": {
+        "sub_zones": [
+          "Sonsonate/Sonsonate"
+        ],
+        "count": 1
+      },
+      "Usulutan": {
+        "sub_zones": [
+          "Usulutan"
+        ],
+        "count": 2
+      },
+      "Usulutan/Alegria": {
+        "sub_zones": [
+          "Usulutan/Alegria"
+        ],
+        "count": 1
+      },
+      "Usulutan/Estanzuela": {
+        "sub_zones": [
+          "Usulutan/Estanzuela"
+        ],
+        "count": 2
+      },
+      "Usulutan/Jiquilisco": {
+        "sub_zones": [
+          "Usulutan/Jiquilisco"
+        ],
+        "count": 4
+      },
+      "Usulutan/Jucuaran": {
+        "sub_zones": [
+          "Usulutan/Jucuaran"
+        ],
+        "count": 5
+      },
+      "Usulutan/La Herradura": {
+        "sub_zones": [
+          "Usulutan/La Herradura"
+        ],
+        "count": 1
+      },
+      "Usulutan/Nueva Granada": {
+        "sub_zones": [
+          "Usulutan/Nueva Granada"
+        ],
+        "count": 1
+      },
+      "Usulutan/Puerto el Triunfo": {
+        "sub_zones": [
+          "Usulutan/Puerto el Triunfo"
+        ],
+        "count": 2
+      }
+    },
+    "total_count": 171
+  },
+  "GTM": {
+    "name": "Guatemala",
+    "categories": [
+      "Area de Uso Multiple",
+      "Area de Uso Multiple Río Sarstun",
+      "Biotopo Protegido",
+      "Monumento Cultural",
+      "Monumento Natural",
+      "Parque Nacional",
+      "Parque Recreativo Natural Municipal",
+      "Parque Regional",
+      "Parque Regional Municipal",
+      "Parque Regional y Área Natural Recreativa",
+      "Refugio de Vida Silvestre",
+      "Reserva Biológica",
+      "Reserva Forestal Municipal",
+      "Reserva Forestal Protectora de Manantiales",
+      "Reserva Hídrica y Forestal",
+      "Reserva Natural Privada",
+      "Reserva Protectora de Manantiales",
+      "Reserva de Uso Multiple",
+      "Reserva de la Biosfera",
+      "Reserva de la Biosfera Maya",
+      "Resolución SECONAP 006-2006",
+      "Zona amortiguamiento Complejo I y II",
+      "Zona amortiguamiento Complejo IV",
+      "Zona de Veda Definitiva",
+      "Área de Usos Múltiples"
+    ],
+    "zones": {},
+    "total_count": 407
+  },
+  "HND": {
+    "name": "Honduras",
+    "categories": [
+      "Area de Uso Múltiple",
+      "Jardín Botánico y Centro de Investigación",
+      "Monumento Cultural",
+      "Monumento Natural",
+      "Monumento Natural Marino",
+      "Parque Nacional",
+      "Parque Nacional Marino",
+      "Refugio de Vida Silvestre",
+      "Reserva Antropológica y Forestal",
+      "Reserva Biológica",
+      "Reserva Forestal",
+      "Reserva de Biósfera",
+      "Zona de Reserva",
+      "Área Productora de Agua",
+      "Área de manejo de hábitat/especie"
+    ],
+    "zones": {
+      "Amortiguamiento": {
+        "sub_zones": [
+          "Amortiguamiento",
+          "Asentamientos Humanos",
+          "Asentamientos Humanos-Rurales",
+          "Asentamientos humanos-urbanos",
+          "Consejo Indígena Lenca Montaña Verde",
+          "Histórico - Cultural",
+          "Histórico-Cultural",
+          "Manejo de Recursos",
+          "Recuperación",
+          "Recuperación (Pesquera)",
+          "SZ. Urbana",
+          "SZ. Uso Restringido",
+          "SZ. Uso Sostenible de Recursos Naturales",
+          "SZ. de Recuperación",
+          "SZ. de Uso Restringido",
+          "SZ. de Uso Sostenible de los Recursos Naturales",
+          "Sub Zona de Recuperacion",
+          "Sub Zona de Uso Restringido",
+          "Sub Zona de Uso Sostenible de los Recursos",
+          "Uso Especial-Restringida",
+          "Uso Histórico - Cultural",
+          "Uso Intensivo",
+          "Uso Público",
+          "Uso Público Extensivo",
+          "Uso Público Intensivo",
+          "Uso Restringido",
+          "Uso Sostenible de Recursos",
+          "Uso Sostenible de Recursos Extensivo",
+          "Uso Sostenible de Recursos Intensivo",
+          "Uso Sostenible de Recursos Naturales",
+          "Uso Sostenible de los Recursos",
+          "Uso Sostenible de los Recursos Extensiva",
+          "Uso Sostenible de los Recursos Intensiva",
+          "Uso Sostenible de los Recursos Naturales",
+          "Uso Sostenible del Recurso/Marino",
+          "Uso Sostenible del Recurso/Terrestre",
+          "Zona de Amortiguamiento (ZA)",
+          "Zona de Uso Publico",
+          "Área Bajo Consideración Especial"
+        ],
+        "count": 147
+      },
+      "Arboretum": {
+        "sub_zones": [
+          "Arboretum"
+        ],
+        "count": 1
+      },
+      "Cultural": {
+        "sub_zones": [
+          "Cultural"
+        ],
+        "count": 1
+      },
+      "Forestal": {
+        "sub_zones": [
+          "Forestal"
+        ],
+        "count": 1
+      },
+      "No definida": {
+        "sub_zones": [
+          "Asentamientos Humanos",
+          "No definida",
+          "Recuperación",
+          "Uso Restringido",
+          "Uso Sostenible de los Recursos Naturales"
+        ],
+        "count": 20
+      },
+      "Núcleo": {
+        "sub_zones": [
+          "Núcleo",
+          "Preservación Absoluta",
+          "Z. Núcleo",
+          "Zona Nucleo",
+          "Zona Núcleo"
+        ],
+        "count": 42
+      },
+      "Plantaciones": {
+        "sub_zones": [
+          "Plantaciones"
+        ],
+        "count": 1
+      },
+      "Protección de especies": {
+        "sub_zones": [
+          "Protección de especies"
+        ],
+        "count": 3
+      },
+      "Reserva biótica": {
+        "sub_zones": [
+          "Reserva biótica"
+        ],
+        "count": 1
+      },
+      "SZRP_Old Bank": {
+        "sub_zones": [
+          "Sub Zona de Recuperación Pesquera (SZRP)"
+        ],
+        "count": 1
+      },
+      "SZRP_White Water": {
+        "sub_zones": [
+          "Sub Zona de Recuperación Pesquera (SZRP)"
+        ],
+        "count": 1
+      },
+      "Uso Primitivo-núcleo": {
+        "sub_zones": [
+          "Uso Primitivo"
+        ],
+        "count": 1
+      },
+      "Uso Público": {
+        "sub_zones": [
+          "Uso Público"
+        ],
+        "count": 1
+      },
+      "ZDE_Aeropuerto El Bight": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_East_End": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_Flowers Bay Coxen": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_French Harbour": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_Los Cayitos": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_Oak Ridge": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_Oyster Bed Lagoon": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_Pollytilly Bight": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_Punta Gorda": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_Savannah_Bight": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZDE_Útila Town": {
+        "sub_zones": [
+          "Zona de Desarrollo Economico (ZDE)"
+        ],
+        "count": 1
+      },
+      "ZPEM Half Moon Cay-Southwest Cay": {
+        "sub_zones": [
+          "Zona de Proteccion Especial Marina (ZPEM)"
+        ],
+        "count": 1
+      },
+      "ZPEM_Michael Rock": {
+        "sub_zones": [
+          "Zona de Proteccion Especial Marina (ZPEM)"
+        ],
+        "count": 1
+      },
+      "ZPEM_Raggedy Cay-Southwest Cay": {
+        "sub_zones": [
+          "Zona de Proteccion Especial Marina (ZPEM)"
+        ],
+        "count": 1
+      },
+      "ZPEM_Santa Elena Barbareta": {
+        "sub_zones": [
+          "Zona de Proteccion Especial Marina (ZPEM)"
+        ],
+        "count": 1
+      },
+      "ZPEM_Turtle Harbour-Rock Harbour": {
+        "sub_zones": [
+          "Zona de Proteccion Especial Marina (ZPEM)"
+        ],
+        "count": 1
+      },
+      "ZPEM_West End Sandy Bay": {
+        "sub_zones": [
+          "Zona de Proteccion Especial Marina (ZPEM)"
+        ],
+        "count": 1
+      },
+      "ZRPA_Calabash Bight-New Port Royal": {
+        "sub_zones": [
+          "Zona Restringida a la Pesca y Acuicultura (ZRPA)"
+        ],
+        "count": 1
+      },
+      "ZRPA_Coco View-Caribbean Point": {
+        "sub_zones": [
+          "Zona Restringida a la Pesca y Acuicultura (ZRPA)"
+        ],
+        "count": 1
+      },
+      "ZRPA_West End-Blue Rock Point": {
+        "sub_zones": [
+          "Zona Restringida a la Pesca y Acuicultura (ZRPA)"
+        ],
+        "count": 1
+      },
+      "ZR_Mud Hole-Crawfish Rock": {
+        "sub_zones": [
+          "Zona Restringida (ZR)"
+        ],
+        "count": 1
+      },
+      "Zona Costera": {
+        "sub_zones": [
+          "Zona costera (ZC)"
+        ],
+        "count": 1
+      },
+      "Zona _Uso_Múltiple Guanaja": {
+        "sub_zones": [
+          "Zona de Usos Multiples (ZUM)"
+        ],
+        "count": 1
+      },
+      "Zona _Uso_Múltiple José Santos Guardiola": {
+        "sub_zones": [
+          "Zona de Usos Multiples (ZUM)"
+        ],
+        "count": 1
+      },
+      "Zona _Uso_Múltiple Roatán": {
+        "sub_zones": [
+          "Zona de Usos Multiples (ZUM)"
+        ],
+        "count": 1
+      },
+      "Zona _Uso_Múltiple Útila": {
+        "sub_zones": [
+          "Zona de Usos Multiples (ZUM)"
+        ],
+        "count": 2
+      },
+      "Zona de Influencia": {
+        "sub_zones": [
+          "Zona de Influencia (Esta zona no forma parte del área protegida, dado que no está incluida en el Decreto Legislativo No. 75-2010. No obstante, se mantiene en la base de datos en función de las regulaciones aprobadas en el plan de manejo)"
+        ],
+        "count": 1
+      }
+    },
+    "total_count": 253
+  },
+  "NIC": {
+    "name": "Nicaragua",
+    "categories": [
+      "Monumento Histórico",
+      "Monumento Nacional",
+      "Paisaje Terrestre y/o Marino Protegido",
+      "Parque Nacional",
+      "Refugio de Vida Silvestre",
+      "Reserva Biológica",
+      "Reserva Natural",
+      "Reserva de Recursos Geneticos"
+    ],
+    "zones": {},
+    "total_count": 74
+  },
+  "PAN": {
+    "name": "Panamá",
+    "categories": [
+      "Area Recreativa",
+      "Area Silvestre",
+      "Area de Uso Múltiple",
+      "Area de Uso Múltiple Marino",
+      "Area de Uso Múltiple Terrestre",
+      "Bosque Protector",
+      "Corredor Biológico",
+      "Humedal de Importancia Internacional",
+      "Monumento Natural",
+      "Paisaje Protegido",
+      "Parque Internacional",
+      "Parque Nacional",
+      "Parque Nacional Marino",
+      "Parque Natural",
+      "Refugio de Vida Silvestre",
+      "Reserva Forestal",
+      "Reserva Hidrológica",
+      "Reserva Hídrica",
+      "Reserva Natural Municipal",
+      "Sistemas de Humedales",
+      "Zona Especial de Manejo",
+      "Zona Especial de Manejo Marino Costero",
+      "Zona Especial de Protección Marina",
+      "Zona de Protección Hidrológica",
+      "Zona de Reserva",
+      "Área Natural Recreativa",
+      "Área de Uso Múltiple"
+    ],
+    "zones": {
+      "Bocas del Toro": {
+        "sub_zones": [
+          "Bocas del Toro"
+        ],
+        "count": 5
+      },
+      "Bocas del Toro / Chiriquí": {
+        "sub_zones": [
+          "Bocas del Toro / Chiriquí"
+        ],
+        "count": 1
+      },
+      "Chiriquí": {
+        "sub_zones": [
+          "Chiriquí"
+        ],
+        "count": 7
+      },
+      "Chiriquí - Veraguas": {
+        "sub_zones": [
+          "Chiriquí - Veraguas"
+        ],
+        "count": 1
+      },
+      "Coclé": {
+        "sub_zones": [
+          "Coclé"
+        ],
+        "count": 5
+      },
+      "Colón": {
+        "sub_zones": [
+          "Colón"
+        ],
+        "count": 9
+      },
+      "Comarca Guna Yala": {
+        "sub_zones": [
+          "Comarca Guna Yala"
+        ],
+        "count": 1
+      },
+      "Comarca Ngabe Buglé": {
+        "sub_zones": [
+          "Comarca Ngabe Buglé"
+        ],
+        "count": 1
+      },
+      "Comarca Ngäbe Bugle": {
+        "sub_zones": [
+          "Comarca Ngäbe Bugle"
+        ],
+        "count": 1
+      },
+      "Darién": {
+        "sub_zones": [
+          "Darién"
+        ],
+        "count": 9
+      },
+      "Herrera": {
+        "sub_zones": [
+          "Herrera"
+        ],
+        "count": 4
+      },
+      "Los Santos": {
+        "sub_zones": [
+          "Los Santos"
+        ],
+        "count": 7
+      },
+      "Los Santos/Veraguas": {
+        "sub_zones": [
+          "Los Santos/Veraguas"
+        ],
+        "count": 1
+      },
+      "Panama Metro": {
+        "sub_zones": [
+          "Panama Metro"
+        ],
+        "count": 1
+      },
+      "Panamá (Metro y Este)": {
+        "sub_zones": [
+          "Panamá (Metro y Este)"
+        ],
+        "count": 1
+      },
+      "Panamá Este": {
+        "sub_zones": [
+          "Panamá Este"
+        ],
+        "count": 2
+      },
+      "Panamá Metro": {
+        "sub_zones": [
+          "Panamá Metro"
+        ],
+        "count": 9
+      },
+      "Panamá Oeste": {
+        "sub_zones": [
+          "Panamá Oeste"
+        ],
+        "count": 2
+      },
+      "Panamá-Colón": {
+        "sub_zones": [
+          "Panamá-Colón"
+        ],
+        "count": 1
+      },
+      "Veraguas": {
+        "sub_zones": [
+          "Veraguas"
+        ],
+        "count": 8
+      }
+    },
+    "total_count": 76
+  },
+  "DOM": {
+    "name": "República Dominicana",
+    "categories": [
+      "MONUMENTO NATURAL",
+      "Monumento Natural",
+      "Paisaje Protegido",
+      "Parque Nacional",
+      "RESERVAS NATURALES",
+      "Reserva Natural",
+      "Área de Manejo de Hábitat/Especies",
+      "Área de Protección Estricta"
+    ],
+    "zones": {
+      "AREA NACIONAL DE RECREO": {
+        "sub_zones": [
+          "AREA NACIONAL DE RECREO"
+        ],
+        "count": 6
+      },
+      "CORREDOR ECOLOGICO": {
+        "sub_zones": [
+          "CORREDOR ECOLOGICO"
+        ],
+        "count": 6
+      },
+      "MONUMENTO NATURAL": {
+        "sub_zones": [
+          "AREA DE PROTECCION ESPECIAL",
+          "MONUMENTO NATURAL"
+        ],
+        "count": 30
+      },
+      "PARQUE NACIONAL": {
+        "sub_zones": [
+          "PARQUE NACIONAL"
+        ],
+        "count": 28
+      },
+      "PARQUE NACIONAL SUBMARINO": {
+        "sub_zones": [
+          "PARQUE NACIONAL SUBMARINO"
+        ],
+        "count": 2
+      },
+      "REFUGIO DE VIDA SILVESTRE": {
+        "sub_zones": [
+          "REFUGIO DE VIDA SILVESTRE"
+        ],
+        "count": 21
+      },
+      "RESERVA BIOLOGICA": {
+        "sub_zones": [
+          "RESERVA BIOLOGICA"
+        ],
+        "count": 2
+      },
+      "RESERVA CIENTIFICA": {
+        "sub_zones": [
+          "RESERVA CIENTIFICA"
+        ],
+        "count": 8
+      },
+      "RESERVA FORESTAL": {
+        "sub_zones": [
+          "RESERVA FORESTAL"
+        ],
+        "count": 15
+      },
+      "SANTUARIO DE MAMIFEROS MARINOS": {
+        "sub_zones": [
+          "SANTUARIO DE MAMIFEROS MARINOS"
+        ],
+        "count": 1
+      },
+      "VIA PANORAMICA": {
+        "sub_zones": [
+          "VIA PANORAMICA"
+        ],
+        "count": 10
+      }
+    },
+    "total_count": 129
+  }
+}

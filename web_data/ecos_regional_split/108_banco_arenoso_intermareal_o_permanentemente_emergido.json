@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "108_banco_arenoso_intermareal_o_permanentemente_emergido",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "108 Banco arenoso intermareal o permanentemente emergido", "COD14": "108", "UNESCO": "VIB4", "DESCRIP": "Banco arenoso intermareal o permanentemente emergido" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -83.161886052582091, 15.016710299153099 ], [ -83.156639529803655, 15.019218820431128 ], [ -83.145570212625159, 15.020672486105585 ], [ -83.135538880294789, 15.018080738220721 ], [ -83.134115339155954, 15.01527066884017 ], [ -83.134897153909733, 15.013933093798345 ], [ -83.137274850028746, 15.013560766731976 ], [ -83.139600680535793, 15.015221656289208 ], [ -83.14221095519656, 15.015532249263087 ], [ -83.151920515584166, 15.013614659153815 ], [ -83.161886052582091, 15.016710299153099 ] ] ] } }
+]
+}

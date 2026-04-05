@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "71_arbustal_siempreverde_estacional_latifoliado_de_tierras_bajas_en_suelos_calcareos",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "71 Arbustal siempreverde estacional latifoliado de tierras bajas en suelos calcareos", "COD14": "71", "UNESCO": "IIIA1b(1)(a)K", "DESCRIP": "Arbustal siempreverde estacional latifoliado de tierras bajas en suelos calcareos" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -90.442342951057825, 16.075730037526757 ], [ -90.441281236339933, 16.073945452620592 ], [ -90.442610693634833, 16.073945405697831 ], [ -90.442342951057825, 16.075730037526757 ] ] ], [ [ [ -90.444852292718991, 16.088298717506898 ], [ -90.439068068911851, 16.088282231353425 ], [ -90.44425042644275, 16.08380296355482 ], [ -90.444852292718991, 16.088298717506898 ] ] ] ] } }
+]
+}

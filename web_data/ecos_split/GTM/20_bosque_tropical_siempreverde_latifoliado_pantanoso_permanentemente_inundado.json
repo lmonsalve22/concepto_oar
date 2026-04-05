@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "20_bosque_tropical_siempreverde_latifoliado_pantanoso_permanentemente_inundado",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "20 Bosque tropical siempreverde latifoliado pantanoso permanentemente inundado", "COD14": "20", "UNESCO": "IA1g(1)(b)", "DESCRIP": "Bosque tropical siempreverde latifoliado pantanoso permanentemente inundado" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -89.058832851548885, 15.913377973072089 ], [ -89.058919149431873, 15.913465763248803 ], [ -89.058664993994228, 15.915572896871765 ], [ -89.057568491698646, 15.916048931074771 ], [ -89.057413003808776, 15.914852360457834 ], [ -89.058832851548885, 15.913377973072089 ] ] ] } }
+]
+}

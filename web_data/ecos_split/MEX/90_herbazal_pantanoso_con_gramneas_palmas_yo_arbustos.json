@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "90_herbazal_pantanoso_con_gramneas_palmas_yo_arbustos",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "90 Herbazal pantanoso con gram¡neas, palmas y/o arbustos", "COD14": "90", "UNESCO": "VA2b(6)(g)", "DESCRIP": "Herbazal pantanoso con gram¡neas, palmas y/o arbustos" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -91.108600754786778, 16.081725950424666 ], [ -91.104038958514721, 16.076008574423291 ], [ -91.101373858689612, 16.073922154866636 ], [ -91.10915831108062, 16.073921880116927 ], [ -91.108600754786778, 16.081725950424666 ] ] ], [ [ [ -90.740608488302939, 17.818044674915761 ], [ -90.742174850285423, 17.822683021479012 ], [ -90.739548921210798, 17.822350399785407 ], [ -90.736877606464191, 17.819897571969289 ], [ -90.734475431701824, 17.815831056551279 ], [ -90.740783976870432, 17.815820392220044 ], [ -90.740608488302939, 17.818044674915761 ] ] ] ] } }
+]
+}

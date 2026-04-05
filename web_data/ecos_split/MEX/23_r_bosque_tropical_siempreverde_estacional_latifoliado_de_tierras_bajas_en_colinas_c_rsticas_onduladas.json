@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "23_r_bosque_tropical_siempreverde_estacional_latifoliado_de_tierras_bajas_en_colinas_c_rsticas_onduladas",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "23-r Bosque tropical siempreverde estacional latifoliado de tierras bajas, en colinas c rsticas onduladas", "COD14": "23-r", "UNESCO": "IA2a(1)(a)K", "DESCRIP": "Bosque tropical siempreverde estacional latifoliado de tierras bajas, en colinas c rsticas onduladas" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -90.395258847963376, 16.340750235904796 ], [ -90.382696106887607, 16.344366697695442 ], [ -90.381734720680754, 16.343363860154057 ], [ -90.381642309944596, 16.338449579584505 ], [ -90.384175399774847, 16.334977080427961 ], [ -90.388263691715963, 16.33383098441243 ], [ -90.392133937631058, 16.335414368578313 ], [ -90.394375493499794, 16.338163619273633 ], [ -90.395258847963376, 16.340750235904796 ] ] ], [ [ [ -90.374702819136502, 16.361950265709282 ], [ -90.370483548913924, 16.368012008487746 ], [ -90.370698120022212, 16.364675719708771 ], [ -90.374127416717457, 16.360181697976959 ], [ -90.374702819136502, 16.361950265709282 ] ] ] ] } }
+]
+}

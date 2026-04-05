@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "79_arbustal_deciduo_latifoliado_pantanoso_con_rboles_dispersos",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "79 Arbustal deciduo, latifoliado pantanoso con rboles dispersos", "COD14": "79", "UNESCO": "IIIB1b(g)", "DESCRIP": "Arbustal deciduo, latifoliado pantanoso con  rboles dispersos" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -88.318130222824166, 15.670657868710817 ], [ -88.319442715641117, 15.662844950208017 ], [ -88.322621339369988, 15.65805857145252 ], [ -88.322533830172063, 15.658793131497873 ], [ -88.326223641507795, 15.667922438269954 ], [ -88.324458251646945, 15.672695354407153 ], [ -88.319347905215352, 15.672463130470499 ], [ -88.318130222824166, 15.670657868710817 ] ] ] } }
+]
+}

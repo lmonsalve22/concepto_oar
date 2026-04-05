@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "34_l_bosque_tropical_siempreverde_estacional_latifoliado_bajo_submontano",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "34-l Bosque tropical siempreverde estacional latifoliado bajo, submontano", "COD14": "34-l", "UNESCO": "IA2b(1)", "DESCRIP": "Bosque tropical siempreverde estacional latifoliado bajo, submontano" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -88.848800690868543, 16.568178163847882 ], [ -88.851773072994163, 16.567988683530931 ], [ -88.852710479558283, 16.569124188102425 ], [ -88.852734588224209, 16.571649797463596 ], [ -88.850727704298066, 16.573349426215422 ], [ -88.847556290583384, 16.574078579194843 ], [ -88.845353411081845, 16.572769444578409 ], [ -88.845058950065621, 16.569753205503716 ], [ -88.848800690868543, 16.568178163847882 ] ] ] } }
+]
+}

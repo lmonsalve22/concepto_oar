@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "51_bosque_tropical_siempreverde_estacional_de_palmas_de_tierras_bajas_pantanoso",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "51 Bosque tropical siempreverde estacional de palmas de tierras bajas, pantanoso", "COD14": "51", "UNESCO": "IA2g(2)(a)", "DESCRIP": "Bosque tropical siempreverde estacional de palmas de tierras bajas, pantanoso" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -84.330095820145729, 14.67680139880652 ], [ -84.323109068225108, 14.679902493420004 ], [ -84.318544937721214, 14.683060721183089 ], [ -84.318252562471955, 14.682403527841295 ], [ -84.3255758156713, 14.676448167948649 ], [ -84.336606322523721, 14.675403709713464 ], [ -84.337968313224039, 14.675912688275208 ], [ -84.330095820145729, 14.67680139880652 ] ] ] } }
+]
+}

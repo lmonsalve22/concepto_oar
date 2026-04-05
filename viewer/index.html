@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SICA Geo-Armonización: Visor de Áreas y Zonas</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="css/report_styles.css">
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <style>
+        :root {
+            --primary: #10b981;
+            --secondary: #3b82f6;
+            --bg: #0f172a;
+            --panel: #1e293b;
+            --text: #f8fafc;
+            --gray: #94a3b8;
+            --accent: #8b5cf6;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%; width: 100%;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow: hidden;
+        }
+
+        #map { height: 100%; width: 100%; background: var(--bg); }
+
+        /* Sidebar Overlay */
+        #ui-overlay {
+            position: absolute; top: 20px; left: 20px; z-index: 2500;
+            display: flex; flex-direction: column; gap: 15px;
+            pointer-events: none; height: calc(100vh - 40px);
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            pointer-events: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            width: 360px;
+            display: flex; flex-direction: column;
+            height: 100%;
+        }
+
+        h1 {
+            margin: 0 0 5px 0; font-size: 1.3rem; font-weight: 700;
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle { font-size: 0.8rem; color: var(--gray); margin-bottom: 20px; }
+
+        /* Global App Tabs (Bottom) */
+        #top-nav {
+            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 2500;
+            display: flex; gap: 15px; pointer-events: auto;
+        }
+
+        .tab-btn {
+            background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(8px);
+            border: 1px solid var(--border); color: var(--gray);
+            padding: 10px 25px; border-radius: 30px; cursor: pointer;
+            font-size: 0.85rem; font-weight: 600; transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .tab-btn:hover { background: rgba(30, 41, 59, 1); color: #fff; }
+        .tab-btn.active {
+            background: var(--primary); color: #fff; border-color: var(--primary);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Level Selector */
+        .level-selector {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;
+            background: rgba(0, 0, 0, 0.3); padding: 5px; border-radius: 10px; margin-bottom: 20px;
+        }
+
+        .level-btn {
+            background: transparent; border: none; color: var(--gray);
+            padding: 10px 5px; font-size: 0.75rem; font-weight: 600;
+            border-radius: 6px; cursor: pointer; transition: all 0.2s ease;
+        }
+
+        .level-btn.active {
+            background: var(--panel); color: #fff; border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Filter */
+        .control-group { margin-bottom: 15px; }
+        label { display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 6px; color: var(--gray); }
+        select {
+            width: 100%; padding: 12px; border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border);
+            color: white; font-family: inherit; outline: none; cursor: pointer;
+        }
+
+        /* Accordion Legend */
+        .legends-container {
+            margin-top: 10px; flex-grow: 1; overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .legends-container::-webkit-scrollbar { width: 5px; }
+        .legends-container::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+
+        .accordion-item {
+            border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px;
+            background: var(--card-bg); overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 12px 15px; cursor: pointer; display: flex; align-items: center;
+            justify-content: space-between; transition: background 0.2s;
+        }
+
+        .accordion-header:hover { background: rgba(255, 255, 255, 0.05); }
+
+        .country-title { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; }
+        .country-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+        .accordion-content {
+            max-height: 0; transition: max-height 0.3s ease-out; background: rgba(0, 0, 0, 0.2);
+        }
+
+        .accordion-item.active .accordion-content { max-height: 500px; padding: 10px 15px; }
+        .accordion-item.active .toggle-symbol { transform: rotate(180deg); }
+
+        .toggle-symbol { transition: transform 0.3s; font-size: 0.7rem; color: var(--gray); }
+
+        .legend-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; font-size: 0.75rem; }
+        .legend-color { width: 12px; height: 12px; border-radius: 3px; margin-top: 2px; flex-shrink: 0; }
+        .legend-label { line-height: 1.2; color: var(--gray); }
+
+        /* Custom "Square" Tooltip for List */
+        .tooltip-trigger { position: relative; }
+        .tooltip-trigger:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            z-index: 9999;
+            bottom: 100%;
+            left: 10px;
+            width: 220px;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(12px);
+            color: #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            white-space: normal;
+            line-height: 1.4;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.15);
+            pointer-events: none;
+            margin-bottom: 10px;
+            text-transform: none;
+            text-align: left;
+            font-weight: 400;
+        }
+        .tooltip-trigger:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 30px;
+            border: 8px solid transparent;
+            border-top-color: rgba(255,255,255,0.15);
+            z-index: 9999;
+            margin-bottom: -6px;
+            pointer-events: none;
+        }
+
+        .accordion-item { border-color: rgba(255,255,255,0.1) !important; margin-bottom: 8px !important; }
+        .accordion-header:hover { background: rgba(255,255,255,0.08) !important; }
+        .accordion-content.visible { 
+            max-height: 400px !important; 
+            overflow-y: auto !important;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) rgba(0,0,0,0.2);
+        }
+        .accordion-content::-webkit-scrollbar { width: 6px; }
+        .accordion-content::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+        .accordion-content::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        .acc-arrow { font-size: 0.7rem; }
+
+        /* Detail Panel (Right) */
+        #detail-panel {
+            position: absolute; top: 20px; right: 20px; z-index: 2500;
+            height: calc(100vh - 40px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); width: 400px;
+            display: none; 
+            flex-direction: column;
+            transform: translateX(450px);
+            overflow: hidden; /* Header and Tabs stay fixed, Body scrolls */
+            padding: 0 !important; /* Managed by children */
+        }
+
+        .dash-header-container {
+            padding: 15px 20px;
+            background: rgba(30, 41, 59, 0.95);
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .dashboard-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 6px;
+            padding-bottom: 5px;
+        }
+
+        .dash-tab {
+            padding: 8px 12px;
+            font-size: 0.75rem;
+            min-width: fit-content;
+        }
+
+        .dash-tabs-container {
+            padding: 12px 15px;
+            background: rgba(30, 41, 59, 0.9);
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .dash-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 0 20px 20px 20px; /* Removed top padding to avoid gap with tabs */
+            scrollbar-gutter: stable;
+        }
+
+        .dash-footer {
+            padding: 10px 20px;
+            background: rgba(30, 41, 59, 0.95);
+            border-top: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        #detail-panel.visible { 
+            display: flex !important; 
+            transform: none !important; 
+        }
+
+        .dash-content { display: none; }
+        .dash-content.visible { display: block; }
+
+        .detail-header { border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 12px; }
+        .detail-title { font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--primary); }
+
+        .dash-row { display: flex; align-items: center; gap: 10px; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.2s ease; border-radius: 8px; }
+        .dash-row:hover { background: rgba(255,255,255,0.08); transform: scale(1.01); }
+
+        .stat-row { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 12px; margin-bottom: 8px; background: rgba(255,255,255,0.03); 
+            border-radius: 10px; border: 1px solid transparent; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .stat-row:hover { 
+            background: rgba(255,255,255,0.07); 
+            transform: translateX(5px) scale(1.01); 
+            border-color: rgba(255,255,255,0.1);
+        }
+        .stat-info { display: flex; flex-direction: column; gap: 2px; }
+        .stat-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+        .stat-category { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; }
+        .stat-data { text-align: right; }
+        .stat-count { font-size: 0.95rem; font-weight: 700; color: var(--secondary); display: block; }
+        .stat-unit { font-size: 0.65rem; color: var(--gray); text-transform: uppercase; }
+        .stat-percentage { font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-left: 4px; }
+
+        /* Dashboard Styles */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+            cursor: default;
+        }
+        .stat-card:hover { 
+            background: rgba(255,255,255,0.1); 
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--primary);
+        }
+        .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 5px; }
+        .stat-label { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Premium Popups Refined v4.0 */
+        .premium-popup-wrap .leaflet-popup-content-wrapper {
+            background: rgba(15, 23, 42, 0.85) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            color: #fff !important;
+            border-radius: 14px !important;
+            padding: 0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.5) !important;
+            overflow: hidden !important;
+        }
+
+        .premium-popup-wrap .leaflet-popup-content {
+            margin: 0 !important;
+            width: auto !important;
+            max-width: 420px;
+        }
+
+        .premium-popup-wrap .leaflet-popup-tip-container {
+            display: none !important; /* Minimalist look without tips */
+        }
+
+        .premium-popup-wrap .leaflet-popup-close-button {
+            color: rgba(255, 255, 255, 0.5) !important;
+            padding: 8px !important;
+            font-size: 14px !important;
+            top: 10px !important;
+            right: 5px !important;
+        }
+
+        .premium-popup-wrap .leaflet-popup-close-button:hover {
+            color: #fff !important;
+            background: transparent !important;
+        }
+
+        .popup-premium-header {
+            padding: 12px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .popup-premium-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .popup-premium-subtitle {
+            font-size: 0.65rem;
+            color: var(--gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .popup-premium-body {
+            padding: 0 15px 15px 15px;
+        }
+
+        .popup-premium-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+            margin: 0 15px;
+        }
+        .chart-section { margin-top: 25px; }
+        .chart-container { position: relative; margin: auto; height: 180px; width: 100%; margin-bottom: 20px; }
+        .chart-title { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 15px; border-left: 3px solid var(--primary); padding-left: 10px; }
+
+        .btn-clear {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            color: var(--gray);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-clear:hover { background: rgba(239, 68, 68, 0.15); color: #ef4444; border-color: rgba(239, 68, 68, 0.3); }
+        .admin-section-header { display: flex; justify-content: space-between; align-items: center; margin-top: 25px; margin-bottom: 10px; }
+
+        .dash-name { font-size: 0.85rem; color: var(--gray); flex: 1; }
+        .dash-value { font-size: 0.8rem; font-weight: 600; }
+
+        .detail-row { margin-bottom: 12px; }
+        .detail-label { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; font-weight: 600; }
+        .detail-value { font-size: 0.9rem; word-wrap: break-word; margin-top: 2px; }
+        .detail-badge { display: inline-block; padding: 4px 10px; background: rgba(59, 130, 246, 0.15); color: var(--secondary); border-radius: 6px; font-size: 0.75rem; font-weight: 600; margin-top: 8px; }
+
+        /* Loader */
+        #loader {
+            position: fixed; inset: 0; background: var(--bg); z-index: 5000; /* Higher than anything */
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            transition: opacity 0.5s ease;
+        }
+        #loader.hidden { opacity: 0; pointer-events: none; } /* Ensure it's transparent to clicks! */
+
+        /* Nuclear Pointer Lock for Mobile */
+        @media (max-width: 1100px) {
+            body.panel-left-open #map, 
+            body.panel-right-open #map { 
+                pointer-events: none !important; 
+                filter: grayscale(0.5) blur(2px);
+            }
+            /* Hide toggles ONLY when their respective panel is open */
+            body.panel-left-open #toggle-filters { display: none !important; }
+            body.panel-right-open #toggle-stats { display: none !important; }
+        }
+
+        .spinner { width: 50px; height: 50px; border: 3px solid rgba(16, 185, 129, 0.1); border-top: 3px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Dashboard Panel Styles */
+        .dashboard-panel { width: 420px; max-width: 90vw; }
+        .dashboard-tabs { display: flex; gap: 5px; margin-bottom: 20px; padding: 5px; background: rgba(0,0,0,0.2); border-radius: 10px; }
+        .dash-tab { flex: 1; padding: 10px; border: none; background: none; color: var(--gray); cursor: pointer; border-radius: 8px; font-size: 0.8rem; font-weight: 600; transition: all 0.3s; }
+        .dash-tab.active { background: var(--primary); color: white; }
+        .dash-content { display: none; }
+        .dash-content.visible { display: block; }
+        .dash-title { font-size: 0.9rem; color: var(--primary); margin: 0 0 15px 0; }
+        .stats-list { margin-top: 20px; max-height: 200px; overflow-y: auto; font-size: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px; }
+        
+        /* Force Vertical Charts in Info Panel */
+        .pa-detail-vertical { display: flex !important; flex-direction: column !important; gap: 20px !important; width: 100% !important; }
+        .pa-chart-block { width: 100% !important; clear: both !important; display: block !important; }
+        
+        .stat-item { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .stat-label { color: var(--gray); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 70%; }
+        .stat-value { color: white; font-weight: 600; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+        
+        .selected-admin-row {
+            background: rgba(16, 185, 129, 0.25) !important;
+            box-shadow: inset 0 0 0 1px var(--primary);
+        }
+
+        /* Leaflet Popup Overrides */
+        .leaflet-popup-content-wrapper {
+            background: #0f172a !important;
+            border: 1px solid var(--border) !important;
+            color: #ffffff !important;
+            border-radius: 12px !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+            padding: 0 !important;
+        }
+        .leaflet-popup-tip {
+            background: #0f172a !important;
+            border: 1px solid var(--border) !important;
+        }
+        .leaflet-popup-content {
+            margin: 0 !important;
+            padding: 15px !important;
+            line-height: 1.6;
+            width: auto !important;
+            color: #ffffff !important;
+        }
+        .leaflet-popup-content strong { color: var(--primary); font-size: 0.95rem; display: block; margin-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        .leaflet-popup-tip { background: rgba(15,23,42,0.95); }
+        .leaflet-popup-close-button { color: #fff !important; font-size: 1.2rem !important; padding: 10px !important; margin-right: 5px !important; }
+        .leaflet-popup-close-button:hover { color: var(--primary) !important; background: transparent !important; }
+        .leaflet-popup-tip { background: rgba(15,23,42,0.95); }
+        .leaflet-popup-close-button { color: #fff !important; font-size: 1.2rem !important; padding: 10px !important; margin-right: 5px !important; }
+        .leaflet-popup-close-button:hover { color: var(--primary) !important; background: transparent !important; }
+        /* ============================================================
+           HUD & MOBILE RESPONSIVE SYSTEM v6.0 (Unified)
+           ============================================================ */
+
+        /* 1. LAYER HIERARCHY (Global) */
+        #map { z-index: 0 !important; }
+        #loader { z-index: 9999 !important; } /* Always on top during loading */
+        
+        #ui-overlay, #detail-panel { z-index: 2000; }
+        #top-nav { z-index: 1000; } 
+        .mobile-toggle { z-index: 4000 !important; position: fixed !important; }
+
+        /* 2. DESKTOP SPECIFIC VISIBILITY */
+        @media (min-width: 1101px) {
+            #ui-overlay { transform: translateX(0); }
+            #detail-panel { transform: translateX(450px); display: none; }
+            #detail-panel.visible { display: flex; transform: translateX(0); opacity: 1; }
+            #ui-overlay.minimized { transform: translateX(-450px); opacity: 0; pointer-events: none; }
+            #detail-panel.minimized { transform: translateX(450px) !important; opacity: 0; pointer-events: none; }
+            
+            #toggle-filters.active, #toggle-stats.active-unit { display: flex; }
+            #ui-overlay:not(.minimized) ~ #toggle-filters,
+            #detail-panel.visible:not(.minimized) ~ #toggle-stats { display: none !important; }
+        }
+
+        /* 3. MOBILE/TABLET UNIFIED RESPONSE (Zero-State) */
+        @media (max-width: 1100px) {
+            /* GLOBAL LOCKS */
+            body.panel-left-open #map, 
+            body.panel-right-open #map { 
+                pointer-events: none !important; 
+                filter: grayscale(0.5) blur(2px);
+            }
+
+            /* IMMERSIVE FULL-HEIGHT PANELS */
+            #ui-overlay, #detail-panel { 
+                position: fixed !important;
+                left: 0 !important; right: 0 !important; top: 0 !important; bottom: 0 !important;
+                width: 100vw !important; height: 100vh !important;
+                margin: 0 !important; border: none !important; border-radius: 0 !important;
+                background: var(--bg) !important; /* Force solid color */
+                pointer-events: none; 
+                opacity: 0;
+            }
+
+            #ui-overlay { transform: translateX(-100%); }
+            #detail-panel { transform: translateX(100%); }
+
+            /* ACTIVATION STATES (Master Classes) */
+            #ui-overlay.mobile-open,
+            #detail-panel.mobile-open { 
+                transform: translateX(0) !important; 
+                opacity: 1 !important; 
+                pointer-events: auto !important;
+                display: flex !important;
+                visibility: visible !important;
+            }
+
+            /* Ensure internal glass panels take full height */
+            .glass-panel { height: 100% !important; border-radius: 0 !important; border: none !important; width: 100% !important; }
+
+            /* MOBILE HUD CONTROL (Burgers) */
+            .mobile-toggle { 
+                width: 50px !important; height: 50px !important; 
+                border-radius: 12px !important;
+                background: rgba(30, 41, 59, 0.9) !important;
+                backdrop-filter: blur(8px);
+                border: 1px solid var(--border) !important;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            }
+            #toggle-filters { left: 15px !important; top: 15px !important; display: flex !important; }
+            #toggle-stats { right: 15px !important; top: 15px !important; display: none !important; }
+            #toggle-stats.active-unit { display: flex !important; }
+            
+            /* AUTO-HIDE burgers when panel is open */
+            body.panel-left-open #toggle-filters,
+            body.panel-right-open #toggle-stats { display: none !important; }
+
+            /* BOTTOM NAV COMPACT */
+            #top-nav { gap: 8px; width: 100%; left: 0; transform: none; bottom: 0; justify-content: center; background: rgba(15,23,42,0.95); padding: 10px 0; border-top: 1px solid var(--border); }
+            .tab-btn { padding: 10px 12px; font-size: 0.7rem; border-radius: 8px; }
+            
+            /* CONTENT POLISHING */
+            .dash-header-container { padding: 12px 25px !important; min-height: 60px; }
+            .dash-tabs-container { padding: 5px 15px !important; }
+            .dash-body { padding: 5px 20px 80px 20px !important; } /* Space for bottom nav */
+        }
+
+        /* --- INTEGRATED PANEL ENHANCEMENTS --- */
+        /* Modern Sub-Tabs Navigation (Compact) is handled below in persistent headers section */
+
+        
+        /* Persistant Excel-style Context Headers */
+        .context-sticky-header {
+            position: sticky;
+            top: 0 !important;
+            z-index: 900;
+            background: #0f172a;
+            padding: 0;
+            margin: 0 -15px 18px -15px; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+        .context-header-card {
+            background: rgba(15, 23, 42, 0.4); 
+            backdrop-filter: blur(8px);
+            padding: 12px 20px 12px 20px;
+            border: none;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 50px;
+        }
+
+        /* Identity backgrounds */
+        .context-header-card.bg-defor { background: rgba(239, 68, 68, 0.1); border-color: #ef4444; }
+        .context-header-card.bg-pas { background: rgba(59, 130, 246, 0.1); border-color: #3b82f6; }
+        .context-header-card.bg-ecos { background: rgba(16, 185, 129, 0.1); border-color: #10b981; }
+        .context-header-card.bg-int { background: rgba(16, 185, 129, 0.15); border-color: #34d399; }
+
+        .context-unit-info { flex: 1; }
+        .context-unit-stats { text-align: right; margin-left: 15px; }
+
+        .context-unit-label { margin:0; font-size:0.55rem; color:var(--gray); text-transform:uppercase; letter-spacing:1px; opacity:0.6; font-weight:700; margin-bottom: 4px; }
+        .context-unit-name { margin:0; font-size:1.05rem; font-weight:800; color:var(--text); line-height:1.1; }
+        
+        .context-stat-label { margin:0; font-size:0.55rem; color:var(--gray); text-transform:uppercase; font-weight:700; opacity:0.8; letter-spacing:0.5px; margin-bottom: 4px; }
+        .context-stat-value { margin:0; font-size:1.1rem; font-weight:900; color:#fff; line-height:1; }
+
+        #integrated-content .admin-sub-tabs { 
+            display: flex; 
+            gap: 1px; 
+            margin: 0; 
+            padding: 10px 15px 10px 15px; 
+            background: #0f172a; 
+            border: none; 
+        }
+        #integrated-content .admin-sub-tab { 
+            flex: 1; 
+            padding: 8px 4px; 
+            font-size: 0.6rem; 
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            color: var(--gray);
+            border-radius: 4px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        #integrated-content .admin-sub-tab.active {
+             background: var(--primary) !important;
+             border-color: rgba(255,255,255,0.2);
+             color: #fff;
+             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        #integrated-content .admin-sub-tab:hover:not(.active) {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+        }
+
+        .stat-card-integrated { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 12px; margin-bottom: 10px; }
+        
+        .question-header {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: none;
+            letter-spacing: 0.2px;
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary);
+            line-height: 1.2;
+        }
+        .question-description {
+            font-size: 0.62rem;
+            color: var(--gray);
+            text-transform: none;
+            letter-spacing: 0;
+            margin-top: -8px;
+            margin-bottom: 15px;
+            padding-left: 12px;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Conservation Goal Bars */
+        .integrated-bar-container {
+            position: relative;
+            height: 12px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            margin: 10px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: visible; /* Allow target line to potentially breathe */
+        }
+        .integrated-bar-wrapper {
+             position: relative;
+             width: 100%;
+             height: 100%;
+             border-radius: 20px;
+             overflow: hidden;
+        }
+        .integrated-bar-fill {
+            height: 100%;
+            transition: width 1s ease-in-out;
+        }
+        .integrated-target-line {
+            position: absolute;
+            top: -4px;
+            bottom: -4px;
+            width: 3px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(255,255,255,0.9);
+            z-index: 20;
+            border-radius: 2px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <!-- Map is now first at bottom of stack -->
+    <div id="map" style="z-index: 0 !important;"></div>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <p style="margin-top: 20px; color: var(--gray); font-size: 0.9rem;">Sincronizando Cartografía SICA...</p>
+    </div>
+
+    <div id="ui-overlay">
+        <div class="glass-panel">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                    <h1 id="app-title" style="margin: 0; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.5px; color: #fff;">Prueba de Concepto OAR</h1>
+                    <div class="subtitle" id="app-subtitle" style="margin: 0; font-size: 0.7rem; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8;">Análisis Integrado Áreas Protegidas, Ecosistema, Deforestación y Riesgo</div>
+                </div>
+                <button title="Minimizar" onclick="toggleMobilePanel('left')" style="background:rgba(255,255,255,0.05); border:1px solid var(--border); color:var(--gray); cursor:pointer; padding:5px; border-radius:6px; display:flex; align-items:center; justify-content:center;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+            </div>
+            
+            <div id="level-container" class="level-selector" style="display: none;">
+                <button class="level-btn active" onclick="switchLevel(1)">N1: Áreas</button>
+                <button class="level-btn" onclick="switchLevel(2)">N2: Zonas</button>
+                <button class="level-btn" onclick="switchLevel(3)">N3: Subzonas</button>
+            </div>
+
+
+
+            <!-- Unified Admin & Risks Filters -->
+            <div id="admin-controls" class="control-group" style="display: block; margin-top: 25px;">
+                <label style="margin-bottom: 12px; color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Selección de Unidad Territorial</label>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <select id="admin-country"><option value="">Seleccione País</option></select>
+                    <label id="label-admin1" style="margin-bottom: 0px; font-weight: normal;">Nivel 1 (Deptos, Provincias, Distritos)</label>
+                    <select id="admin-dept" disabled><option value="">Seleccione Unidad (N1)</option></select>
+                    <label id="label-admin2" style="margin-bottom: 0px; font-weight: normal;">Nivel 2 (Munis, Cantones, Distritos)</label>
+                    <select id="admin-muni" disabled><option value="">Seleccione Unidad</option></select>
+                    <button class="btn-clear" id="btn-reset-admin" onclick="window.adminAppInstance.resetFilters()" style="width: 100%; margin-top: 10px; display: flex !important; min-height: 35px; justify-content: center; align-items: center; border: 1px solid rgba(255,255,255,0.2);">
+                        <span></span> Limpiar Selección
+                    </button>
+                </div>
+            </div>
+
+            <div class="legends-container" id="accordion-legend">
+                <!-- Se poblará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+
+    <div id="detail-panel" class="glass-panel dashboard-panel">
+        <div class="dash-header-container" style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="flex-grow:1;">
+                <h2 class="detail-title" id="dash-title" style="display:none; margin:0; font-size: 1.1rem; line-height: 1.2;">Selección</h2>
+                <p class="detail-label" id="dash-subtitle" style="margin:0; font-size: 0.8rem; color: var(--gray); margin-top: 2px;">Cargando...</p>
+            </div>
+            <button title="Minimizar" onclick="toggleMobilePanel('right')" style="background:rgba(255,255,255,0.05); border:1px solid var(--border); color:var(--gray); cursor:pointer; padding:5px; border-radius:6px; display:flex; align-items:center; justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+        
+        <div class="dash-tabs-container">
+            <div class="dashboard-tabs" style="margin-bottom: 0;">
+                <button class="dash-tab active" id="tab-info" onclick="switchDashTab('info', this)">Unidades Territoriales</button>
+                <button class="dash-tab" id="tab-pas" onclick="switchDashTab('pas', this)">Áreas Protegidas</button>
+                <button class="dash-tab" id="tab-ecos" onclick="switchDashTab('ecos', this)">Ecosistemas</button>
+                <button class="dash-tab" id="tab-test" onclick="switchDashTab('test', this)">Deforestación</button>
+                <button class="dash-tab" id="tab-integrated" onclick="switchDashTab('integrated', this)">Análisis Integrado</button>
+                <button class="dash-tab" id="tab-loss" onclick="switchDashTab('loss', this)" style="display:none;">Antiguo</button>
+            </div>
+        </div>
+
+        <div class="dash-body" id="dash-scroll-container">
+            <div id="info-content" class="dash-content visible"></div>
+            
+            <div id="ecos-content" class="dash-content">
+                <div class="context-sticky-header">
+                    <div class="context-header-card bg-ecos">
+                        <div class="context-unit-info">
+                            <p class="context-unit-label">Unidad Analizada:</p>
+                            <p id="ecos-unit-name" class="context-unit-name">...</p>
+                        </div>
+                        <div class="context-unit-stats">
+                            <p class="context-stat-label">Área Natural (Año 2000)</p>
+                            <p id="ecos-total-area" class="context-stat-value">--- ha</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ecos-results-container">
+                    <h3 class="dash-title">Composición de Ecosistemas</h3>
+                    <div style="position:relative; height:220px; margin-bottom: 20px;"><canvas id="ecoCategoryChartEcos"></canvas></div>
+
+                    <h3 class="dash-title">Top Ecosistemas</h3>
+                    <div style="position:relative; height:300px; margin-bottom: 30px;"><canvas id="ecoTopChartEcos"></canvas></div>
+
+                    <div class="dash-section" style="border-left: 4px solid var(--primary); margin-top:20px;">
+                        <h3 class="dash-title" id="eco-list-title-ecos">Listado por Grupo</h3>
+                        <div id="eco-accordion-list-ecos" style="margin-top:10px;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="pas-content" class="dash-content">
+                <div class="context-sticky-header">
+                    <div class="context-header-card bg-pas">
+                        <div class="context-unit-info">
+                            <p class="context-unit-label">Unidad Analizada:</p>
+                            <p id="pas-unit-name" class="context-unit-name">...</p>
+                        </div>
+                        <div class="context-unit-stats">
+                            <p class="context-stat-label">Área Total Protegida (terrestre + marina)</p>
+                            <p id="pas-total-area" class="context-stat-value">--- ha</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="pas-results-container">
+                    <h3 class="dash-title">Categorías de Áreas Protegidas</h3>
+                    <div style="position:relative; height:220px; margin-bottom: 20px;"><canvas id="paCategoryChart"></canvas></div>
+                    
+                    <h3 class="dash-title">Top Áreas Protegidas (Sup. en Unidad)</h3>
+                    <div style="position:relative; height:300px; margin-bottom: 30px;"><canvas id="paTopChart"></canvas></div>
+                    
+                    <div class="dash-section" style="border-left: 4px solid var(--accent); margin-top:20px;">
+                        <h3 class="dash-title">Listado por Categoría</h3>
+                        <div id="pa-accordion-list" style="margin-top:10px;"></div>
+                    </div>
+                    <div id="pas-list" class="stats-list" style="display:none;"></div>
+                </div>
+            </div>
+
+            <div id="integrated-content" class="dash-content">
+                <div class="context-sticky-header">
+                    <div class="context-header-card bg-int" style="display: flex; flex-direction: column; align-items: stretch; gap: 12px; padding: 15px 20px;">
+                        <!-- Row 1: Identity & Main Stat -->
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="context-unit-info">
+                                <p class="context-unit-label">Unidad Analizada:</p>
+                                <p id="integrated-unit-name" class="context-unit-name">...</p>
+                            </div>
+                            <div class="context-unit-stats">
+                                <p class="context-stat-label">% Protegido Global</p>
+                                <p id="integrated-total-pct" class="context-stat-value">---%</p>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Sub-navigation Tabs -->
+                        <div class="admin-sub-tabs" style="background: rgba(0,0,0,0.2); padding: 4px; margin: 0; border: none; border-radius: 8px;">
+                            <div class="admin-sub-tab active" data-sub="relative" onclick="window.adminAppInstance.switchIntegratedSubTab('relative', this)" style="padding: 6px 4px; font-size: 0.6rem;">
+                                Nivel de Conservación
+                            </div>
+                            <div class="admin-sub-tab" data-sub="gaps" onclick="window.adminAppInstance.switchIntegratedSubTab('gaps', this)" style="padding: 6px 4px; font-size: 0.6rem;">
+                                Nivel de Riesgo
+                            </div>
+                        </div>
+
+                        <!-- Row 3: Analysis Parameters (Details) -->
+                        <details id="integrated-params-details" style="margin: 0; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 8px;">
+                            <summary style="font-size:0.65rem; color:#10b981; cursor:pointer; font-weight:700; outline:none; user-select:none; display:flex; align-items:center; gap:8px;">
+                                <i class="fas fa-sliders-h" style="font-size:0.6rem;"></i>Ajustar Parámetros de Análisis
+                            </summary>
+
+                            <!-- Help Tooltip Content -->
+                            <div id="integrated-analysis-help" style="display:none; margin-top:10px; padding:10px; background:rgba(15, 23, 42, 0.95); border-radius:8px; border:1px solid #10b981; font-size:0.65rem; color:#e2e8f0; line-height:1.4; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                                <h5 style="margin:0 0 8px 0; color:#10b981; font-size:0.7rem; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:4px;">Guía de Parámetros</h5>
+                                <p style="margin-bottom:8px;"><strong>1. Meta:</strong> Objetivo de protección territorial (30x30). Define el porcentaje de la unidad que se aspira conservar bajo Áreas Protegidas.</p>
+                                <p style="margin-bottom:8px;"><strong>2. Pérdida:</strong> Umbral de alerta para detectar ecosistemas con degradación forestal significativa (Defecto 5%).</p>
+                                <p style="margin:0;"><strong>3. Colapso Crítico (UICN):</strong> Límite de pérdida de área original (>20%) que categoriza un ecosistema en riesgo crítico de desaparecer.</p>
+                            </div>
+
+                            <div style="padding:10px 0 5px 0; display:flex; flex-direction:column; gap:10px;">
+                                <div style="display:flex; justify-content:flex-end; gap:12px; margin-bottom:5px; padding-right:5px;">
+                                    <i class="fas fa-question-circle" onclick="window.adminAppInstance.toggleAnalysisExplanation()" 
+                                       title="Explicación de Parámetros" 
+                                       style="color:#94a3b8; font-size:0.85rem; cursor:pointer; opacity:0.8;"></i>
+                                    <i class="fas fa-undo" onclick="window.adminAppInstance.resetAnalysisParameters()" 
+                                       title="Restablecer Parámetros por Defecto" 
+                                       style="color:#10b981; font-size:0.85rem; cursor:pointer; opacity:0.8;"></i>
+                                </div>
+                                <div style="display:flex; gap:10px;">
+                                    <div class="target-selector" style="flex:1; margin-bottom:0; background:rgba(16, 185, 129, 0.05); display:flex; flex-direction:column; gap:6px; padding:10px; border-radius:8px; border:1px solid rgba(16,185,129,0.1);">
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-size:0.65rem; color:var(--gray); font-weight:800; text-transform:uppercase;">Meta</span>
+                                            <div style="display:flex; align-items:center; gap:2px;">
+                                                <input type="number" id="integrated-target-val" value="30" class="target-input" style="width:35px; font-size:0.75rem; background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff; text-align:center;" onchange="window.adminAppInstance.onTargetChange()">
+                                                <span style="color:var(--gray); font-size:0.55rem; font-weight:700;">%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="target-selector" style="flex:1; margin-bottom:0; border-left:3px solid #ef4444; background:rgba(239, 68, 68, 0.05); display:flex; flex-direction:column; gap:6px; padding:10px; border-radius:8px;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-size:0.65rem; color:var(--gray); font-weight:800; text-transform:uppercase;">Pérdida</span>
+                                            <div style="display:flex; align-items:center; gap:2px;">
+                                                <input type="number" id="integrated-loss-threshold" value="5" class="target-input" style="width:35px; font-size:0.75rem; background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff; text-align:center;" onchange="window.adminAppInstance.onTargetChange()">
+                                                <span style="color:var(--gray); font-size:0.55rem; font-weight:700;">%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="target-selector" style="width:100%; border-left:3px solid #f59e0b; background: rgba(245, 158, 11, 0.05); padding:10px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                                    <span style="font-size:0.65rem; color:var(--gray); font-weight:800; text-transform:uppercase;">Umbral Colapso Crítico</span>
+                                    <div style="display:flex; align-items:center; gap:4px;">
+                                        <input type="number" id="integrated-collapse-threshold" value="20" class="target-input" style="width:40px; font-size:0.8rem; background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff; text-align:center;" onchange="window.adminAppInstance.onTargetChange()">
+                                        <span style="color:var(--gray); font-size:0.65rem; font-weight:700;">%</span>
+                                    </div>
+                                </div>
+
+                                <!-- Heatmap Layer Overlay Controls (Integrated) -->
+                                <div style="margin-top:5px; padding:12px; background:rgba(239, 68, 68, 0.08); border-radius:10px; border:1px solid rgba(239, 68, 68, 0.15); display:flex; flex-direction:column; gap:10px;">
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <label style="color:#ef4444; font-size:0.75rem; font-weight:800; text-transform:uppercase; display:flex; align-items:center; gap:8px; cursor:pointer;">
+                                            <span>Mapa de Deforestación</span>
+                                            <input type="checkbox" id="int-heat-toggle" checked style="accent-color:#ef4444;" onchange="window.appControllerInstance.apps['test'].toggleHeat(this.checked)">
+                                        </label>
+                                        <div style="display:flex; align-items:center; gap:10px;">
+                                            <select id="int-heat-weight" style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff; font-size:0.55rem; padding:2px 4px; outline:none; cursor:pointer;" onchange="window.appControllerInstance.apps['test'].toggleHeat(true)">
+                                                <option value="has">Hectáreas</option>
+                                                <option value="pts">Puntos</option>
+                                            </select>
+                                            <button onclick="window.appControllerInstance.apps['test'].resetHeatSettings()" 
+                                                    style="background:transparent; border:none; color:#94a3b8; font-size:0.6rem; cursor:pointer; text-decoration:underline; padding:0; opacity:0.8;">
+                                                Restablecer
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Sliders with integrated labels -->
+                                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                                        <div style="display:flex; flex-direction:column; gap:4px;">
+                                            <div style="display:flex; justify-content:space-between; font-size:0.6rem; color:#94a3b8; font-weight:700; text-transform:uppercase;">
+                                                <span>Radio</span>
+                                                <span id="int-val-radius">12px</span>
+                                            </div>
+                                            <input type="range" id="int-heat-radius" min="5" max="50" value="12" step="1" style="accent-color:#ef4444; height:3px; cursor:pointer;" 
+                                                   oninput="document.getElementById('int-val-radius').innerText = this.value + 'px'; window.appControllerInstance.apps['test'].toggleHeat(true)">
+                                        </div>
+
+                                        <div style="display:flex; flex-direction:column; gap:4px;">
+                                            <div style="display:flex; justify-content:space-between; font-size:0.6rem; color:#94a3b8; font-weight:700; text-transform:uppercase;">
+                                                <span>Saturación</span>
+                                                <span id="int-val-max">5.0</span>
+                                            </div>
+                                            <input type="range" id="int-heat-max" min="0.1" max="10.0" value="5" step="0.1" style="accent-color:#ea580c; height:3px; cursor:pointer;" 
+                                                   oninput="document.getElementById('int-val-max').innerText = parseFloat(this.value).toFixed(1); window.appControllerInstance.apps['test'].toggleHeat(true)">
+                                        </div>
+                                    </div>
+
+                                    <!-- Integrated Mini Legend -->
+                                    <div style="display:flex; flex-direction:column; gap:4px; margin-top:2px;">
+                                        <div style="display:flex; justify-content:space-between; font-size:0.55rem; color:#94a3b8; font-weight:700; text-transform:uppercase;">
+                                            <span>Intensidad de Pérdida</span>
+                                        </div>
+                                        <div style="height:6px; border-radius:3px; background: linear-gradient(to right, #fde047, #fb923c, #f97316, #dc2626, #7f1d1d);"></div>
+                                        <div style="display:flex; justify-content:space-between; font-size:0.55rem; color:#64748b; font-weight:600;">
+                                            <span>BAJA</span>
+                                            <span>MÁXIMA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC SUB-CONTENT AREA -->
+                <div id="integrated-sub-render">
+                    <div class="empty-state" style="padding:40px; text-align:center; opacity:0.3;">
+                        <i class="fas fa-chart-line" style="font-size:2rem; margin-bottom:10px;"></i>
+                        <p style="font-size:0.8rem;">Cargando análisis integrado...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loss-content" class="dash-content">
+                <div class="context-sticky-header">
+                    <div class="context-header-card bg-defor">
+                        <div class="context-unit-info">
+                             <p class="context-unit-label">Unidad Analizada:</p>
+                             <p id="loss-unit-name" class="context-unit-name">...</p>
+                             <div id="loss-loading-status" style="font-size: 0.55rem; color: #ef4444; font-weight: 600; display: none; letter-spacing: 0.5px;">Sincronizando registros...</div>
+                        </div>
+                        <div class="context-unit-stats">
+                            <p class="context-stat-label" style="color:#ef4444;">Pérdida Total 2001-2020</p>
+                            <p id="loss-total-ha" class="context-stat-value" style="color:#ef4444;">--- ha</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="loss-results-container">
+                    <div class="target-selector" style="background:rgba(239,68,68,0.05); border-color:rgba(239,68,68,0.1);">
+                        <div style="display:flex; flex-direction:column;">
+                            <span style="font-size:0.7rem; color:var(--gray); font-weight:600;">Visualización de Riesgo</span>
+                            <span style="font-size:0.6rem; color:#ef4444; opacity:0.7;">Ponderación del Mapa de Calor</span>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                             <select id="loss-heatmap-weight" class="target-input" style="width:105px; background:rgba(0,0,0,0.4);" onchange="window.adminAppInstance.onLossWeightChange()">
+                                <option value="has" selected>Hectáreas</option>
+                                <option value="density">Densidad</option>
+                             </select>
+                        </div>
+                    </div>
+                    <h3 class="dash-title" style="color:#ef4444; margin-top:20px;">Tendencia de Pérdida (ha)</h3>
+                    <div style="position:relative; height:220px; margin-bottom: 25px;"><canvas id="lossTrendChart"></canvas></div>
+                    <h3 class="dash-title" style="color:#ef4444;">Ecosistemas con mayor impacto</h3>
+                    <div style="position:relative; height:320px; margin-bottom: 30px;"><canvas id="lossEcoChart"></canvas></div>
+                </div>
+            </div>
+
+            <div id="test-content" class="dash-content">
+                <!-- CABEZAL FIJO ESTANDARIZADO -->
+                <div class="context-sticky-header">
+                    <div class="context-header-card bg-defor">
+                        <div class="context-unit-info">
+                            <p class="context-unit-label">Unidad Analizada:</p>
+                            <p id="test-unit-name" class="context-unit-name">Centroamérica</p>
+                        </div>
+                        <div class="context-unit-stats">
+                            <p class="context-stat-label" style="color:#ef4444;">Pérdida Total 2001-2020</p>
+                            <p id="test-total-loss" class="context-stat-value" style="color:#ef4444;">--- ha</p>
+                        </div>
+                </div>
+                </div> <!-- Added missing closure for .context-sticky-header -->
+
+                <div id="test-results-container" style="padding-top: 10px; display:flex; flex-direction:column; gap:20px;">
+                    <!-- 1. Heatmap Operational Controls -->
+                    <div style="padding:15px; background:rgba(15, 23, 42, 0.4); border-radius:12px; border:1px solid rgba(255,255,255,0.05); display:flex; flex-direction:column; gap:12px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <label style="color:#94a3b8; font-size:0.8rem; display:flex; align-items:center; gap:8px; cursor:pointer;">
+                                <span style="font-weight:600;">Mapa de Calor (ha)</span>
+                                <input type="checkbox" id="test-heat-toggle" checked style="accent-color:#22c55e;" onchange="window.appControllerInstance.apps['test'].toggleHeat(this.checked)">
+                            </label>
+                            <div style="display:flex; gap:10px;">
+                                <button onclick="window.appControllerInstance.apps['test'].refreshMapLayers()" 
+                                        style="background:rgba(34, 197, 94, 0.2); border:1px solid rgba(34, 197, 94, 0.4); color:#4ade80; font-size:0.65rem; font-weight:bold; cursor:pointer; padding:4px 10px; border-radius:6px; transition: all 0.2s;">
+                                    <i class="fas fa-sync-alt"></i> Refrescar
+                                </button>
+                                <button onclick="window.appControllerInstance.apps['test'].resetHeatSettings()" 
+                                        style="background:transparent; border:none; color:#6366f1; font-size:0.65rem; cursor:pointer; text-decoration:underline; padding:0; opacity:0.8;">
+                                    Restablecer
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Radio Slider -->
+                        <div style="display:flex; flex-direction:column; gap:4px;">
+                            <div style="display:flex; justify-content:space-between;">
+                                <label style="color:#64748b; font-size:0.7rem;">Difusión (Radio)</label>
+                                <span id="test-val-radius" style="color:#94a3b8; font-size:0.7rem;">12px</span>
+                            </div>
+                            <input type="range" id="test-heat-radius" min="5" max="50" value="12" step="1" style="accent-color:#ef4444; height:4px; cursor:pointer;" 
+                                   oninput="document.getElementById('test-val-radius').innerText = this.value + 'px'; window.appControllerInstance.apps['test'].toggleHeat(true)">
+                        </div>
+
+                        <!-- Intensity Slider -->
+                        <div style="display:flex; flex-direction:column; gap:4px;">
+                            <div style="display:flex; justify-content:space-between;">
+                                <label style="color:#64748b; font-size:0.7rem;">Punto de Saturación (Rojo)</label>
+                                <span id="test-val-max" style="color:#94a3b8; font-size:0.7rem;">5.0 ha</span>
+                            </div>
+                            <input type="range" id="test-heat-max" min="0.1" max="10.0" value="5" step="0.1" style="accent-color:#ea580c; height:4px; cursor:pointer;" 
+                                   oninput="document.getElementById('test-val-max').innerText = parseFloat(this.value).toFixed(1) + ' ha'; window.appControllerInstance.apps['test'].toggleHeat(true)">
+                        </div>
+
+                        <!-- Heatmap Legend (Gradient Bar from Backup) -->
+                        <div style="margin-top:5px; border-top:1px solid rgba(255,255,255,0.05); padding-top:12px;">
+                            <div style="height:8px; width:100%; border-radius:4px; background:linear-gradient(90deg, #fde047, #fb923c, #f97316, #dc2626, #7f1d1d); margin-bottom:6px;"></div>
+                            <div style="display:flex; justify-content:space-between; font-size:0.6rem; color:#94a3b8; text-transform:uppercase; letter-spacing:0.5px;">
+                                <span>Bajo Impacto</span>
+                                <span>Crítico (Saturación)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Charts Container (Trend & Top Ecosystems) -->
+                    <div style="display:flex; flex-direction:column; gap:15px;">
+                        <!-- Line Chart -->
+                        <div class="dash-card" style="padding:15px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); border-radius:12px;">
+                            <h4 style="margin:0 0 12px 0; font-size:0.75rem; color:#94a3b8; text-transform:uppercase; font-weight:700; letter-spacing:0.5px;">Tendencia de Deforestación (ha)</h4>
+                            <div style="height:210px;"><canvas id="test-line-chart"></canvas></div>
+                        </div>
+
+                        <!-- Structural Impact Bars Card -->
+                        <div id="test-impact-container"></div>
+
+                        <!-- Bar Chart (Ecosystems) -->
+                        <div class="dash-card" style="padding:15px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); border-radius:12px;">
+                            <h4 style="margin:0 0 12px 0; font-size:0.75rem; color:#94a3b8; text-transform:uppercase; font-weight:700; letter-spacing:0.5px;">Ecosistemas más Afectados</h4>
+                            <div style="height:260px;"><canvas id="test-eco-chart"></canvas></div>
+                        </div>
+                    </div>
+
+                    <!-- 3. DETAILED ECOSYSTEM LOSS ACCORDION -->
+                    <div class="dash-section" style="border-left: 4px solid #ef4444; margin-top:5px; background:rgba(239, 68, 68, 0.02); padding:15px; border-radius:0 12px 12px 0;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <h3 class="dash-title" id="test-eco-loss-title" style="font-size:0.85rem; color:#ef4444; margin:0; font-weight:800;">Pérdida por Ecosistema</h3>
+                            <span style="font-size:0.6rem; color:var(--gray); text-transform:uppercase;">Histórico detallado</span>
+                        </div>
+                        <div id="test-eco-loss-accordion">
+                            <!-- Se poblará dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Operational Console removed for production -->
+                </div>
+            </div>
+        </div> <!-- Added missing closure for dash-body -->
+
+        <div class="dash-footer" style="display: flex; justify-content: center; padding: 10px;">
+                <button id="btn-narrative-report" onclick="window.adminAppInstance.generateNarrativeReport()" style="display: none; padding: 8px 25px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.75rem; transition: all 0.2s; text-transform: uppercase; letter-spacing: 1px;" title="Generar reporte estructural para toma de decisiones"> 
+                    Reporte
+                </button>
+        </div>
+    </div>
+
+    <!-- Mobile Toggles -->
+    <button id="toggle-filters" class="mobile-toggle" onclick="toggleMobilePanel('left')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="2" y1="14" x2="6" y2="14"></line><line x1="10" y1="8" x2="14" y2="8"></line><line x1="18" y1="16" x2="22" y2="16"></line></svg>
+    </button>
+    <button id="toggle-stats" class="mobile-toggle" onclick="toggleMobilePanel('right')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+    </button>
+    <div id="report-modal" class="report-overlay" style="display:none;">
+        <!-- Generating PDF Loading Overlay -->
+        <div id="pdf-loading" class="pdf-loading-overlay" style="display:none;">
+            <div class="pdf-spinner"></div>
+            <p style="font-weight: 700; font-size: 1.1rem; margin: 0;">Generando PDF de Alta Resolución...</p>
+            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 5px;">Por favor espere, esto puede tardar unos segundos.</p>
+        </div>
+        
+        <div class="report-container">
+            <div class="report-header" style="padding: 12px 60px 12px 20px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <button onclick="location.reload()" class="report-btn-close-main"><i class="fas fa-times-circle"></i> Cerrar</button>
+                        <h2 style="margin:0; font-size: 1.1rem; font-weight: 800; color: #fff; letter-spacing: 0.5px;">REPORTE</h2>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:15px;">
+                        <span class="header-subtitle" style="color: rgba(255,255,255,0.6); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; white-space: nowrap;">OBSERVATORIO AMBIENTAL REGIONAL</span>
+                        <button onclick="window.adminAppInstance.exportReportToPDF()" class="report-btn-print" style="white-space: nowrap; flex-shrink: 0;">
+                            <i class="fas fa-file-pdf"></i> Exportar PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="report-content" class="report-body">
+                <!-- Se poblará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+        <button class="tab-btn active" data-app="admin" onclick="switchApp('admin')">Límites Adm.</button>
+    </div>
+
+    <!-- Leaflet JS (single load) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <!-- VectorGrid: must load AFTER Leaflet -->
+    <script src="js/Leaflet.VectorGrid.bundled.js"></script>
+    <!-- Turf.js for spatial ops -->
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Global Dashboard Helpers -->
+    <script>
+        // Global Error Tracking
+        window._visorLogs = [];
+        const originalLog = console.log;
+        console.log = function(...args) {
+            window._visorLogs.push(`[LOG] ${args.join(' ')}`);
+            originalLog.apply(console, args);
+        };
+        const originalError = console.error;
+        console.error = function(...args) {
+            window._visorLogs.push(`[ERROR] ${args.join(' ')}`);
+            originalError.apply(console, args);
+        };
+
+        function switchDashTab(tabId, btn) {
+            const app = window.adminAppInstance || window.ecosAppInstance || window.areasAppInstance;
+            if (app && typeof app.switchDashTab === 'function') {
+                app.switchDashTab(tabId, btn);
+            } else {
+                document.querySelectorAll('.dash-tab').forEach(t => t.classList.remove('active'));
+                if (btn) btn.classList.add('active');
+                document.querySelectorAll('.dash-content').forEach(c => c.classList.remove('visible'));
+                const content = document.getElementById(`${tabId}-content`);
+                if (content) content.classList.add('visible');
+            }
+        }
+
+        function logPanelState() {
+            const hasHeat = typeof L.heatLayer === 'function';
+            const hasChart = typeof Chart === 'function';
+            const app = window.adminAppInstance;
+            
+            // Check real module state exposed to window
+            const realData = window.fullData || {};
+            const realState = window.state || {};
+            const isLossLoaded = !!(realState.forestLossStats || realData.forestLossStats);
+
+            const heatPoints = (realState.forestLossHeatmapPoints || []).length;
+
+            let report = `REPORTE DE SALUD SICA OAR\n`;
+            report += `--------------------------\n`;
+            report += `1. Librerías:\n   Leaflet Heat: ${hasHeat ? '✅ OK' : '❌ ERROR'}\n   Chart.js: ${hasChart ? '✅ OK' : '❌ ERROR'}\n`;
+            report += `2. Datos:\n   JSON Stats: ${isLossLoaded ? '✅ OK' : '❌ NO CARGADO'}\n   Puntos Heatmap: ${heatPoints.toLocaleString()}\n`;
+            report += `3. Estado:\n   App Activa: ${app ? 'SÍ' : 'NO'}\n   Unidad: ${app?._lastAdminName || 'No seleccionada'}\n\n`;
+            report += `Últimos Eventos:\n${(window._visorLogs || []).slice(-5).join('\n')}\n`;
+            
+            alert(report);
+        }
+        function closeDetail() {
+            document.getElementById('detail-panel').classList.remove('visible');
+        }
+    </script>
+    <script type="module" src="js/modules/AppController.js?v=final_v10_SICA_ATOMIC"></script>
+</body>
+</html>

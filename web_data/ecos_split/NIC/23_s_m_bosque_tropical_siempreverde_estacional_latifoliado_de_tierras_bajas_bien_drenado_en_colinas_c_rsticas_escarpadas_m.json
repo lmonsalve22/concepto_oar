@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "23_s_m_bosque_tropical_siempreverde_estacional_latifoliado_de_tierras_bajas_bien_drenado_en_colinas_c_rsticas_escarpadas_m",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "23-s-M Bosque tropical siempreverde estacional latifoliado de tierras bajas, bien drenado, en colinas c rsticas escarpadas, M", "COD14": "23-s-M", "UNESCO": "IA2a(1)(a)K", "DESCRIP": "Bosque tropical siempreverde estacional latifoliado de tierras bajas, bien drenado, en colinas c rsticas escarpadas, M" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -85.047851675740688, 14.657311524654681 ], [ -85.031004972755881, 14.652905378006995 ], [ -85.027964264614269, 14.650840328899688 ], [ -85.027051956000818, 14.647859833417787 ], [ -85.027971628186108, 14.64327186051589 ], [ -85.033348101633521, 14.648212838052075 ], [ -85.048527895146208, 14.650683874661127 ], [ -85.050739553787366, 14.654695423854776 ], [ -85.050498941408293, 14.65908120553161 ], [ -85.047851675740688, 14.657311524654681 ] ] ], [ [ [ -85.035002853363522, 14.61659881379086 ], [ -85.025881796953996, 14.616688030691202 ], [ -85.025550347794209, 14.614473524811435 ], [ -85.027101661027714, 14.612215890933037 ], [ -85.029723697538699, 14.609536072115896 ], [ -85.037136314988913, 14.608236428968098 ], [ -85.043264538227845, 14.610919018497952 ], [ -85.042746927128974, 14.613045193880623 ], [ -85.038206896720055, 14.61740021666515 ], [ -85.035002853363522, 14.61659881379086 ] ] ] ] } }
+]
+}

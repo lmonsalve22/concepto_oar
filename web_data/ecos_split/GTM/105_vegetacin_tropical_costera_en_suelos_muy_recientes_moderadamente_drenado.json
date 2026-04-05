@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "105_vegetacin_tropical_costera_en_suelos_muy_recientes_moderadamente_drenado",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "105 Vegetaci¢n tropical costera en suelos muy recientes, moderadamente drenado", "COD14": "105", "UNESCO": "VIB3a", "DESCRIP": "Vegetaci¢n tropical costera en suelos muy recientes, moderadamente drenado" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -88.238669575663948, 15.726476581686335 ], [ -88.238601202081085, 15.728407712910526 ], [ -88.230261611184346, 15.726269288896617 ], [ -88.223821956318204, 15.727280750106559 ], [ -88.221502374534907, 15.723527489801882 ], [ -88.23148566323006, 15.722505844215885 ], [ -88.238669575663948, 15.726476581686335 ] ] ] } }
+]
+}

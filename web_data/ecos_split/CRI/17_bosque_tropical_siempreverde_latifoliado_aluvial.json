@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "17_bosque_tropical_siempreverde_latifoliado_aluvial",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "17 Bosque tropical siempreverde latifoliado aluvial", "COD14": "17", "UNESCO": "IA1f(2)", "DESCRIP": "Bosque tropical siempreverde latifoliado aluvial" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -82.565566625930202, 9.549918437886255 ], [ -82.555798898285914, 9.542474406062276 ], [ -82.560057000130428, 9.540163000422183 ], [ -82.560383706643393, 9.540236877182126 ], [ -82.562754516267319, 9.542008928981479 ], [ -82.565880725447172, 9.543231063220492 ], [ -82.567840081074806, 9.545842005388138 ], [ -82.567667971731353, 9.550077698599985 ], [ -82.565566625930202, 9.549918437886255 ] ] ] } }
+]
+}

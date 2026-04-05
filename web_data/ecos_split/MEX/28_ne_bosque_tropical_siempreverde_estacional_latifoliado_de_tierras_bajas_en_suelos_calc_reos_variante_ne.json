@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "28_ne_bosque_tropical_siempreverde_estacional_latifoliado_de_tierras_bajas_en_suelos_calc_reos_variante_ne",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "28-NE Bosque tropical siempreverde estacional latifoliado de tierras bajas en suelos calc reos, variante NE", "COD14": "28-NE", "UNESCO": "IA2a(1)(b)K", "DESCRIP": "Bosque tropical siempreverde estacional latifoliado de tierras bajas en suelos calc reos, variante NE" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -88.357518410038807, 18.490365750460985 ], [ -88.356596858054345, 18.486426752419451 ], [ -88.353676426031683, 18.483993795209848 ], [ -88.366167967277818, 18.4857075828387 ], [ -88.369311303746315, 18.483420772969996 ], [ -88.369457538709639, 18.483493941056363 ], [ -88.368337788145283, 18.488476267694743 ], [ -88.362790959180373, 18.494785964428907 ], [ -88.355879790552223, 18.496633658263868 ], [ -88.338820892743414, 18.496189516975754 ], [ -88.344931957503022, 18.488554563310174 ], [ -88.348048340053907, 18.488274233718691 ], [ -88.352520249957252, 18.492653719420872 ], [ -88.355156543162778, 18.492574347639422 ], [ -88.357518410038807, 18.490365750460985 ] ] ] } }
+]
+}

@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "54_bosque_tropical_siempreverde_estacional_latifoliado_pantanoso_de_tierras_bajas_estacionalmente_inundado",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "54 Bosque tropical siempreverde estacional latifoliado pantanoso de tierras bajas, estacionalmente inundado", "COD14": "54", "UNESCO": "IA2g(1)(a)", "DESCRIP": "Bosque tropical siempreverde estacional latifoliado pantanoso de tierras bajas, estacionalmente inundado" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -88.241337179600336, 15.715294747071173 ], [ -88.240448472635975, 15.712486570166366 ], [ -88.243189592222549, 15.711309968725557 ], [ -88.246299365123548, 15.712080142684499 ], [ -88.251110738969373, 15.720892598514638 ], [ -88.239884660570809, 15.722364080366885 ], [ -88.241337179600336, 15.715294747071173 ] ] ] } }
+]
+}

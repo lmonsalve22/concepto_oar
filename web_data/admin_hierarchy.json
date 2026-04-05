@@ -1,0 +1,2383 @@
+{
+  "BLZ": {
+    "name": "Belice",
+    "admin1_type": "District",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "1": {
+        "name": "Belize",
+        "admin2": {
+          "BLZ-0100": "Belize"
+        }
+      },
+      "2": {
+        "name": "Cayo",
+        "admin2": {
+          "BLZ-0200": "Cayo"
+        }
+      },
+      "3": {
+        "name": "Corozal",
+        "admin2": {
+          "BLZ-0300": "Corozal"
+        }
+      },
+      "4": {
+        "name": "Orange Walk",
+        "admin2": {
+          "BLZ-0400": "Orange Walk"
+        }
+      },
+      "5": {
+        "name": "Stann Creek",
+        "admin2": {
+          "BLZ-0500": "Stann Creek"
+        }
+      },
+      "6": {
+        "name": "Toledo",
+        "admin2": {
+          "BLZ-0600": "Toledo"
+        }
+      }
+    }
+  },
+  "CRI": {
+    "name": "Costa Rica",
+    "admin1_type": "Provincia",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "1": {
+        "name": "San Jos0",
+        "admin2": {
+          "CRI-0101": "San Jos0",
+          "CRI-0102": "Escazo",
+          "CRI-0103": "Desamparados",
+          "CRI-0104": "Puriscal",
+          "CRI-0105": "Tarrazs",
+          "CRI-0106": "Aserro",
+          "CRI-0107": "Mora",
+          "CRI-0108": "Goicoechea",
+          "CRI-0109": "Santa Ana",
+          "CRI-0110": "Alajuelita",
+          "CRI-0111": "Vazquez de Coronado",
+          "CRI-0112": "Acosta",
+          "CRI-0113": "Tib s",
+          "CRI-0114": "Moravia",
+          "CRI-0115": "Montes de Oca",
+          "CRI-0116": "Turrubares",
+          "CRI-0117": "Dota",
+          "CRI-0118": "Curridabat",
+          "CRI-0119": "Parez Zeledsn",
+          "CRI-0120": "Lenn Cortss Castro"
+        }
+      },
+      "2": {
+        "name": "Alajuela",
+        "admin2": {
+          "CRI-0201": "Alajuela",
+          "CRI-0202": "San Raman",
+          "CRI-0203": "Grecia",
+          "CRI-0204": "San Mateo",
+          "CRI-0205": "Atenas",
+          "CRI-0206": "Naranjo",
+          "CRI-0207": "Palmares",
+          "CRI-0208": "Poas",
+          "CRI-0209": "Orotina",
+          "CRI-0210": "San Carlos",
+          "CRI-0211": "Zarcero",
+          "CRI-0212": "Sarche",
+          "CRI-0213": "Upala",
+          "CRI-0214": "Los Chiles",
+          "CRI-0215": "Guatuso",
+          "CRI-0216": "Rlo Cuarto"
+        }
+      },
+      "3": {
+        "name": "Cartago",
+        "admin2": {
+          "CRI-0301": "Cartago",
+          "CRI-0302": "Paraaso",
+          "CRI-0303": "La Union",
+          "CRI-0304": "Jimtnez",
+          "CRI-0305": "Turrialba",
+          "CRI-0306": "Alvarado",
+          "CRI-0307": "Oreamuno",
+          "CRI-0308": "El Guarco"
+        }
+      },
+      "4": {
+        "name": "Heredia",
+        "admin2": {
+          "CRI-0401": "Heredia",
+          "CRI-0402": "Barva",
+          "CRI-0403": "Santo Domingo",
+          "CRI-0404": "Santa B",
+          "CRI-0405": "San Rafael",
+          "CRI-0406": "San Isidro",
+          "CRI-0407": "Belen",
+          "CRI-0408": "Flores",
+          "CRI-0409": "San Pablo",
+          "CRI-0410": "Sarapiqu"
+        }
+      },
+      "5": {
+        "name": "Guanacaste",
+        "admin2": {
+          "CRI-0501": "Liberia",
+          "CRI-0502": "Nicoya",
+          "CRI-0503": "Santa Cruz",
+          "CRI-0504": "Bagaces",
+          "CRI-0505": "Carrillo",
+          "CRI-0506": "Caaas",
+          "CRI-0507": "Abangares",
+          "CRI-0508": "Tilarcn",
+          "CRI-0509": "Nandayure",
+          "CRI-0510": "La Cruz",
+          "CRI-0511": "Hojancha"
+        }
+      },
+      "6": {
+        "name": "Puntarenas",
+        "admin2": {
+          "CRI-0601": "Puntarenas",
+          "CRI-0602": "Esparza",
+          "CRI-0603": "Buenos Aires",
+          "CRI-0604": "Montes de Oro",
+          "CRI-0605": "Osa",
+          "CRI-0606": "Quepos",
+          "CRI-0607": "Golfito",
+          "CRI-0608": "Coto Brus",
+          "CRI-0609": "Parrita",
+          "CRI-0610": "Corredores",
+          "CRI-0611": "Garabito",
+          "CRI-0612": "Monteverde"
+        }
+      },
+      "7": {
+        "name": "Lim1n",
+        "admin2": {
+          "CRI-0701": "Lim1n",
+          "CRI-0702": "Pococ",
+          "CRI-0703": "Siquirres",
+          "CRI-0704": "Talamanca",
+          "CRI-0705": "Matina",
+          "CRI-0706": "Gumcimo"
+        }
+      }
+    }
+  },
+  "DOM": {
+    "name": "República Dominicana",
+    "admin1_type": "Provincia",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "109": {
+        "name": "ESPAILLAT",
+        "admin2": {
+          "DOM-010901": "MOCA",
+          "DOM-010902": "CAYETANO GERMOSÉN",
+          "DOM-010903": "GASPAR HERNÁNDEZ",
+          "DOM-010904": "JAMAO AL NORTE"
+        }
+      },
+      "118": {
+        "name": "PUERTO PLATA",
+        "admin2": {
+          "DOM-011801": "PUERTO PLATA",
+          "DOM-011802": "ALTAMIRA",
+          "DOM-011803": "GUANANICO",
+          "DOM-011804": "IMBERT",
+          "DOM-011805": "LOS HIDALGOS",
+          "DOM-011806": "LUPERÓN",
+          "DOM-011807": "SOSÚA",
+          "DOM-011808": "VILLA ISABELA",
+          "DOM-011809": "VILLA MONTELLANO"
+        }
+      },
+      "125": {
+        "name": "SANTIAGO",
+        "admin2": {
+          "DOM-012501": "SANTIAGO",
+          "DOM-012502": "BISONÓ",
+          "DOM-012503": "JÁNICO",
+          "DOM-012504": "LICEY AL MEDIO",
+          "DOM-012505": "SAN JOSÉ DE LAS MATAS",
+          "DOM-012506": "TAMBORIL",
+          "DOM-012507": "VILLA GONZÁLEZ",
+          "DOM-012508": "PUÑAL",
+          "DOM-012509": "SABANA IGLESIA"
+        }
+      },
+      "213": {
+        "name": "LA VEGA",
+        "admin2": {
+          "DOM-021301": "LA VEGA",
+          "DOM-021302": "CONSTANZA",
+          "DOM-021303": "JARABACOA",
+          "DOM-021304": "JIMA ABAJO"
+        }
+      },
+      "224": {
+        "name": "SANCHEZ RAMÍREZ",
+        "admin2": {
+          "DOM-022401": "COTUÍ",
+          "DOM-022402": "CEVICOS",
+          "DOM-022403": "FANTINO",
+          "DOM-022404": "LA MATA"
+        }
+      },
+      "228": {
+        "name": "MONSEÑOR NOUEL",
+        "admin2": {
+          "DOM-022801": "BONAO",
+          "DOM-022802": "MAIMÓN",
+          "DOM-022803": "PIEDRA BLANCA"
+        }
+      },
+      "306": {
+        "name": "DUARTE",
+        "admin2": {
+          "DOM-030601": "SAN FRANCISCO DE MACORÍS",
+          "DOM-030602": "ARENOSO",
+          "DOM-030603": "CASTILLO",
+          "DOM-030604": "PIMENTEL",
+          "DOM-030605": "VILLA RIVA",
+          "DOM-030606": "LAS GUÁRANAS",
+          "DOM-030607": "EUGENIO MARÍA DE HOSTOS"
+        }
+      },
+      "314": {
+        "name": "MARÍA TRINIDAD SÁNCHEZ",
+        "admin2": {
+          "DOM-031401": "NAGUA",
+          "DOM-031402": "CABRERA",
+          "DOM-031403": "EL FACTOR",
+          "DOM-031404": "RÍO SAN JUAN"
+        }
+      },
+      "319": {
+        "name": "HERMANAS MIRABAL",
+        "admin2": {
+          "DOM-031901": "SALCEDO",
+          "DOM-031902": "TENARES",
+          "DOM-031903": "VILLA TAPIA"
+        }
+      },
+      "320": {
+        "name": "SAMANÁ",
+        "admin2": {
+          "DOM-032001": "SAMANÁ",
+          "DOM-032002": "SÁNCHEZ",
+          "DOM-032003": "LAS TERRENAS"
+        }
+      },
+      "405": {
+        "name": "DAJABÓN",
+        "admin2": {
+          "DOM-040501": "DAJABÓN",
+          "DOM-040502": "LOMA DE CABRERA",
+          "DOM-040503": "PARTIDO",
+          "DOM-040504": "RESTAURACIÓN",
+          "DOM-040505": "EL PINO"
+        }
+      },
+      "415": {
+        "name": "MONTE CRISTI",
+        "admin2": {
+          "DOM-041501": "MONTE CRISTI",
+          "DOM-041502": "CASTAÑUELAS",
+          "DOM-041503": "GUAYUBÍN",
+          "DOM-041504": "LAS MATAS DE SANTA CRUZ",
+          "DOM-041505": "PEPILLO SALCEDO",
+          "DOM-041506": "VILLA VÁSQUEZ"
+        }
+      },
+      "426": {
+        "name": "SANTIAGO RODRÍGUEZ",
+        "admin2": {
+          "DOM-042601": "SAN IGNACIO DE SABANETA",
+          "DOM-042602": "VILLA LOS ALMÁCIGOS",
+          "DOM-042603": "MONCIÓN"
+        }
+      },
+      "427": {
+        "name": "VALVERDE",
+        "admin2": {
+          "DOM-042701": "MAO",
+          "DOM-042702": "ESPERANZA",
+          "DOM-042703": "LAGUNA SALADA"
+        }
+      },
+      "502": {
+        "name": "AZUA",
+        "admin2": {
+          "DOM-050201": "AZUA",
+          "DOM-050202": "LAS CHARCAS",
+          "DOM-050203": "LAS YAYAS DE VIAJAMA",
+          "DOM-050204": "PADRE LAS CASAS",
+          "DOM-050205": "PERALTA",
+          "DOM-050206": "SABANA YEGUA",
+          "DOM-050207": "PUEBLO VIEJO",
+          "DOM-050208": "TÁBARA ARRIBA",
+          "DOM-050209": "GUAYABAL",
+          "DOM-050210": "ESTEBANÍA"
+        }
+      },
+      "517": {
+        "name": "PERAVIA",
+        "admin2": {
+          "DOM-051701": "BANÍ",
+          "DOM-051702": "NIZAO"
+        }
+      },
+      "521": {
+        "name": "SAN CRISTÓBAL",
+        "admin2": {
+          "DOM-052101": "SAN CRISTÓBAL",
+          "DOM-052102": "SABANA GRANDE DE PALENQUE",
+          "DOM-052103": "BAJOS DE HAINA",
+          "DOM-052104": "CAMBITA GARABITOS",
+          "DOM-052105": "VILLA ALTAGRACIA",
+          "DOM-052106": "YAGUATE",
+          "DOM-052107": "SAN GREGORIO DE NIGUA",
+          "DOM-052108": "LOS CACAOS"
+        }
+      },
+      "531": {
+        "name": "SAN JOSÉ DE OCOA",
+        "admin2": {
+          "DOM-053101": "SAN JOSÉ DE OCOA",
+          "DOM-053102": "SABANA LARGA",
+          "DOM-053103": "RANCHO ARRIBA"
+        }
+      },
+      "603": {
+        "name": "BAORUCO",
+        "admin2": {
+          "DOM-060301": "NEIBA",
+          "DOM-060302": "GALVÁN",
+          "DOM-060303": "TAMAYO",
+          "DOM-060304": "VILLA JARAGUA",
+          "DOM-060305": "LOS RÍOS"
+        }
+      },
+      "604": {
+        "name": "BARAHONA",
+        "admin2": {
+          "DOM-060401": "BARAHONA",
+          "DOM-060402": "CABRAL",
+          "DOM-060403": "ENRIQUILLO",
+          "DOM-060404": "PARAÍSO",
+          "DOM-060405": "VICENTE NOBLE",
+          "DOM-060406": "EL PEÑÓN",
+          "DOM-060407": "LA CIÉNAGA",
+          "DOM-060408": "FUNDACIÓN",
+          "DOM-060409": "LAS SALINAS",
+          "DOM-060410": "POLO",
+          "DOM-060411": "JAQUIMEYES"
+        }
+      },
+      "610": {
+        "name": "INDEPENDENCIA",
+        "admin2": {
+          "DOM-061001": "JIMANÍ",
+          "DOM-061002": "DUVERGÉ",
+          "DOM-061003": "LA DESCUBIERTA",
+          "DOM-061004": "POSTRER RÍO",
+          "DOM-061005": "CRISTÓBAL",
+          "DOM-061006": "MELLA"
+        }
+      },
+      "616": {
+        "name": "PEDERNALES",
+        "admin2": {
+          "DOM-061601": "PEDERNALES",
+          "DOM-061602": "OVIEDO"
+        }
+      },
+      "707": {
+        "name": "ELÍAS PIÑA",
+        "admin2": {
+          "DOM-070701": "COMENDADOR",
+          "DOM-070702": "BÁNICA",
+          "DOM-070703": "EL LLANO",
+          "DOM-070704": "HONDO VALLE",
+          "DOM-070705": "PEDRO SANTANA",
+          "DOM-070706": "JUAN SANTIAGO"
+        }
+      },
+      "722": {
+        "name": "SAN JUAN",
+        "admin2": {
+          "DOM-072201": "SAN JUAN",
+          "DOM-072202": "BOHECHÍO",
+          "DOM-072203": "EL CERCADO",
+          "DOM-072204": "JUAN DE HERRERA",
+          "DOM-072205": "LAS MATAS DE FARFÁN",
+          "DOM-072206": "VALLEJUELO"
+        }
+      },
+      "808": {
+        "name": "EL SEIBO",
+        "admin2": {
+          "DOM-080801": "EL SEIBO",
+          "DOM-080802": "MICHES"
+        }
+      },
+      "811": {
+        "name": "LA ALTAGRACIA",
+        "admin2": {
+          "DOM-081101": "HIGÜEY",
+          "DOM-081102": "SAN RAFAEL DEL YUMA"
+        }
+      },
+      "812": {
+        "name": "LA ROMANA",
+        "admin2": {
+          "DOM-081201": "LA ROMANA",
+          "DOM-081202": "GUAYMATE",
+          "DOM-081203": "VILLA HERMOSA"
+        }
+      },
+      "923": {
+        "name": "SAN PEDRO DE MACORÍS",
+        "admin2": {
+          "DOM-092301": "SAN PEDRO DE MACORÍS",
+          "DOM-092302": "LOS LLANOS",
+          "DOM-092303": "RAMÓN SANTANA",
+          "DOM-092304": "CONSUELO",
+          "DOM-092305": "QUISQUEYA",
+          "DOM-092306": "GUAYACANES"
+        }
+      },
+      "929": {
+        "name": "MONTE PLATA",
+        "admin2": {
+          "DOM-092901": "MONTE PLATA",
+          "DOM-092902": "BAYAGUANA",
+          "DOM-092903": "SABANA GRANDE DE BOYÁ",
+          "DOM-092904": "YAMASÁ",
+          "DOM-092905": "PERALVILLO"
+        }
+      },
+      "930": {
+        "name": "HATO MAYOR",
+        "admin2": {
+          "DOM-093001": "HATO MAYOR",
+          "DOM-093002": "SABANA DE LA MAR",
+          "DOM-093003": "EL VALLE"
+        }
+      },
+      "1001": {
+        "name": "DISTRITO NACIONAL",
+        "admin2": {
+          "DOM-100101": "SANTO DOMINGO DE GUZMÁN"
+        }
+      },
+      "1032": {
+        "name": "SANTO DOMINGO",
+        "admin2": {
+          "DOM-103201": "SANTO DOMINGO ESTE",
+          "DOM-103202": "SANTO DOMINGO OESTE",
+          "DOM-103203": "SANTO DOMINGO NORTE",
+          "DOM-103204": "BOCA CHICA",
+          "DOM-103205": "SAN ANTONIO DE GUERRA",
+          "DOM-103206": "LOS ALCARRIZOS",
+          "DOM-103207": "PEDRO BRAND"
+        }
+      }
+    }
+  },
+  "GTM": {
+    "name": "Guatemala",
+    "admin1_type": "Departamento",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "7": {
+        "name": "Sololá",
+        "admin2": {
+          "GTM-00000": "Lago Atitlán",
+          "GTM-0701": "Sololá",
+          "GTM-0702": "San José Chacayá",
+          "GTM-0703": "Santa María Visitación",
+          "GTM-0704": "Santa Lucía Utatlán",
+          "GTM-0705": "Nahualá",
+          "GTM-0706": "Santa Catarina Ixtahuacán",
+          "GTM-0707": "Santa Clara La Laguna",
+          "GTM-0708": "Concepción",
+          "GTM-0709": "San Andrés Semetabaj",
+          "GTM-0710": "Panajachel",
+          "GTM-0711": "Santa Catarina Palopó",
+          "GTM-0712": "San Antonio Palopó",
+          "GTM-0713": "San Lucas Tolimán",
+          "GTM-0714": "Santa Cruz La Laguna",
+          "GTM-0715": "San Pablo La Laguna",
+          "GTM-0716": "San Marcos La Laguna",
+          "GTM-0717": "San Juan La Laguna",
+          "GTM-0718": "San Pedro La Laguna",
+          "GTM-0719": "Santiago Atitlán"
+        }
+      },
+      "1": {
+        "name": "Guatemala",
+        "admin2": {
+          "GTM-0101": "Guatemala",
+          "GTM-0102": "Santa Catarina Pinula",
+          "GTM-0103": "San José Pinula",
+          "GTM-0104": "San José del Golfo",
+          "GTM-0105": "Palencia",
+          "GTM-0106": "Chinautla",
+          "GTM-0107": "San Pedro Ayampuc",
+          "GTM-0108": "Mixco",
+          "GTM-0109": "San Pedro Sacatepéquez",
+          "GTM-0110": "San Juan Sacatepéquez",
+          "GTM-0111": "San Raimundo",
+          "GTM-0112": "Chuarrancho",
+          "GTM-0113": "Fraijanes",
+          "GTM-0114": "Amatitlán",
+          "GTM-0115": "Villa Nueva",
+          "GTM-0116": "Villa Canales",
+          "GTM-0117": "Petapa"
+        }
+      },
+      "2": {
+        "name": "El Progreso",
+        "admin2": {
+          "GTM-0201": "Guastatoya",
+          "GTM-0202": "Morazán",
+          "GTM-0203": "San Agustín Acasaguastlán",
+          "GTM-0204": "San Cristóbal Acasaguastlán",
+          "GTM-0205": "El Jícaro",
+          "GTM-0206": "Sanarate",
+          "GTM-0207": "Sansare",
+          "GTM-0208": "San Antonio La Paz"
+        }
+      },
+      "3": {
+        "name": "Sacatepéquez",
+        "admin2": {
+          "GTM-0301": "Antigua Guatemala",
+          "GTM-0302": "Jocotenango",
+          "GTM-0303": "Pastores",
+          "GTM-0304": "Sumpango",
+          "GTM-0305": "Santo Domingo Xenacoj",
+          "GTM-0306": "Santiago Sacatepéquez",
+          "GTM-0307": "San Bartolomé Milpas Altas",
+          "GTM-0308": "San Lucas Sacatepéquez",
+          "GTM-0309": "Santa Lucía Milpas Altas",
+          "GTM-0310": "Magdalena Milpas Altas",
+          "GTM-0311": "Santa María de Jesús",
+          "GTM-0312": "Ciudad Vieja",
+          "GTM-0313": "San Miguel Dueñas",
+          "GTM-0314": "Alotenango",
+          "GTM-0315": "San Antonio Aguas Calientes",
+          "GTM-0316": "Santa Catarina Barahona"
+        }
+      },
+      "4": {
+        "name": "Chimaltenango",
+        "admin2": {
+          "GTM-0401": "Chimaltenango",
+          "GTM-0402": "San José Poaquil",
+          "GTM-0403": "San Martín Jilotepeque",
+          "GTM-0404": "Comalapa",
+          "GTM-0405": "Santa Apolonia",
+          "GTM-0406": "Tecpán Guatemala",
+          "GTM-0407": "Patzún",
+          "GTM-0408": "Pochuta",
+          "GTM-0409": "Patzicía",
+          "GTM-0410": "Santa Cruz Balanyá",
+          "GTM-0411": "Acatenango",
+          "GTM-0412": "Yepocapa",
+          "GTM-0413": "San Andrés Itzapa",
+          "GTM-0414": "Parramos",
+          "GTM-0415": "Zaragoza",
+          "GTM-0416": "El Tejar"
+        }
+      },
+      "5": {
+        "name": "Escuintla",
+        "admin2": {
+          "GTM-0501": "Escuintla",
+          "GTM-0502": "Santa Lucía Cotzumalguapa",
+          "GTM-0503": "La Democracia",
+          "GTM-0504": "Siquinalá",
+          "GTM-0505": "Masagua",
+          "GTM-0506": "Tiquisate",
+          "GTM-0507": "La Gomera",
+          "GTM-0508": "Guanagazapa",
+          "GTM-0509": "San José",
+          "GTM-0510": "Iztapa",
+          "GTM-0511": "Palín",
+          "GTM-0512": "San Vicente Pacaya",
+          "GTM-0513": "Nueva Concepción",
+          "GTM-0514": "Sipacate"
+        }
+      },
+      "6": {
+        "name": "Santa Rosa",
+        "admin2": {
+          "GTM-0601": "Cuilapa",
+          "GTM-0602": "Barberena",
+          "GTM-0603": "Santa Rosa de Lima",
+          "GTM-0604": "Casillas",
+          "GTM-0605": "San Rafael Las Flores",
+          "GTM-0606": "Oratorio",
+          "GTM-0607": "San Juan Tecuaco",
+          "GTM-0608": "Chiquimulilla",
+          "GTM-0609": "Taxisco",
+          "GTM-0610": "Santa María Ixhuatán",
+          "GTM-0611": "Guazacapán",
+          "GTM-0612": "Santa Cruz Naranjo",
+          "GTM-0613": "Pueblo Nuevo Viñas",
+          "GTM-0614": "Nueva Santa Rosa"
+        }
+      },
+      "8": {
+        "name": "Totonicapán",
+        "admin2": {
+          "GTM-0801": "Totonicapán",
+          "GTM-0802": "San Cristóbal Totonicapán",
+          "GTM-0803": "San Francisco El Alto",
+          "GTM-0804": "San Andrés Xecul",
+          "GTM-0805": "Momostenango",
+          "GTM-0806": "Santa María Chiquimula",
+          "GTM-0807": "Santa Lucía La Reforma",
+          "GTM-0808": "San Bartolo"
+        }
+      },
+      "9": {
+        "name": "Quetzaltenango",
+        "admin2": {
+          "GTM-0901": "Quetzaltenango",
+          "GTM-0902": "Salcajá",
+          "GTM-0903": "Olintepeque",
+          "GTM-0904": "San Carlos Sija",
+          "GTM-0905": "Sibilia",
+          "GTM-0906": "Cabricán",
+          "GTM-0907": "Cajolá",
+          "GTM-0908": "San Miguel Sigüila",
+          "GTM-0909": "San Juan Ostuncalco",
+          "GTM-0910": "San Mateo",
+          "GTM-0911": "Concepción Chiquirichapa",
+          "GTM-0912": "San Martín Sacatepéquez",
+          "GTM-0913": "Almolonga",
+          "GTM-0914": "Cantel",
+          "GTM-0915": "Huitán",
+          "GTM-0916": "Zunil",
+          "GTM-0917": "Colomba",
+          "GTM-0918": "San Francisco La Unión",
+          "GTM-0919": "El Palmar",
+          "GTM-0920": "Coatepeque",
+          "GTM-0921": "Génova",
+          "GTM-0922": "Flores Costa Cuca",
+          "GTM-0923": "La Esperanza",
+          "GTM-0924": "Palestina de Los Altos"
+        }
+      },
+      "10": {
+        "name": "Suchitepéquez",
+        "admin2": {
+          "GTM-1001": "Mazatenango",
+          "GTM-1002": "Cuyotenango",
+          "GTM-1003": "San Francisco Zapotitlán",
+          "GTM-1004": "San Bernardino",
+          "GTM-1005": "San José El Ídolo",
+          "GTM-1006": "Santo Domingo Suchitepéquez",
+          "GTM-1007": "San Lorenzo",
+          "GTM-1008": "Samayac",
+          "GTM-1009": "San Pablo Jocopilas",
+          "GTM-1010": "San Antonio Suchitepéquez",
+          "GTM-1011": "San Miguel Panán",
+          "GTM-1012": "San Gabriel",
+          "GTM-1013": "Chicacao",
+          "GTM-1014": "Patulul",
+          "GTM-1015": "Santa Bárbara",
+          "GTM-1016": "San Juan Bautista",
+          "GTM-1017": "Santo Tomás La Unión",
+          "GTM-1018": "Zunilito",
+          "GTM-1019": "Pueblo Nuevo",
+          "GTM-1020": "Río Bravo",
+          "GTM-1021": "San José La Máquina"
+        }
+      },
+      "11": {
+        "name": "Retalhuleu",
+        "admin2": {
+          "GTM-1101": "Retalhuleu",
+          "GTM-1102": "San Sebastián",
+          "GTM-1103": "Santa Cruz Muluá",
+          "GTM-1104": "San Martín Zapotitlán",
+          "GTM-1105": "San Felipe",
+          "GTM-1106": "San Andrés Villa Seca",
+          "GTM-1107": "Champerico",
+          "GTM-1108": "Nuevo San Carlos",
+          "GTM-1109": "El Asintal"
+        }
+      },
+      "12": {
+        "name": "San Marcos",
+        "admin2": {
+          "GTM-1201": "San Marcos",
+          "GTM-1202": "San Pedro Sacatepéquez",
+          "GTM-1203": "San Antonio Sacatepéquez",
+          "GTM-1204": "Comitancillo",
+          "GTM-1205": "San Miguel Ixtahuacán",
+          "GTM-1206": "Concepción Tutuapa",
+          "GTM-1207": "Tacaná",
+          "GTM-1208": "Sibinal",
+          "GTM-1209": "Tajumulco",
+          "GTM-1210": "Tejutla",
+          "GTM-1211": "San Rafael Pie de la Cuesta",
+          "GTM-1212": "Nuevo Progreso",
+          "GTM-1213": "El Tumbador",
+          "GTM-1214": "El Rodeo",
+          "GTM-1215": "Malacatán",
+          "GTM-1216": "Catarina",
+          "GTM-1217": "Ayutla",
+          "GTM-1218": "Ocós",
+          "GTM-1219": "San Pablo",
+          "GTM-1220": "El Quetzal",
+          "GTM-1221": "La Reforma",
+          "GTM-1222": "Pajapita",
+          "GTM-1223": "Ixchiguán",
+          "GTM-1224": "San José Ojetenam",
+          "GTM-1225": "San Cristóbal Cucho",
+          "GTM-1226": "Sipacapa",
+          "GTM-1227": "Esquipulas Palo Gordo",
+          "GTM-1228": "Río Blanco",
+          "GTM-1229": "San Lorenzo",
+          "GTM-1230": "La Blanca"
+        }
+      },
+      "13": {
+        "name": "Huehuetenango",
+        "admin2": {
+          "GTM-1301": "Huehuetenango",
+          "GTM-1302": "Chiantla",
+          "GTM-1303": "Malacatancito",
+          "GTM-1304": "Cuilco",
+          "GTM-1305": "Nentón",
+          "GTM-1306": "San Pedro Necta",
+          "GTM-1307": "Jacaltenango",
+          "GTM-1308": "Soloma",
+          "GTM-1309": "Ixtahuacán",
+          "GTM-1310": "Santa Bárbara",
+          "GTM-1311": "La Libertad",
+          "GTM-1312": "La Democracia",
+          "GTM-1313": "San Miguel Acatán",
+          "GTM-1314": "San Rafael La Independencia",
+          "GTM-1315": "Todos Santos Cuchumatán",
+          "GTM-1316": "San Juan Atitán",
+          "GTM-1317": "Santa Eulalia",
+          "GTM-1318": "San Mateo Ixtatán",
+          "GTM-1319": "Colotenango",
+          "GTM-1320": "San Sebastián Huehuetenango",
+          "GTM-1321": "Tectitán",
+          "GTM-1322": "Concepción Huista",
+          "GTM-1323": "San Juan Ixcoy",
+          "GTM-1324": "San Antonio Huista",
+          "GTM-1325": "San Sebastián Coatán",
+          "GTM-1326": "Barillas",
+          "GTM-1327": "Aguacatán",
+          "GTM-1328": "San Rafael Petzal",
+          "GTM-1329": "San Gaspar Ixchil",
+          "GTM-1330": "Santiago Chimaltenango",
+          "GTM-1331": "Santa Ana Huista",
+          "GTM-1332": "Unión Cantinil",
+          "GTM-1333": "Petatán"
+        }
+      },
+      "14": {
+        "name": "Quiché",
+        "admin2": {
+          "GTM-1401": "Santa Cruz del Quiché",
+          "GTM-1402": "Chiché",
+          "GTM-1403": "Chinique",
+          "GTM-1404": "Zacualpa",
+          "GTM-1405": "Chajul",
+          "GTM-1406": "Chichicastenango",
+          "GTM-1407": "Patzité",
+          "GTM-1408": "San Antonio Ilotenango",
+          "GTM-1409": "San Pedro Jocopilas",
+          "GTM-1410": "Cunén",
+          "GTM-1411": "San Juan Cotzal",
+          "GTM-1412": "Joyabaj",
+          "GTM-1413": "Nebaj",
+          "GTM-1414": "San Andrés Sajcabajá",
+          "GTM-1415": "Uspantán",
+          "GTM-1416": "Sacapulas",
+          "GTM-1417": "San Bartolomé Jocotenango",
+          "GTM-1418": "Canillá",
+          "GTM-1419": "Chicamán",
+          "GTM-1420": "Ixcán",
+          "GTM-1421": "Pachalum"
+        }
+      },
+      "15": {
+        "name": "Baja Verapaz",
+        "admin2": {
+          "GTM-1501": "Salamá",
+          "GTM-1502": "San Miguel Chicaj",
+          "GTM-1503": "Rabinal",
+          "GTM-1504": "Cubulco",
+          "GTM-1505": "Granados",
+          "GTM-1506": "El Chol",
+          "GTM-1507": "San Jerónimo",
+          "GTM-1508": "Purulhá"
+        }
+      },
+      "16": {
+        "name": "Alta Verapaz",
+        "admin2": {
+          "GTM-1601": "Cobán",
+          "GTM-1602": "Santa Cruz Verapaz",
+          "GTM-1603": "San Cristóbal Verapaz",
+          "GTM-1604": "Tactic",
+          "GTM-1605": "Tamahú",
+          "GTM-1606": "Tucurú",
+          "GTM-1607": "Panzós",
+          "GTM-1608": "Senahú",
+          "GTM-1609": "San Pedro Carchá",
+          "GTM-1610": "San Juan Chamelco",
+          "GTM-1611": "Lanquín",
+          "GTM-1612": "Cahabón",
+          "GTM-1613": "Chisec",
+          "GTM-1614": "Chahal",
+          "GTM-1615": "Fray Bartolomé de Las Casas",
+          "GTM-1616": "Santa Catalina La Tinta",
+          "GTM-1617": "Raxruhá"
+        }
+      },
+      "17": {
+        "name": "Petén",
+        "admin2": {
+          "GTM-1701": "Flores",
+          "GTM-1702": "San José",
+          "GTM-1703": "San Benito",
+          "GTM-1704": "San Andrés",
+          "GTM-1705": "La Libertad",
+          "GTM-1706": "San Francisco",
+          "GTM-1707": "Santa Ana",
+          "GTM-1708": "Dolores",
+          "GTM-1709": "San Luis",
+          "GTM-1710": "Sayaxché",
+          "GTM-1711": "Melchor de Mencos",
+          "GTM-1712": "Poptún",
+          "GTM-1713": "Las Cruces",
+          "GTM-1714": "El Chal"
+        }
+      },
+      "18": {
+        "name": "Izabal",
+        "admin2": {
+          "GTM-1801": "Puerto Barrios",
+          "GTM-1802": "Lívingston",
+          "GTM-1803": "El Estor",
+          "GTM-1804": "Morales",
+          "GTM-1805": "Los Amates"
+        }
+      },
+      "19": {
+        "name": "Zacapa",
+        "admin2": {
+          "GTM-1901": "Zacapa",
+          "GTM-1902": "Estanzuela",
+          "GTM-1903": "Río Hondo",
+          "GTM-1904": "Gualán",
+          "GTM-1905": "Teculután",
+          "GTM-1906": "Usumatlán",
+          "GTM-1907": "Cabañas",
+          "GTM-1908": "San Diego",
+          "GTM-1909": "La Unión",
+          "GTM-1910": "Huité",
+          "GTM-1911": "San Jorge"
+        }
+      },
+      "20": {
+        "name": "Chiquimula",
+        "admin2": {
+          "GTM-2001": "Chiquimula",
+          "GTM-2002": "San José La Arada",
+          "GTM-2003": "San Juan Ermita",
+          "GTM-2004": "Jocotán",
+          "GTM-2005": "Camotán",
+          "GTM-2006": "Olopa",
+          "GTM-2007": "Esquipulas",
+          "GTM-2008": "Concepción Las Minas",
+          "GTM-2009": "Quezaltepeque",
+          "GTM-2010": "San Jacinto",
+          "GTM-2011": "Ipala"
+        }
+      },
+      "21": {
+        "name": "Jalapa",
+        "admin2": {
+          "GTM-2101": "Jalapa",
+          "GTM-2102": "San Pedro Pinula",
+          "GTM-2103": "San Luis Jilotepeque",
+          "GTM-2104": "San Manuel Chaparrón",
+          "GTM-2105": "San Carlos Alzatate",
+          "GTM-2106": "Monjas",
+          "GTM-2107": "Mataquescuintla"
+        }
+      },
+      "22": {
+        "name": "Jutiapa",
+        "admin2": {
+          "GTM-2201": "Jutiapa",
+          "GTM-2202": "El Progreso",
+          "GTM-2203": "Santa Catarina Mita",
+          "GTM-2204": "Agua Blanca",
+          "GTM-2205": "Asunción Mita",
+          "GTM-2206": "Yupiltepeque",
+          "GTM-2207": "Atescatempa",
+          "GTM-2208": "Jerez",
+          "GTM-2209": "El Adelanto",
+          "GTM-2210": "Zapotitlán",
+          "GTM-2211": "Comapa",
+          "GTM-2212": "Jalpatagua",
+          "GTM-2213": "Conguaco",
+          "GTM-2214": "Moyuta",
+          "GTM-2215": "Pasaco",
+          "GTM-2216": "San José Acatempa",
+          "GTM-2217": "Quesada"
+        }
+      }
+    }
+  },
+  "HND": {
+    "name": "Honduras",
+    "admin1_type": "Departamento",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "1": {
+        "name": "Atlantida",
+        "admin2": {
+          "HND-0101": "La Ceiba",
+          "HND-0102": "El Porvenir",
+          "HND-0103": "Esparta",
+          "HND-0104": "Jutiapa",
+          "HND-0105": "La Masica",
+          "HND-0106": "San Francisco",
+          "HND-0107": "Tela",
+          "HND-0108": "Arizona"
+        }
+      },
+      "2": {
+        "name": "Colon",
+        "admin2": {
+          "HND-0201": "Trujillo",
+          "HND-0202": "Balfate",
+          "HND-0203": "Iriona",
+          "HND-0204": "Limon",
+          "HND-0205": "Saba",
+          "HND-0206": "Santa Fe",
+          "HND-0207": "Santa Rosa de Aguan",
+          "HND-0208": "Sonaguera",
+          "HND-0209": "Tocoa",
+          "HND-0210": "Bonito Oriental"
+        }
+      },
+      "3": {
+        "name": "Comayagua",
+        "admin2": {
+          "HND-0301": "Comayagua",
+          "HND-0302": "Ajuterique",
+          "HND-0303": "El Rosario",
+          "HND-0304": "Esquias",
+          "HND-0305": "Humuya",
+          "HND-0306": "La Libertad",
+          "HND-0307": "Lamani",
+          "HND-0308": "La Trinidad",
+          "HND-0309": "Lejamani",
+          "HND-0310": "Meambar",
+          "HND-0311": "Minas de Oro",
+          "HND-0312": "Ojos de Agua",
+          "HND-0313": "San Jerónimo",
+          "HND-0314": "San Jose de Comayagua",
+          "HND-0315": "San Jose del Potrero",
+          "HND-0316": "San Luis",
+          "HND-0317": "San Sebastian",
+          "HND-0318": "Siguatepeque",
+          "HND-0319": "Villa de San Antonio",
+          "HND-0320": "Las Lajas",
+          "HND-0321": "Taulabe"
+        }
+      },
+      "4": {
+        "name": "Copan",
+        "admin2": {
+          "HND-0401": "Santa Rosa de Copan",
+          "HND-0402": "Cabana",
+          "HND-0403": "Concepción",
+          "HND-0404": "Copan Ruinas",
+          "HND-0405": "Corquin",
+          "HND-0406": "Cucuyagua",
+          "HND-0407": "Dolores",
+          "HND-0408": "Dulce Nombre",
+          "HND-0409": "El Paraiso",
+          "HND-0410": "Florida",
+          "HND-0411": "La Jigua",
+          "HND-0412": "La Union",
+          "HND-0413": "Nueva Arcadia",
+          "HND-0414": "San Agustin",
+          "HND-0415": "San Antonio",
+          "HND-0416": "San Jeronimo",
+          "HND-0417": "San Jose",
+          "HND-0418": "San Juan de Opoa",
+          "HND-0419": "San Nicolas",
+          "HND-0420": "San Pedro",
+          "HND-0421": "Santa Rita",
+          "HND-0422": "Trinidad de Copan",
+          "HND-0423": "Veracruz"
+        }
+      },
+      "5": {
+        "name": "Cortes",
+        "admin2": {
+          "HND-0501": "San Pedro Sula",
+          "HND-0502": "Choloma",
+          "HND-0503": "Omoa",
+          "HND-0504": "Pimienta",
+          "HND-0505": "Potrerillos",
+          "HND-0506": "Puerto Cortes",
+          "HND-0507": "San Antonio de Cortes",
+          "HND-0508": "San Francisco de Yojoa",
+          "HND-0509": "San Manuel",
+          "HND-0510": "Santa Cruz de Yojoa",
+          "HND-0511": "Villanueva",
+          "HND-0512": "La Lima"
+        }
+      },
+      "6": {
+        "name": "Choluteca",
+        "admin2": {
+          "HND-0601": "Choluteca",
+          "HND-0602": "Apacilagua",
+          "HND-0603": "Concepcion de Maria",
+          "HND-0604": "Duyure",
+          "HND-0605": "El Corpus",
+          "HND-0606": "El Triunfo",
+          "HND-0607": "Marcovia",
+          "HND-0608": "Morolica",
+          "HND-0609": "Namasigue",
+          "HND-0610": "Orocuina",
+          "HND-0611": "Pespire",
+          "HND-0612": "San Antonio de Flores",
+          "HND-0613": "San Isidro",
+          "HND-0614": "San Jose",
+          "HND-0615": "San Marcos de Colon",
+          "HND-0616": "Santa Ana de Yusguare"
+        }
+      },
+      "7": {
+        "name": "El Paraiso",
+        "admin2": {
+          "HND-0701": "Yuscaran",
+          "HND-0702": "Alauca",
+          "HND-0703": "Danli",
+          "HND-0704": "El Paraiso",
+          "HND-0705": "Guinope",
+          "HND-0706": "Jacaleapa",
+          "HND-0707": "Liure",
+          "HND-0708": "Moroceli",
+          "HND-0709": "Oropoli",
+          "HND-0710": "Potrerillos",
+          "HND-0711": "San Antonio de Flores",
+          "HND-0712": "San Lucas",
+          "HND-0713": "San Matias",
+          "HND-0714": "Soledad",
+          "HND-0715": "Teupasenti",
+          "HND-0716": "Texiguat",
+          "HND-0717": "Vado Ancho",
+          "HND-0718": "Yauyupe",
+          "HND-0719": "Trojes"
+        }
+      },
+      "8": {
+        "name": "Francisco Morazan",
+        "admin2": {
+          "HND-0801": "Distrito Central",
+          "HND-0802": "Alubaren",
+          "HND-0803": "Cedros",
+          "HND-0804": "Curaren",
+          "HND-0805": "El Porvenir",
+          "HND-0806": "Guaimaca",
+          "HND-0807": "La Libertad",
+          "HND-0808": "La Venta",
+          "HND-0809": "Lepaterique",
+          "HND-0810": "Maraita",
+          "HND-0811": "Marale",
+          "HND-0812": "Nueva Armenia",
+          "HND-0813": "Ojojona",
+          "HND-0814": "Orica",
+          "HND-0815": "Reitoca",
+          "HND-0816": "Sabanagrande",
+          "HND-0817": "San Antonio de Oriente",
+          "HND-0818": "San Buenaventura",
+          "HND-0819": "San Ignacio",
+          "HND-0820": "San Juan de Flores",
+          "HND-0821": "San Miguelito",
+          "HND-0822": "Santa Ana",
+          "HND-0823": "Santa Lucia",
+          "HND-0824": "Talanga",
+          "HND-0825": "Tatumbla",
+          "HND-0826": "Valle de Angeles",
+          "HND-0827": "Villa de San Francisco",
+          "HND-0828": "Vallecillo"
+        }
+      },
+      "9": {
+        "name": "Gracias a Dios",
+        "admin2": {
+          "HND-0901": "Puerto Lempira",
+          "HND-0902": "Brus Laguna",
+          "HND-0903": "Ahuas",
+          "HND-0904": "Juan Francisco  Bulnes",
+          "HND-0905": "Ramón Villeda Morales",
+          "HND-0906": "Wampusirpi"
+        }
+      },
+      "10": {
+        "name": "Intibuca",
+        "admin2": {
+          "HND-1001": "La Esperanza",
+          "HND-1002": "Camasca",
+          "HND-1003": "Colomoncagua",
+          "HND-1004": "Concepcion",
+          "HND-1005": "Dolores",
+          "HND-1006": "Intibuca",
+          "HND-1007": "Jesus de Otoro",
+          "HND-1008": "Magdalena",
+          "HND-1009": "Masaguara",
+          "HND-1010": "San Antonio",
+          "HND-1011": "San Isidro",
+          "HND-1012": "San Juan",
+          "HND-1013": "San Marcos de Sierra",
+          "HND-1014": "San Miguelito",
+          "HND-1015": "Santa Lucia",
+          "HND-1016": "Yamaranguila",
+          "HND-1017": "San Francisco de Opalaca"
+        }
+      },
+      "11": {
+        "name": "Islas de La Bahia",
+        "admin2": {
+          "HND-1101": "Roatan",
+          "HND-1102": "Guanaja",
+          "HND-1103": "Jose Santos Guardiola",
+          "HND-1104": "Utila"
+        }
+      },
+      "12": {
+        "name": "La Paz",
+        "admin2": {
+          "HND-1201": "La Paz",
+          "HND-1202": "Aguanqueterique",
+          "HND-1203": "Cabanas",
+          "HND-1204": "Cane",
+          "HND-1205": "Chinacla",
+          "HND-1206": "Guajiquiro",
+          "HND-1207": "Lauterique",
+          "HND-1208": "Marcala",
+          "HND-1209": "Mercedes de Oriente",
+          "HND-1210": "Opatoro",
+          "HND-1211": "San Antonio del Norte",
+          "HND-1212": "San Jose",
+          "HND-1213": "San Juan",
+          "HND-1214": "San Pedro de Tutule",
+          "HND-1215": "Santa Ana",
+          "HND-1216": "Santa Elena",
+          "HND-1217": "Santa Maria",
+          "HND-1218": "Santiago de Puringla",
+          "HND-1219": "Yarula"
+        }
+      },
+      "13": {
+        "name": "Lempira",
+        "admin2": {
+          "HND-1301": "Gracias",
+          "HND-1302": "Belen",
+          "HND-1303": "Candelaria",
+          "HND-1304": "Cololaca",
+          "HND-1305": "Erandique",
+          "HND-1306": "Gualcince",
+          "HND-1307": "Guarita",
+          "HND-1308": "La Campa",
+          "HND-1309": "La Iguala",
+          "HND-1310": "Las Flores",
+          "HND-1311": "La Union",
+          "HND-1312": "La Virtud",
+          "HND-1313": "Lepaera",
+          "HND-1314": "Mapulaca",
+          "HND-1315": "Piraera",
+          "HND-1316": "San Andres",
+          "HND-1317": "San Francisco",
+          "HND-1318": "San Juan Guarita",
+          "HND-1319": "San Manuel Colohete",
+          "HND-1320": "San Rafael",
+          "HND-1321": "San Sebastian",
+          "HND-1322": "Santa Cruz",
+          "HND-1323": "Talgua",
+          "HND-1324": "Tambla",
+          "HND-1325": "Tomala",
+          "HND-1326": "Valladolid",
+          "HND-1327": "Virginia",
+          "HND-1328": "San Marcos de Caiquin"
+        }
+      },
+      "14": {
+        "name": "Ocotepeque",
+        "admin2": {
+          "HND-1401": "Ocotepeque",
+          "HND-1402": "Belen Gualcho",
+          "HND-1403": "Concepcion",
+          "HND-1404": "Dolores Merendon",
+          "HND-1405": "Fraternidad",
+          "HND-1406": "La Encarnacion",
+          "HND-1407": "La Labor",
+          "HND-1408": "Lucerna",
+          "HND-1409": "Mercedes",
+          "HND-1410": "San Fernando",
+          "HND-1411": "San Francisco del Valle",
+          "HND-1412": "San Jorge",
+          "HND-1413": "San Marcos",
+          "HND-1414": "Santa Fe",
+          "HND-1415": "Sensenti",
+          "HND-1416": "Sinuapa"
+        }
+      },
+      "15": {
+        "name": "Olancho",
+        "admin2": {
+          "HND-1501": "Juticalpa",
+          "HND-1502": "Campamento",
+          "HND-1503": "Catacamas",
+          "HND-1504": "Concordia",
+          "HND-1505": "Dulce Nombre de Culmi",
+          "HND-1506": "El Rosario",
+          "HND-1507": "Esquipulas del Norte",
+          "HND-1508": "Gualaco",
+          "HND-1509": "Guarizama",
+          "HND-1510": "Guata",
+          "HND-1511": "Guayape",
+          "HND-1512": "Jano",
+          "HND-1513": "La Union",
+          "HND-1514": "Mangulile",
+          "HND-1515": "Manto",
+          "HND-1516": "Salama",
+          "HND-1517": "San Esteban",
+          "HND-1518": "San Francisco de Becerra",
+          "HND-1519": "San Francisco de La Paz",
+          "HND-1520": "Santa Maria del Real",
+          "HND-1521": "Silca",
+          "HND-1522": "Yocon",
+          "HND-1523": "Patuca"
+        }
+      },
+      "16": {
+        "name": "Santa Barbara",
+        "admin2": {
+          "HND-1601": "Santa Barbara",
+          "HND-1602": "Arada",
+          "HND-1603": "Atima",
+          "HND-1604": "Azacualpa",
+          "HND-1605": "Ceguaca",
+          "HND-1606": "Concepcion del Norte",
+          "HND-1607": "Concepcion del Sur",
+          "HND-1608": "Chinda",
+          "HND-1609": "El Nispero",
+          "HND-1610": "Gualala",
+          "HND-1611": "Ilama",
+          "HND-1612": "Macuelizo",
+          "HND-1613": "Naranjito",
+          "HND-1614": "Nuevo Celilac",
+          "HND-1615": "Petoa",
+          "HND-1616": "Proteccion",
+          "HND-1617": "Quimistan",
+          "HND-1618": "San Francisco de Ojuera",
+          "HND-1619": "San Jose de Colinas",
+          "HND-1620": "San Luis",
+          "HND-1621": "San Marcos",
+          "HND-1622": "San Nicolas",
+          "HND-1623": "San Pedro Zacapa",
+          "HND-1624": "San Vicente Centenario",
+          "HND-1625": "Santa Rita",
+          "HND-1626": "Trinidad",
+          "HND-1627": "Las Vegas",
+          "HND-1628": "Nueva Frontera"
+        }
+      },
+      "17": {
+        "name": "Valle",
+        "admin2": {
+          "HND-1701": "Nacaome",
+          "HND-1702": "Alianza",
+          "HND-1703": "Amapala",
+          "HND-1704": "Aramecina",
+          "HND-1705": "Caridad",
+          "HND-1706": "Goascoran",
+          "HND-1707": "Langue",
+          "HND-1708": "San Francisco de Coray",
+          "HND-1709": "San Lorenzo"
+        }
+      },
+      "18": {
+        "name": "Yoro",
+        "admin2": {
+          "HND-1801": "Yoro",
+          "HND-1802": "Arenal",
+          "HND-1803": "El Negrito",
+          "HND-1804": "El Progreso",
+          "HND-1805": "Jocon",
+          "HND-1806": "Morazan",
+          "HND-1807": "Olanchito",
+          "HND-1808": "Santa Rita",
+          "HND-1809": "Sulaco",
+          "HND-1810": "Victoria",
+          "HND-1811": "Yorito"
+        }
+      }
+    }
+  },
+  "MEX": {
+    "name": "México",
+    "admin1_type": "Estado",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "4": {
+        "name": "Campeche",
+        "admin2": {
+          "MEX-04001": "Calkini",
+          "MEX-04002": "Campeche",
+          "MEX-04003": "Carmen",
+          "MEX-04004": "Champoten",
+          "MEX-04005": "Hecelchak",
+          "MEX-04006": "Hopelchan",
+          "MEX-04007": "Palizada",
+          "MEX-04008": "Tenabo",
+          "MEX-04009": "Esc0rcega",
+          "MEX-04010": "Calakmul",
+          "MEX-04011": "Candelaria"
+        }
+      },
+      "7": {
+        "name": "Chiapas",
+        "admin2": {
+          "MEX-07001": "Acacoyagua",
+          "MEX-07002": "Acala",
+          "MEX-07003": "Acapetahua",
+          "MEX-07004": "Altamirano",
+          "MEX-07005": "Amat5n",
+          "MEX-07006": "Amatenango de la Frontera",
+          "MEX-07007": "Amatenango del Valle",
+          "MEX-07008": "Angel Albino Corzo",
+          "MEX-07009": "Arriaga",
+          "MEX-07010": "Bejucal de Ocampo",
+          "MEX-07011": "Bella Vista",
+          "MEX-07012": "Berriozibal",
+          "MEX-07013": "Bochil",
+          "MEX-07014": "El Bosque",
+          "MEX-07015": "Cacahoaten",
+          "MEX-07016": "Catazajt",
+          "MEX-07017": "Cintalapa",
+          "MEX-07018": "Coapilla",
+          "MEX-07019": "Comit",
+          "MEX-07020": "La Concordia",
+          "MEX-07021": "Copainalr",
+          "MEX-07022": "Chalchihuitan",
+          "MEX-07023": "Chamula",
+          "MEX-07024": "Chanal",
+          "MEX-07025": "Chapultenango",
+          "MEX-07026": "Chenalhe",
+          "MEX-07027": "Chiapa de Corzo",
+          "MEX-07028": "Chiapilla",
+          "MEX-07029": "Chicoasln",
+          "MEX-07030": "Chicomuselo",
+          "MEX-07031": "Chil1n",
+          "MEX-07032": "Escuintla",
+          "MEX-07033": "Francisco Lern",
+          "MEX-07034": "Frontera Comalapa",
+          "MEX-07035": "Frontera Hidalgo",
+          "MEX-07036": "La Grandeza",
+          "MEX-07037": "Huehuetdn",
+          "MEX-07038": "Huixt",
+          "MEX-07039": "Huitiup",
+          "MEX-07040": "Huixtla",
+          "MEX-07041": "La Independencia",
+          "MEX-07042": "Ixhuaten",
+          "MEX-07043": "Ixtacomitnn",
+          "MEX-07044": "Ixtapa",
+          "MEX-07045": "Ixtapangajoya",
+          "MEX-07046": "Jiquipilas",
+          "MEX-07047": "Jitotol",
+          "MEX-07048": "Ju0rez",
+          "MEX-07049": "Larr9inzar",
+          "MEX-07050": "La Libertad",
+          "MEX-07051": "Mapastepec",
+          "MEX-07052": "Las Margaritas",
+          "MEX-07053": "Mazapa de Madero",
+          "MEX-07054": "Mazat",
+          "MEX-07055": "Metapa",
+          "MEX-07056": "Mitontic",
+          "MEX-07057": "Motozintla",
+          "MEX-07058": "Nicol",
+          "MEX-07059": "Ocosingo",
+          "MEX-07060": "Ocotepec",
+          "MEX-07061": "Ocozocoautla de Espinosa",
+          "MEX-07062": "Ostuacon",
+          "MEX-07063": "Osumacinta",
+          "MEX-07064": "Oxchuc",
+          "MEX-07065": "Palenque",
+          "MEX-07066": "Pantelhe",
+          "MEX-07067": "Pantepec",
+          "MEX-07068": "Pichucalco",
+          "MEX-07069": "Pijijiapan",
+          "MEX-07070": "El Porvenir",
+          "MEX-07071": "Villa Comaltitl n",
+          "MEX-07072": "Pueblo Nuevo Solistahuac",
+          "MEX-07073": "Ray7n",
+          "MEX-07074": "Reforma",
+          "MEX-07075": "Las Rosas",
+          "MEX-07076": "Sabanilla",
+          "MEX-07077": "Salto de Agua",
+          "MEX-07078": "San CristAbal de las Casas",
+          "MEX-07079": "San Fernando",
+          "MEX-07080": "Siltepec",
+          "MEX-07081": "Simojovel",
+          "MEX-07082": "Sital",
+          "MEX-07083": "Socoltenango",
+          "MEX-07084": "Solosuchiapa",
+          "MEX-07085": "Soyal",
+          "MEX-07086": "Suchiapa",
+          "MEX-07087": "Suchiate",
+          "MEX-07088": "Sunuapa",
+          "MEX-07089": "Tapachula",
+          "MEX-07090": "Tapalapa",
+          "MEX-07091": "Tapilula",
+          "MEX-07092": "Tecpatln",
+          "MEX-07093": "Tenejapa",
+          "MEX-07094": "Teopisca",
+          "MEX-07096": "Tila",
+          "MEX-07097": "Tonal",
+          "MEX-07098": "Totolapa",
+          "MEX-07099": "La Trinitaria",
+          "MEX-07100": "Tumbaln",
+          "MEX-07101": "Tuxtla Gutiirrez",
+          "MEX-07102": "Tuxtla Chico",
+          "MEX-07103": "Tuzant n",
+          "MEX-07104": "Tzimol",
+          "MEX-07105": "Uni0n Ju",
+          "MEX-07106": "Venustiano Carranza",
+          "MEX-07107": "Villa Corzo",
+          "MEX-07108": "Villaflores",
+          "MEX-07109": "Yajal",
+          "MEX-07110": "San Lucas",
+          "MEX-07111": "Zinacantsn",
+          "MEX-07112": "San Juan Cancuc",
+          "MEX-07113": "Aldama",
+          "MEX-07114": "Benem",
+          "MEX-07115": "Maravilla Tenejapa",
+          "MEX-07116": "Marqu",
+          "MEX-07117": "Montecristo de Guerrero",
+          "MEX-07118": "San Andrss Duraznal",
+          "MEX-07119": "Santiago el Pinar",
+          "MEX-07120": "Capit",
+          "MEX-07121": "Rinc1n Chamula San Pedro",
+          "MEX-07122": "El Parral",
+          "MEX-07123": "Emiliano Zapata",
+          "MEX-07124": "Mezcalapa"
+        }
+      },
+      "23": {
+        "name": "Quintana Roo",
+        "admin2": {
+          "MEX-23001": "Cozumel",
+          "MEX-23002": "Felipe Carrillo Puerto",
+          "MEX-23003": "Isla Mujeres",
+          "MEX-23004": "Oth0n P. Blanco",
+          "MEX-23005": "Benito JuBrez",
+          "MEX-23006": "Jos0 Marua Morelos",
+          "MEX-23007": "L3zaro Curdenas",
+          "MEX-23008": "Solidaridad",
+          "MEX-23009": "Tulum",
+          "MEX-23010": "Bacalar",
+          "MEX-23011": "Puerto Morelos"
+        }
+      },
+      "27": {
+        "name": "Tabasco",
+        "admin2": {
+          "MEX-27001": "Balancen",
+          "MEX-27002": "C7rdenas",
+          "MEX-27003": "Centla",
+          "MEX-27004": "Centro",
+          "MEX-27005": "Comalcalco",
+          "MEX-27006": "Cunduacln",
+          "MEX-27007": "Emiliano Zapata",
+          "MEX-27008": "Huimanguillo",
+          "MEX-27009": "Jalapa",
+          "MEX-27010": "Jalpa de Mandez",
+          "MEX-27011": "Jonuta",
+          "MEX-27012": "Macuspana",
+          "MEX-27013": "Nacajuca",
+          "MEX-27014": "Para4so",
+          "MEX-27015": "Tacotalpa",
+          "MEX-27016": "Teapa",
+          "MEX-27017": "Tenosique"
+        }
+      },
+      "31": {
+        "name": "Yucatán",
+        "admin2": {
+          "MEX-31001": "Abal1",
+          "MEX-31002": "Acanceh",
+          "MEX-31003": "Akil",
+          "MEX-31004": "Baca",
+          "MEX-31005": "Bokob",
+          "MEX-31006": "Buctzotz",
+          "MEX-31007": "Cacalchzn",
+          "MEX-31008": "Calotmul",
+          "MEX-31009": "Cansahcab",
+          "MEX-31010": "Cantamayec",
+          "MEX-31011": "Celestan",
+          "MEX-31012": "Cenotillo",
+          "MEX-31013": "Conkal",
+          "MEX-31014": "Cuncunul",
+          "MEX-31015": "Cuzam",
+          "MEX-31016": "Chacsink",
+          "MEX-31017": "Chankom",
+          "MEX-31018": "Chapab",
+          "MEX-31019": "Chemax",
+          "MEX-31020": "Chicxulub Pueblo",
+          "MEX-31021": "Chichimil",
+          "MEX-31022": "Chikindzonot",
+          "MEX-31023": "Chocholz",
+          "MEX-31024": "Chumayel",
+          "MEX-31025": "Dz0n",
+          "MEX-31026": "Dzemul",
+          "MEX-31027": "Dzidzant",
+          "MEX-31028": "Dzilam de Bravo",
+          "MEX-31029": "Dzilam Gonzrlez",
+          "MEX-31030": "Dzit0s",
+          "MEX-31031": "Dzoncauich",
+          "MEX-31032": "Espita",
+          "MEX-31033": "Halach",
+          "MEX-31034": "Hocab",
+          "MEX-31035": "Hoct5n",
+          "MEX-31036": "Hom3n",
+          "MEX-31037": "Huh3",
+          "MEX-31038": "Hunucm",
+          "MEX-31039": "Ixil",
+          "MEX-31040": "Izamal",
+          "MEX-31041": "Kanas",
+          "MEX-31042": "Kantunil",
+          "MEX-31043": "Kaua",
+          "MEX-31044": "Kinchil",
+          "MEX-31045": "Kopom",
+          "MEX-31046": "Mama",
+          "MEX-31047": "Man4",
+          "MEX-31048": "Maxcan",
+          "MEX-31049": "Mayap",
+          "MEX-31050": "M1rida",
+          "MEX-31051": "Mococh",
+          "MEX-31052": "Motul",
+          "MEX-31053": "Muna",
+          "MEX-31054": "Muxupip",
+          "MEX-31055": "Opich",
+          "MEX-31056": "Oxkutzcab",
+          "MEX-31057": "Panab",
+          "MEX-31058": "Peto",
+          "MEX-31059": "Progreso",
+          "MEX-31060": "Quintana Roo",
+          "MEX-31061": "R1o Lagartos",
+          "MEX-31062": "Sacalum",
+          "MEX-31063": "Samahil",
+          "MEX-31064": "Sanahcat",
+          "MEX-31065": "San Felipe",
+          "MEX-31066": "Santa Elena",
+          "MEX-31067": "Sey6",
+          "MEX-31068": "Sinanchl",
+          "MEX-31069": "Sotuta",
+          "MEX-31070": "Sucil",
+          "MEX-31071": "Sudzal",
+          "MEX-31072": "Suma",
+          "MEX-31073": "Tahdzi",
+          "MEX-31074": "Tahmek",
+          "MEX-31075": "Teabo",
+          "MEX-31076": "Tecoh",
+          "MEX-31077": "Tekal de Venegas",
+          "MEX-31078": "Tekantd",
+          "MEX-31079": "Tekax",
+          "MEX-31080": "Tekit",
+          "MEX-31081": "Tekom",
+          "MEX-31082": "Telchac Pueblo",
+          "MEX-31083": "Telchac Puerto",
+          "MEX-31084": "Temax",
+          "MEX-31085": "Temoz",
+          "MEX-31086": "Tepak",
+          "MEX-31087": "Tetiz",
+          "MEX-31088": "Teya",
+          "MEX-31089": "Ticul",
+          "MEX-31090": "Timucuy",
+          "MEX-31091": "Tinum",
+          "MEX-31092": "Tixcacalcupul",
+          "MEX-31093": "Tixkokob",
+          "MEX-31094": "Tixmehuac",
+          "MEX-31095": "Tixp5hual",
+          "MEX-31096": "Tizim",
+          "MEX-31097": "Tunk7s",
+          "MEX-31098": "Tzucacab",
+          "MEX-31099": "Uayma",
+          "MEX-31100": "Uc1",
+          "MEX-31101": "Um1n",
+          "MEX-31102": "Valladolid",
+          "MEX-31103": "Xocchel",
+          "MEX-31104": "Yaxcabl",
+          "MEX-31105": "Yaxkukul",
+          "MEX-31106": "Yoba6n"
+        }
+      }
+    }
+  },
+  "NIC": {
+    "name": "Nicaragua",
+    "admin1_type": "Departamento",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "5": {
+        "name": "Nueva Segovia",
+        "admin2": {
+          "NIC-0505": "Jalapa",
+          "NIC-0510": "Murra",
+          "NIC-0515": "El Jícaro",
+          "NIC-0520": "San Fernando",
+          "NIC-0525": "Mosonte",
+          "NIC-0530": "Dipilto",
+          "NIC-0535": "Macuelizo",
+          "NIC-0540": "Santa María",
+          "NIC-0545": "Ocotal",
+          "NIC-0550": "Ciudad Antigua",
+          "NIC-0555": "Quilalí",
+          "NIC-0560": "Wiwilí de Nueva Segovia"
+        }
+      },
+      "10": {
+        "name": "Jinotega",
+        "admin2": {
+          "NIC-1005": "Wiwilí de Jinotega",
+          "NIC-1010": "El Cuá",
+          "NIC-1012": "San José de Bocay",
+          "NIC-1015": "Santa María de Pantasma",
+          "NIC-1020": "San Rafael del Norte",
+          "NIC-1025": "San Sebastián de Yalí",
+          "NIC-1030": "La Concordia",
+          "NIC-1035": "Jinotega"
+        }
+      },
+      "20": {
+        "name": "Madriz",
+        "admin2": {
+          "NIC-2005": "Somoto",
+          "NIC-2010": "Totogalpa",
+          "NIC-2015": "Telpaneca",
+          "NIC-2020": "San Juan del Río Coco",
+          "NIC-2025": "Palacagüina",
+          "NIC-2030": "Yalagüina",
+          "NIC-2035": "San Lucas",
+          "NIC-2040": "Las Sabanas",
+          "NIC-2045": "San José de Cusmapa"
+        }
+      },
+      "25": {
+        "name": "Estelí",
+        "admin2": {
+          "NIC-2505": "Pueblo Nuevo",
+          "NIC-2510": "Condega",
+          "NIC-2515": "Estelí",
+          "NIC-2520": "San Juan de Limay",
+          "NIC-2525": "La Trinidad",
+          "NIC-2530": "San Nicolás"
+        }
+      },
+      "30": {
+        "name": "Chinandega",
+        "admin2": {
+          "NIC-3005": "San Pedro del Norte",
+          "NIC-3010": "San Francisco del Norte",
+          "NIC-3015": "Cinco Pinos",
+          "NIC-3020": "Santo Tomás del Norte",
+          "NIC-3025": "El Viejo",
+          "NIC-3030": "Puerto Morazán",
+          "NIC-3035": "Somotillo",
+          "NIC-3040": "Villanueva",
+          "NIC-3045": "Chinandega",
+          "NIC-3050": "El Realejo",
+          "NIC-3055": "Corinto",
+          "NIC-3060": "Chichigalpa",
+          "NIC-3065": "Posoltega"
+        }
+      },
+      "35": {
+        "name": "León",
+        "admin2": {
+          "NIC-3505": "Achuapa",
+          "NIC-3510": "El Sauce",
+          "NIC-3515": "Santa Rosa del Peñón",
+          "NIC-3520": "El Jicaral",
+          "NIC-3525": "Larreynaga",
+          "NIC-3530": "Telica",
+          "NIC-3535": "Quezalguaque",
+          "NIC-3540": "León",
+          "NIC-3545": "La Paz Centro",
+          "NIC-3550": "Nagarote"
+        }
+      },
+      "40": {
+        "name": "Matagalpa",
+        "admin2": {
+          "NIC-4005": "Rancho Grande",
+          "NIC-4010": "Río Blanco",
+          "NIC-4015": "Tuma - La Dalia",
+          "NIC-4020": "San Isidro",
+          "NIC-4025": "Sébaco",
+          "NIC-4030": "Matagalpa",
+          "NIC-4035": "San Ramón",
+          "NIC-4040": "Matiguás",
+          "NIC-4045": "Muy Muy",
+          "NIC-4050": "Esquipulas",
+          "NIC-4055": "San Dionisio",
+          "NIC-4060": "Terrabona",
+          "NIC-4065": "Ciudad Darío"
+        }
+      },
+      "50": {
+        "name": "Boaco",
+        "admin2": {
+          "NIC-5005": "San José de Los Remates",
+          "NIC-5010": "Boaco",
+          "NIC-5015": "Camoapa",
+          "NIC-5020": "Santa Lucía",
+          "NIC-5025": "Teustepe",
+          "NIC-5030": "San Lorenzo"
+        }
+      },
+      "55": {
+        "name": "Managua",
+        "admin2": {
+          "NIC-5505": "San Francisco Libre",
+          "NIC-5510": "Tipitapa",
+          "NIC-5515": "Mateare",
+          "NIC-5520": "Villa El Carmen",
+          "NIC-5522": "Ciudad Sandino",
+          "NIC-5525": "Managua",
+          "NIC-5530": "Ticuantepe",
+          "NIC-5532": "El Crucero",
+          "NIC-5535": "San Rafael del Sur"
+        }
+      },
+      "60": {
+        "name": "Masaya",
+        "admin2": {
+          "NIC-6005": "Nindirí",
+          "NIC-6010": "Masaya",
+          "NIC-6015": "Tisma",
+          "NIC-6020": "La Concepción",
+          "NIC-6025": "Masatepe",
+          "NIC-6030": "Nandasmo",
+          "NIC-6035": "Catarina",
+          "NIC-6040": "San Juan de Oriente",
+          "NIC-6045": "Niquinohomo"
+        }
+      },
+      "65": {
+        "name": "Chontales",
+        "admin2": {
+          "NIC-6505": "Comalapa",
+          "NIC-6507": "San Francisco de Cuapa",
+          "NIC-6510": "Juigalpa",
+          "NIC-6515": "La Libertad",
+          "NIC-6520": "Santo Domingo",
+          "NIC-6525": "Santo Tomás",
+          "NIC-6530": "San Pedro de Lóvago",
+          "NIC-6535": "Acoyapa",
+          "NIC-6540": "Villa Sandino",
+          "NIC-6545": "El Coral"
+        }
+      },
+      "70": {
+        "name": "Granada",
+        "admin2": {
+          "NIC-7005": "Diriá",
+          "NIC-7010": "Diriomo",
+          "NIC-7015": "Granada",
+          "NIC-7020": "Nandaime"
+        }
+      },
+      "75": {
+        "name": "Carazo",
+        "admin2": {
+          "NIC-7505": "San Marcos",
+          "NIC-7510": "Jinotepe",
+          "NIC-7515": "Dolores",
+          "NIC-7520": "Diriamba",
+          "NIC-7525": "El Rosario",
+          "NIC-7530": "La Paz de Carazo",
+          "NIC-7535": "Santa Teresa",
+          "NIC-7540": "La Conquista"
+        }
+      },
+      "80": {
+        "name": "Rivas",
+        "admin2": {
+          "NIC-8005": "Tola",
+          "NIC-8010": "Belén",
+          "NIC-8015": "Potosí",
+          "NIC-8020": "Buenos Aires",
+          "NIC-8025": "Moyogalpa",
+          "NIC-8030": "Altagracia",
+          "NIC-8035": "San Jorge",
+          "NIC-8040": "Rivas",
+          "NIC-8045": "San Juan del Sur",
+          "NIC-8050": "Cárdenas"
+        }
+      },
+      "85": {
+        "name": "Río San Juan",
+        "admin2": {
+          "NIC-8505": "Morrito",
+          "NIC-8510": "El Almendro",
+          "NIC-8515": "San Miguelito",
+          "NIC-8520": "San Carlos",
+          "NIC-8525": "El Castillo",
+          "NIC-8530": "San Juan de Nicaragua"
+        }
+      },
+      "91": {
+        "name": "Región Autónoma de la Costa Caribe Norte",
+        "admin2": {
+          "NIC-9105": "Waspam",
+          "NIC-9110": "Puerto Cabezas",
+          "NIC-9115": "Rosita",
+          "NIC-9120": "Bonanza",
+          "NIC-9125": "Mulukukú",
+          "NIC-9127": "Waslala",
+          "NIC-9130": "Siuna",
+          "NIC-9135": "Prinzapolka"
+        }
+      },
+      "93": {
+        "name": "Región Autónoma de la Costa Caribe Sur",
+        "admin2": {
+          "NIC-9305": "Paiwas",
+          "NIC-9310": "La Cruz de Río Grande",
+          "NIC-9312": "Desembocadura de Río Grande",
+          "NIC-9315": "Laguna de Perlas",
+          "NIC-9316": "El Tortuguero",
+          "NIC-9320": "El Rama",
+          "NIC-9323": "El Ayote",
+          "NIC-9325": "Muelle de Los Bueyes",
+          "NIC-9330": "Kukrahill",
+          "NIC-9335": "Corn Island",
+          "NIC-9340": "Bluefields",
+          "NIC-9345": "Nueva Guinea"
+        }
+      }
+    }
+  },
+  "PAN": {
+    "name": "Panamá",
+    "admin1_type": "Provincia",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "1": {
+        "name": "Bocas del Toro",
+        "admin2": {
+          "PAN-0101": "Bocas del Toro",
+          "PAN-0102": "Changuinola",
+          "PAN-0103": "Chiriquí Grande",
+          "PAN-0104": "Almirante"
+        }
+      },
+      "2": {
+        "name": "Coclé",
+        "admin2": {
+          "PAN-0201": "Aguadulce",
+          "PAN-0202": "Antón",
+          "PAN-0203": "La Pintada",
+          "PAN-0204": "Natá",
+          "PAN-0205": "Olá",
+          "PAN-0206": "Penonomé"
+        }
+      },
+      "3": {
+        "name": "Colón",
+        "admin2": {
+          "PAN-0301": "Colón",
+          "PAN-0302": "Chagres",
+          "PAN-0303": "Donoso",
+          "PAN-0304": "Portobelo",
+          "PAN-0305": "Santa Isabel",
+          "PAN-0306": "Omar Torrijos Herrera"
+        }
+      },
+      "4": {
+        "name": "Chiriquí",
+        "admin2": {
+          "PAN-0401": "Alanje",
+          "PAN-0402": "Barú",
+          "PAN-0403": "Boquerón",
+          "PAN-0404": "Boquete",
+          "PAN-0405": "Bugaba",
+          "PAN-0406": "David",
+          "PAN-0407": "Dolega",
+          "PAN-0408": "Gualaca",
+          "PAN-0409": "Remedios",
+          "PAN-0410": "Renacimiento",
+          "PAN-0411": "San Félix",
+          "PAN-0412": "San Lorenzo",
+          "PAN-0413": "Tolé",
+          "PAN-0414": "Tierras Altas"
+        }
+      },
+      "5": {
+        "name": "Darién",
+        "admin2": {
+          "PAN-0501": "Chepigana",
+          "PAN-0502": "Pinogana",
+          "PAN-0503": "Santa Fe"
+        }
+      },
+      "6": {
+        "name": "Herrera",
+        "admin2": {
+          "PAN-0601": "Chitré",
+          "PAN-0602": "Las Minas",
+          "PAN-0603": "Los Pozos",
+          "PAN-0604": "Ocú",
+          "PAN-0605": "Parita",
+          "PAN-0606": "Pesé",
+          "PAN-0607": "Santa María"
+        }
+      },
+      "7": {
+        "name": "Los Santos",
+        "admin2": {
+          "PAN-0701": "Guararé",
+          "PAN-0702": "Las Tablas",
+          "PAN-0703": "Los Santos",
+          "PAN-0704": "Macaracas",
+          "PAN-0705": "Pedasí",
+          "PAN-0706": "Pocrí",
+          "PAN-0707": "Tonosí"
+        }
+      },
+      "8": {
+        "name": "Panamá",
+        "admin2": {
+          "PAN-0802": "Balboa",
+          "PAN-0805": "Chepo",
+          "PAN-0806": "Chimán",
+          "PAN-0808": "Panamá",
+          "PAN-0810": "San Miguelito",
+          "PAN-0811": "Taboga"
+        }
+      },
+      "9": {
+        "name": "Veraguas",
+        "admin2": {
+          "PAN-0901": "Atalaya",
+          "PAN-0902": "Calobre",
+          "PAN-0903": "Cañazas",
+          "PAN-0904": "La Mesa",
+          "PAN-0905": "Las Palmas",
+          "PAN-0906": "Montijo",
+          "PAN-0907": "Río de Jesús",
+          "PAN-0908": "San Francisco",
+          "PAN-0909": "Santa Fe",
+          "PAN-0910": "Santiago",
+          "PAN-0911": "Soná",
+          "PAN-0912": "Mariato"
+        }
+      },
+      "10": {
+        "name": "Comarca Kuna Yala",
+        "admin2": {
+          "PAN-1001": "Comarca Kuna Yala"
+        }
+      },
+      "11": {
+        "name": "Comarca Emberá Wounaán",
+        "admin2": {
+          "PAN-1101": "Cémaco",
+          "PAN-1102": "Sambú"
+        }
+      },
+      "12": {
+        "name": "Comarca Ngäbe Buglé",
+        "admin2": {
+          "PAN-1201": "Besiko",
+          "PAN-1202": "Mironó",
+          "PAN-1203": "Müna",
+          "PAN-1204": "Nole Duima",
+          "PAN-1205": "Ñürün",
+          "PAN-1206": "Kankintú",
+          "PAN-1207": "Kusapín",
+          "PAN-1208": "Jirondai",
+          "PAN-1209": "Santa Catalina o Calovébora"
+        }
+      },
+      "13": {
+        "name": "Panamá Oeste",
+        "admin2": {
+          "PAN-1301": "Arraiján",
+          "PAN-1303": "Capira",
+          "PAN-1304": "Chame",
+          "PAN-1307": "La Chorrera",
+          "PAN-1309": "San Carlos"
+        }
+      }
+    }
+  },
+  "SLV": {
+    "name": "El Salvador",
+    "admin1_type": "Departamento",
+    "admin2_type": "Municipio",
+    "admin1": {
+      "1": {
+        "name": "AHUACHAPAN",
+        "admin2": {
+          "SLV-0101": "AHUACHAPAN",
+          "SLV-0102": "APANECA",
+          "SLV-0103": "ATIQUIZAYA",
+          "SLV-0104": "CONCEPCION DE ATACO",
+          "SLV-0105": "EL REFUGIO",
+          "SLV-0106": "GUAYMANGO",
+          "SLV-0107": "JUJUTLA",
+          "SLV-0108": "SAN FRANCISCO MENENDEZ",
+          "SLV-0109": "SAN LORENZO",
+          "SLV-0110": "SAN PEDRO PUXTLA",
+          "SLV-0111": "TACUBA",
+          "SLV-0112": "TURIN"
+        }
+      },
+      "2": {
+        "name": "SANTA ANA",
+        "admin2": {
+          "SLV-0201": "CANDELARIA DE LA FRONTERA",
+          "SLV-0202": "COATEPEQUE",
+          "SLV-0203": "CHALCHUAPA",
+          "SLV-0204": "EL CONGO",
+          "SLV-0205": "EL PORVENIR",
+          "SLV-0206": "MASAHUAT",
+          "SLV-0207": "METAPAN",
+          "SLV-0208": "SAN ANTONIO PAJONAL",
+          "SLV-0209": "SAN SEBASTIAN SALITRILLO",
+          "SLV-0210": "SANTA ANA",
+          "SLV-0211": "SANTA ROSA GUACHIPILIN",
+          "SLV-0212": "SANTIAGO DE LA FRONTERA",
+          "SLV-0213": "TEXISTEPEQUE"
+        }
+      },
+      "3": {
+        "name": "SONSONATE",
+        "admin2": {
+          "SLV-0301": "ACAJUTLA",
+          "SLV-0302": "ARMENIA",
+          "SLV-0303": "CALUCO",
+          "SLV-0304": "CUISNAHUAT",
+          "SLV-0305": "SANTA ISABEL ISHUATAN",
+          "SLV-0306": "IZALCO",
+          "SLV-0307": "JUAYUA",
+          "SLV-0308": "NAHUIZALCO",
+          "SLV-0309": "NAHULINGO",
+          "SLV-0310": "SALCOATITAN",
+          "SLV-0311": "SAN ANTONIO DEL MONTE",
+          "SLV-0312": "SAN JULIAN",
+          "SLV-0313": "SANTA CATARINA MASAHUAT",
+          "SLV-0314": "SANTO DOMINGO DE GUZMAN",
+          "SLV-0315": "SONSONATE",
+          "SLV-0316": "SONZACATE"
+        }
+      },
+      "4": {
+        "name": "CHALATENANGO",
+        "admin2": {
+          "SLV-0401": "AGUA CALIENTE",
+          "SLV-0402": "ARCATAO",
+          "SLV-0403": "AZACUALPA",
+          "SLV-0404": "CITALA",
+          "SLV-0405": "COMALAPA",
+          "SLV-0406": "CONCEPCION QUEZALTEPEQUE",
+          "SLV-0407": "CHALATENANGO",
+          "SLV-0408": "DULCE NOMBRE DE MARIA",
+          "SLV-0409": "EL CARRIZAL",
+          "SLV-0410": "EL PARAISO",
+          "SLV-0411": "LA LAGUNA",
+          "SLV-0412": "LA PALMA",
+          "SLV-0413": "LA REINA",
+          "SLV-0414": "LAS VUELTAS",
+          "SLV-0415": "NOMBRE DE JESUS",
+          "SLV-0416": "NUEVA CONCEPCION",
+          "SLV-0417": "NUEVA TRINIDAD",
+          "SLV-0418": "OJOS DE AGUA",
+          "SLV-0419": "POTONICO",
+          "SLV-0420": "SAN ANTONIO DE LA CRUZ",
+          "SLV-0421": "SAN ANTONIO LOS RANCHOS",
+          "SLV-0422": "SAN FERNANDO",
+          "SLV-0423": "SAN FRANCISCO LEMPA",
+          "SLV-0424": "SAN FRANCISCO MORAZAN",
+          "SLV-0425": "SAN IGNACIO",
+          "SLV-0426": "SAN ISIDRO LABRADOR",
+          "SLV-0427": "CANCASQUE",
+          "SLV-0428": "LAS FLORES",
+          "SLV-0429": "SAN LUIS DEL CARMEN",
+          "SLV-0430": "SAN MIGUEL DE MERCEDES",
+          "SLV-0431": "SAN RAFAEL",
+          "SLV-0432": "SANTA RITA",
+          "SLV-0433": "TEJUTLA"
+        }
+      },
+      "5": {
+        "name": "LA LIBERTAD",
+        "admin2": {
+          "SLV-0501": "ANTIGUO CUSCATLAN",
+          "SLV-0502": "CIUDAD ARCE",
+          "SLV-0503": "COLON",
+          "SLV-0504": "COMASAGUA",
+          "SLV-0505": "CHILTIUPAN",
+          "SLV-0506": "HUIZUCAR",
+          "SLV-0507": "JAYAQUE",
+          "SLV-0508": "JICALAPA",
+          "SLV-0509": "LA LIBERTAD",
+          "SLV-0510": "NUEVO CUSCATLAN",
+          "SLV-0511": "SANTA TECLA",
+          "SLV-0512": "QUEZALTEPEQUE",
+          "SLV-0513": "SACACOYO",
+          "SLV-0514": "SAN JOSE VILLANUEVA",
+          "SLV-0515": "SAN JUAN OPICO",
+          "SLV-0516": "SAN MATIAS",
+          "SLV-0517": "SAN PABLO TACACHICO",
+          "SLV-0518": "TAMANIQUE",
+          "SLV-0519": "TALNIQUE",
+          "SLV-0520": "TEOTEPEQUE",
+          "SLV-0521": "TEPECOYO",
+          "SLV-0522": "ZARAGOZA"
+        }
+      },
+      "6": {
+        "name": "SAN SALVADOR",
+        "admin2": {
+          "SLV-0601": "AGUILARES",
+          "SLV-0602": "APOPA",
+          "SLV-0603": "AYUTUXTEPEQUE",
+          "SLV-0604": "CUSCATANCINGO",
+          "SLV-0605": "EL PAISNAL",
+          "SLV-0606": "GUAZAPA",
+          "SLV-0607": "ILOPANGO",
+          "SLV-0608": "MEJICANOS",
+          "SLV-0609": "NEJAPA",
+          "SLV-0610": "PANCHIMALCO",
+          "SLV-0611": "ROSARIO DE MORA",
+          "SLV-0612": "SAN MARCOS",
+          "SLV-0613": "SAN MARTIN",
+          "SLV-0614": "SAN SALVADOR",
+          "SLV-0615": "SANTIAGO TEXACUANGOS",
+          "SLV-0616": "SANTO TOMAS",
+          "SLV-0617": "SOYAPANGO",
+          "SLV-0618": "TONACATEPEQUE",
+          "SLV-0619": "DELGADO"
+        }
+      },
+      "7": {
+        "name": "CUSCATLAN",
+        "admin2": {
+          "SLV-0701": "CANDELARIA",
+          "SLV-0702": "COJUTEPEQUE",
+          "SLV-0703": "EL CARMEN",
+          "SLV-0704": "EL ROSARIO",
+          "SLV-0705": "MONTE SAN JUAN",
+          "SLV-0706": "ORATORIO DE CONCEPCION",
+          "SLV-0707": "SAN BARTOLOME PERULAPIA",
+          "SLV-0708": "SAN CRISTOBAL",
+          "SLV-0709": "SAN JOSE GUAYABAL",
+          "SLV-0710": "SAN PEDRO PERULAPAN",
+          "SLV-0711": "SAN RAFAEL CEDROS",
+          "SLV-0712": "SAN RAMON",
+          "SLV-0713": "SANTA CRUZ ANALQUITO",
+          "SLV-0714": "SANTA CRUZ MICHAPA",
+          "SLV-0715": "SUCHITOTO",
+          "SLV-0716": "TENANCINGO"
+        }
+      },
+      "8": {
+        "name": "LA PAZ",
+        "admin2": {
+          "SLV-0801": "CUYULTITAN",
+          "SLV-0802": "EL ROSARIO",
+          "SLV-0803": "JERUSALEN",
+          "SLV-0804": "MERCEDES LA CEIBA",
+          "SLV-0805": "OLOCUILTA",
+          "SLV-0806": "PARAISO DE OSORIO",
+          "SLV-0807": "SAN ANTONIO MASAHUAT",
+          "SLV-0808": "SAN EMIGDIO",
+          "SLV-0809": "SAN FRANCISCO CHINAMECA",
+          "SLV-0810": "SAN JUAN NONUALCO",
+          "SLV-0811": "SAN JUAN TALPA",
+          "SLV-0812": "SAN JUAN TEPEZONTES",
+          "SLV-0813": "SAN LUIS TALPA",
+          "SLV-0814": "SAN MIGUEL TEPEZONTES",
+          "SLV-0815": "SAN PEDRO MASAHUAT",
+          "SLV-0816": "SAN PEDRO NONUALCO",
+          "SLV-0817": "SAN RAFAEL OBRAJUELO",
+          "SLV-0818": "SANTA MARIA OSTUMA",
+          "SLV-0819": "SANTIAGO NONUALCO",
+          "SLV-0820": "TAPALHUACA",
+          "SLV-0821": "ZACATECOLUCA",
+          "SLV-0822": "SAN LUIS LA HERRADURA"
+        }
+      },
+      "9": {
+        "name": "CABANAS",
+        "admin2": {
+          "SLV-0901": "CINQUERA",
+          "SLV-0902": "GUACOTECTI",
+          "SLV-0903": "ILOBASCO",
+          "SLV-0904": "JUTIAPA",
+          "SLV-0905": "SAN ISIDRO",
+          "SLV-0906": "SENSUNTEPEQUE",
+          "SLV-0907": "TEJUTEPEQUE",
+          "SLV-0908": "VICTORIA",
+          "SLV-0909": "DOLORES"
+        }
+      },
+      "10": {
+        "name": "SAN VICENTE",
+        "admin2": {
+          "SLV-1001": "APASTEPEQUE",
+          "SLV-1002": "GUADALUPE",
+          "SLV-1003": "SAN CAYETANO ISTEPEQUE",
+          "SLV-1004": "SANTA CLARA",
+          "SLV-1005": "SANTO DOMINGO",
+          "SLV-1006": "SAN ESTEBAN CATARINA",
+          "SLV-1007": "SAN ILDEFONSO",
+          "SLV-1008": "SAN LORENZO",
+          "SLV-1009": "SAN SEBASTIAN",
+          "SLV-1010": "SAN VICENTE",
+          "SLV-1011": "TECOLUCA",
+          "SLV-1012": "TEPETITAN",
+          "SLV-1013": "VERAPAZ"
+        }
+      },
+      "11": {
+        "name": "USULUTAN",
+        "admin2": {
+          "SLV-1101": "ALEGRIA",
+          "SLV-1102": "BERLIN",
+          "SLV-1103": "CALIFORNIA",
+          "SLV-1104": "CONCEPCION BATRES",
+          "SLV-1105": "EL TRIUNFO",
+          "SLV-1106": "EREGUAYQUIN",
+          "SLV-1107": "ESTANZUELAS",
+          "SLV-1108": "JIQUILISCO",
+          "SLV-1109": "JUCUAPA",
+          "SLV-1110": "JUCUARAN",
+          "SLV-1111": "MERCEDES UMANA",
+          "SLV-1112": "NUEVA GRANADA",
+          "SLV-1113": "OZATLAN",
+          "SLV-1114": "PUERTO EL TRIUNFO",
+          "SLV-1115": "SAN AGUSTIN",
+          "SLV-1116": "SAN BUENA VENTURA",
+          "SLV-1117": "SAN DIONISIO",
+          "SLV-1118": "SANTA ELENA",
+          "SLV-1119": "SAN FRANCISCO JAVIER",
+          "SLV-1120": "SANTA MARIA",
+          "SLV-1121": "SANTIAGO DE MARIA",
+          "SLV-1122": "TECAPAN",
+          "SLV-1123": "USULUTAN"
+        }
+      },
+      "12": {
+        "name": "SAN MIGUEL",
+        "admin2": {
+          "SLV-1201": "CAROLINA",
+          "SLV-1202": "CIUDAD BARRIOS",
+          "SLV-1203": "COMACARAN",
+          "SLV-1204": "CHAPELTIQUE",
+          "SLV-1205": "CHINAMECA",
+          "SLV-1206": "CHIRILAGUA",
+          "SLV-1207": "EL TRANSITO",
+          "SLV-1208": "LOLOTIQUE",
+          "SLV-1209": "MONCAGUA",
+          "SLV-1210": "NUEVA GUADALUPE",
+          "SLV-1211": "NUEVO EDEN DE SAN JUAN",
+          "SLV-1212": "QUELEPA",
+          "SLV-1213": "SAN ANTONIO",
+          "SLV-1214": "SAN GERARDO",
+          "SLV-1215": "SAN JORGE",
+          "SLV-1216": "SAN LUIS DE LA REINA",
+          "SLV-1217": "SAN MIGUEL",
+          "SLV-1218": "SAN RAFAEL ORIENTE",
+          "SLV-1219": "SESORI",
+          "SLV-1220": "ULUAZAPA"
+        }
+      },
+      "13": {
+        "name": "MORAZAN",
+        "admin2": {
+          "SLV-1301": "ARAMBALA",
+          "SLV-1302": "CACAOPERA",
+          "SLV-1303": "CORINTO",
+          "SLV-1304": "CHILANGA",
+          "SLV-1305": "DELICIAS DE CONCEPCION",
+          "SLV-1306": "EL DIVISADERO",
+          "SLV-1307": "EL ROSARIO",
+          "SLV-1308": "GUALOCOCTI",
+          "SLV-1309": "GUATAJIAGUA",
+          "SLV-1310": "JOATECA",
+          "SLV-1311": "JOCOAITIQUE",
+          "SLV-1312": "JOCORO",
+          "SLV-1313": "LOLOTIQUILLO",
+          "SLV-1314": "MEANGUERA",
+          "SLV-1315": "OSICALA",
+          "SLV-1316": "PERQUIN",
+          "SLV-1317": "SAN CARLOS",
+          "SLV-1318": "SAN FERNANDO",
+          "SLV-1319": "SAN FRANCISCO GOTERA",
+          "SLV-1320": "SAN ISIDRO",
+          "SLV-1321": "SAN SIMON",
+          "SLV-1322": "SENSEMBRA",
+          "SLV-1323": "SOCIEDAD",
+          "SLV-1324": "TOROLA",
+          "SLV-1325": "YAMABAL",
+          "SLV-1326": "YOLOAIQUIN"
+        }
+      },
+      "14": {
+        "name": "LA UNION",
+        "admin2": {
+          "SLV-1401": "ANAMOROS",
+          "SLV-1402": "BOLIVAR",
+          "SLV-1403": "CONCEPCION DE ORIENTE",
+          "SLV-1404": "CONCHAGUA",
+          "SLV-1405": "EL CARMEN",
+          "SLV-1406": "EL SAUCE",
+          "SLV-1407": "INTIPUCA",
+          "SLV-1408": "LA UNION",
+          "SLV-1409": "LISLIQUE",
+          "SLV-1410": "MEANGUERA DEL GOLFO",
+          "SLV-1411": "NUEVA ESPARTA",
+          "SLV-1412": "PASAQUINA",
+          "SLV-1413": "POLOROS",
+          "SLV-1414": "SAN ALEJO",
+          "SLV-1415": "SAN JOSE",
+          "SLV-1416": "SANTA ROSA DE LIMA",
+          "SLV-1417": "YAYANTIQUE",
+          "SLV-1418": "YUCUAIQUIN"
+        }
+      }
+    }
+  }
+}

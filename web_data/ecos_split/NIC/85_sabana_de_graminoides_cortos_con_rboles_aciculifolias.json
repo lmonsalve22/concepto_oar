@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "85_sabana_de_graminoides_cortos_con_rboles_aciculifolias",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "85 Sabana de graminoides cortos con rboles aciculifolias", "COD14": "85", "UNESCO": "VA2a(1)(2)", "DESCRIP": "Sabana de graminoides cortos con  rboles aciculifolias" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -84.106951714613913, 14.758446636764415 ], [ -84.099800085865127, 14.743800091413151 ], [ -84.099765258388985, 14.742052091554056 ], [ -84.100035173779432, 14.74192663101139 ], [ -84.100437891595391, 14.743182362176299 ], [ -84.117090193657475, 14.774502739909565 ], [ -84.117041224183907, 14.775607383376148 ], [ -84.106951714613913, 14.758446636764415 ] ] ] } }
+]
+}

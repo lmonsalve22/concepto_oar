@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "102_roca_marina_con_escasa_vegetacin",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "102 Roca marina con escasa vegetaci¢n", "COD14": "102", "UNESCO": "VIAe", "DESCRIP": "Roca marina con escasa vegetaci¢n" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -85.899988424706436, 10.907568635604362 ], [ -85.898845416344415, 10.906928796756596 ], [ -85.899660760594458, 10.906441226649209 ], [ -85.902914562881818, 10.909167133685294 ], [ -85.902668490343444, 10.909850467642146 ], [ -85.901179685914869, 10.910136716379501 ], [ -85.901451233215369, 10.909012666344937 ], [ -85.899995910006638, 10.908858729449303 ], [ -85.899988424706436, 10.907568635604362 ] ] ] } }
+]
+}

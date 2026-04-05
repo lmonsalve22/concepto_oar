@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "58_hc_1_bosque_semideciduo_mixto_de_tierras_bajas_bien_drenado_hc_moderadamente_intervenido",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "58-HC-1 Bosque semideciduo mixto de tierras bajas, bien drenado, HC, moderadamente intervenido", "COD14": "58-HC-1", "UNESCO": "IA3a(2)(a)", "DESCRIP": "Bosque semideciduo mixto de tierras bajas, bien drenado, HC, moderadamente intervenido" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -89.997786485255347, 14.908351743379272 ], [ -89.955463427441117, 14.908143223445117 ], [ -89.954400139012535, 14.905248512479242 ], [ -89.954813367942819, 14.902012272571815 ], [ -89.958155197409425, 14.899895529912033 ], [ -89.969567046726112, 14.89968867218186 ], [ -89.975071594142733, 14.900843449438563 ], [ -89.998323533336944, 14.896110566766987 ], [ -90.006379454760022, 14.899099019517857 ], [ -90.009985057708988, 14.90455054716784 ], [ -90.007374299995291, 14.907037456877326 ], [ -89.997786485255347, 14.908351743379272 ] ] ] } }
+]
+}

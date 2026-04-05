@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "9_1_bosque_tropical_siempreverde_latifoliado_montano_inferior_moderadamente_intervenido",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "9-1 Bosque tropical siempreverde latifoliado montano inferior, moderadamente intervenido", "COD14": "9-1", "UNESCO": "IA1c(1)", "DESCRIP": "Bosque tropical siempreverde latifoliado montano inferior, moderadamente intervenido" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -82.719247452472729, 8.938119736785932 ], [ -82.721815338419376, 8.947813066583803 ], [ -82.721601071855829, 8.952141770829572 ], [ -82.716108670078995, 8.948515398466895 ], [ -82.71454052678942, 8.94034158017733 ], [ -82.719247452472729, 8.938119736785932 ] ] ] } }
+]
+}

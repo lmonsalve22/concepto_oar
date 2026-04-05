@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "42_bosque_tropical_siempreverde_estacional_mixto_montano_superior",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "42 Bosque tropical siempreverde estacional mixto montano superior", "COD14": "42", "UNESCO": "IA2d(1/2)", "DESCRIP": "Bosque tropical siempreverde estacional mixto montano superior" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -91.704763881928315, 16.079649452225617 ], [ -91.709035749329516, 16.088529600546135 ], [ -91.620796598809548, 16.088168753402616 ], [ -91.601587649325438, 16.073904499983939 ], [ -91.700756795836114, 16.073900999841236 ], [ -91.704763881928315, 16.079649452225617 ] ] ] } }
+]
+}

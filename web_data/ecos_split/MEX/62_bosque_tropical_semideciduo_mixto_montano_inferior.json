@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "62_bosque_tropical_semideciduo_mixto_montano_inferior",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "LEYENDA": "62 Bosque tropical semideciduo mixto montano inferior", "COD14": "62", "UNESCO": "IA3c(2)", "DESCRIP": "Bosque tropical semideciduo mixto montano inferior" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -91.721416041180774, 16.088575623901416 ], [ -91.709035749329516, 16.088529600546135 ], [ -91.704763881928315, 16.079649452225617 ], [ -91.700756795836114, 16.073900999841236 ], [ -91.730082030635188, 16.073899964816633 ], [ -91.721416041180774, 16.088575623901416 ] ] ] } }
+]
+}
